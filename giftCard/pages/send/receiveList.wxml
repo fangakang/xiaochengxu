@@ -1,0 +1,62 @@
+<view class="body">
+  <view class="msgContent">
+    <image class="headBg" src='../../image/headBg.png'></image>
+    <view class="personMsg">
+      <view class="photo">
+        <image src="{{giveUser.avatarurl}}"></image>
+      </view>
+      <view class="nickName">{{giveUser.nickname}}</view>
+      <view class="thanks">
+        {{recoedd.givewish}}
+      </view>
+    </view>
+    <view class="giftMsg" wx:if="{{cardShow}}">
+      <view>
+        <image src="{{cardDetail.background_loc_url}}"></image>
+        <view class="giftName">{{titleTemp}}</view>
+        <!-- <view class="useNotice">已存入到账户，可用于到店支付</view> -->
+        <view class="btnGroup">
+          <view class="canUse" bindtap='canUse' wx:if="{{!used&&giftList[0].status==0&&!myRecord}}">自用</view>
+          <view class="send" bindtap="toIndex" wx:if="{{!myRecord}}">我也要送</view>
+        </view>
+        
+      </view>
+    </view>
+  </view>
+  <view class="giftList">
+    <view class="giftHead">
+      <image src='../../image/line.png'></image>
+        <view class='sendPart'>送出<span>{{hanum}}/{{total}}</span>份礼品</view>
+        <image src='../../image/line.png'></image>
+    </view>
+    <view class="listContent">
+      <view class="gift" wx:for="{{giftList}}">
+        <view class="fl giftImg">
+          <image src="{{item.backimage}}"></image>
+        </view>
+        <view class="fl nameDate">
+          <view class="name">{{item.newtitle}}</view>
+          <view class="date">{{item.addtime}}</view>
+        </view>
+        <view class="fr reeivePeople">
+          <span class="wxName">{{item.wx_name}}</span>
+          <span class="reciveSpan">领取</span> 
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <view class="footer"  wx:if="{{card}}">
+  <button bindtap='canUse'>
+    <view class="personUse">
+      <view class="iconfont icon-paypal"></view>
+      自用
+    </view>
+  </button> 
+  <button bindtap='recharge'>
+    <view class="recharge">
+      <view class="iconfont icon-qia"></view>
+      充值到余额
+    </view>
+  </button>
+</view> -->

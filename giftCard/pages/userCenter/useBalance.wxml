@@ -1,0 +1,25 @@
+<view wx:if="{{loadComplete}}">
+  <view class="head">
+    <view class="title">可用余额（元）</view>
+    <view class="money">{{balance}}</view>
+    <span class="forever">永久有效</span>
+    <view bindtap='detail' hover-class='active' class="list">消费明细</view>
+  </view>
+  <view class="body">
+    <view class="tip" wx:if="{{!noCode}}">到店请出示礼品卡</view>
+    <view class="QRcode" wx:if="{{!noCode}}">
+      <canvas class="myQrcode" style="width:200px;height:200px;" canvas-id="myQrcode"></canvas>
+      <view class="number">{{number}}</view>
+      <view class="change">
+        <span class="iconfont icon-shuaxin"></span>{{time}}秒后更换新核销码
+      </view>
+    </view>
+    <view class="noCode" wx:if="{{noCode}}">
+      <image src='../../image/signNo.png'></image>
+      <view>卡内金额已用完，请前往<view class="backToBuy" bindtap="backToBuy">礼品卡中心</view>购买</view>
+    </view>
+  </view>
+</view>
+
+<!-- 授权 -->
+<authorize modal-hidden="{{authorize}}"></authorize>

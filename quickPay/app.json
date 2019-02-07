@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/pay",
+    "pages/index/consumeDetail",
+    "pages/index/my",
+    "pages/index/payOver",
+    "pages/index/personMsg",
+    "pages/index/cardDetail",
+    "pages/index/cardList",
+    "pages/logs/logs"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

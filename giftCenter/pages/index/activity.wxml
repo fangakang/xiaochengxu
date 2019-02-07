@@ -1,0 +1,61 @@
+<scroll-view style="height: 590px;" class="body" scroll-y bindscrolltolower="lower">
+  <view class="nav">
+    <view data-status="{{item.status}}" class="navList" data-id="{{index}}" wx:for="{{navList}}" bindtap="select">
+      <span class="{{item.active?'active':''}}">{{item.name}}</span>
+    </view>
+  </view>
+  <view class="orderContent {{index==0?'first':''}}" wx:for="{{orderList}}">
+    <view class="title">
+      <view class="fl orderNum">
+        <image class="shopLogo" src="{{item.logo}}"></image>
+        <view class="shopMsg">
+            <view class="shopName">{{item.merca}}</view>
+        </view> 
+      </view>
+      <view class="fr status">
+        <span wx:if="{{item.activityStatus==1}}" class="continue">进行中</span>
+        <span wx:if="{{item.activityStatus==0}}" class="endding">已结束</span>
+      </view>
+    </view>
+    <view class="content">
+      <view class="fl image">
+        <image class="pic" src="{{item.background_loc_url}}"></image>
+      </view>
+      <view class="fl orderMsg">
+        <view class="name">{{item.title}}</view>
+        <!-- 拼团 -->
+        <view class="group" wx:if="{{item.activityType==1}}">
+          <view class="fl">
+            <span class="groupPrice price">￥{{item.groupPrice}}</span>
+            <span class="peopleNum">{{item.peopleNum}}人拼单</span>
+          </view>
+          <view class="fr">
+            <span class="time">{{item.groupTime}}</span>  
+          </view>
+        </view>
+        <!-- 砍价 -->
+        <view class="cutPrice" wx:if="{{item.acttype==1}}">
+          底价￥{{item.nprice}}
+        </view>
+        <!-- 秒杀 -->
+        <view class="secondPrice" wx:if="{{item.activityType==3}}">
+          秒杀价￥{{item.secondPrice}}
+        </view>
+      </view>
+    </view>
+    <view class="orderFooter">
+      <view class="payContent">
+        <view class="msgLeft fl">
+          <view  wx:if="{{item.acttype==1}}">{{item.remard}}</view>
+        </view>
+        <view class="btnGroup fr">
+          <view wx:if="{{item.acttype==1}}" class="btn viewGroup">查看拼团</view>
+          <view wx:if="{{item.activityType==2}}" class="btn viewBargain">查看砍价</view>
+          <view wx:if="{{item.activityType==3}}" class="btn viewSecond">查看秒杀</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+  

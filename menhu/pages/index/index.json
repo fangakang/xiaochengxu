@@ -1,0 +1,9 @@
+{
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "backgroundTextStyle":"dark",
+  "usingComponents": {
+    "footer": "../components/footer",
+    "loadAll":"../components/loadAll"
+  }
+}

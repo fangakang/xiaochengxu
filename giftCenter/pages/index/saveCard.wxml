@@ -1,0 +1,38 @@
+<view class="nav">
+  <view data-status="{{item.status}}" class="navList" data-id="{{index}}" wx:for="{{navList}}" bindtap="select">
+    <span class="{{item.active?'active':''}}">{{item.name}}</span>
+  </view>
+</view>
+<view class="body">
+  <view class="content">
+    <view class="cardList"  wx:for="{{allPresentData}}" wx:if="{{item.show}}">
+      <view class="cardContent" bindtap="detail" data-type="{{item.outid}}" data-id="{{index}}" data-status="{{item.status}}">
+        <view class="cardImg fl">
+          <image src="{{item.backimage}}"></image>
+        </view>
+        <view class="cardDetail fl">
+          <view class="cardName">{{item.title}}</view>
+          <view class="time">
+              购买时间：{{item.addtime}}
+          </view>
+          <view class="msg">
+            <span>{{item.guvenae}}</span>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{item.outid!=14&&chooseShow&&item.status!=7&&item.status!=6&&item.status!=8}}" class="select fr iconfont {{item.selectFlag?'icon-duihao2':''}}" data-id="{{index}}" bindtap="chooseCard"></view>
+    </view>
+  </view>
+</view>
+<view class="footer" wx:if="{{chooseShow}}">
+  <view class="send" bindtap='send'>
+    <view class="iconfont icon-fenxiang"></view>赠送给好友
+  </view>
+  <view class="recharge">
+    <view class="iconfont icon-qia"></view>充值到余额
+  </view>
+  <!-- <view class="quanXuan">
+    <view class="all">全选</view>
+    <view class="selectAll iconfont {{selectAll?'icon-duihao2':''}}" bindtap='selectAll'></view> 
+  </view> -->
+</view>

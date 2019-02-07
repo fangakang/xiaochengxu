@@ -1,0 +1,212 @@
+<!--logs.wxml-->
+<view class="page SourceHan" wx:if="{{containShow}}">
+    <view class="container">
+
+      <view class="card_top">
+        <view class="card_logo">
+          <image src="{{cardMsg.card_img}}"></image>
+        </view>
+      </view>
+
+      <view class="card_down">
+          <view class="top white_bg">
+              <view class="card_mercent gray">{{cardMsg.title}}</view>
+              <view class="card_name">{{cardMsg.project_name}}</view>
+              <view wx:if="{{hasImg}}">
+                  <view class="verify_wrap">
+                      <view class="verify_code">
+                          <canvas class="myQrcode" style="width:400rpx;height:400rpx;" canvas-id="myQrcode"></canvas>
+                      </view>
+                      <view class="verify_yard">{{code}}</view>
+                      <view class="verify_text">此核销码仅限当天有效，超过后将重新生成</view>
+                      <view class="verity_num flex_box flex_middle flex_center">
+                          剩余 <view class="item_color">{{useWrap.last}}{{cardMsg.unit}}</view>
+                          <view wx:if="{{useWrap.gives!='0'}}">(含转赠中{{useWrap.gives}}次）</view>
+                      </view>
+                  </view>
+                  <view class="upload_wrap">
+                      <view class="upBtn_wrap">
+                          <view class="upload_btn" bindtap="addNum">增加{{cardMsg.unit}}数</view>
+                      </view>
+                  </view>
+              </view>
+              <view class="upload_wrap" wx:if="{{!hasImg}}">
+                  <view class="upload_text">
+                      到店使用时，商家以确保持卡人与核销人为同一人，需要用户先上传真实照片。
+                  </view>
+                  <view class="upBtn_wrap">
+                      <view class="upload_btn" bindtap="uploadBtn">我要去上传</view>
+                  </view>
+              </view>
+          </view>
+
+        <view class="notice_tip flex_box flex_middle">
+            <view class="notice_img ">
+                <image src="../../img/notice_img.png"></image>
+            </view>
+            <view class="notice_middle white_bg">
+                <view class="notice_line"></view>
+            </view>
+
+            <view class="notice_img img_right">
+                <image src="../../img/notice_img.png"></image>
+            </view>
+        </view>
+        <view class="list_wrap white_bg">
+            <view class="notice_list">
+                <view class="notice_item flex_box">
+                    <view class="notice_title">可用时间：</view>
+                    <view class="notice_text">
+                        {{cardMsg.time_validity.m}}
+                    </view>
+                </view>
+                <view class="notice_item flex_box">
+                    <view class="notice_title">使用说明：</view>
+                    <view class="notice_text">
+                       {{cardMsg.use_able_give}}
+
+                    </view>
+                </view>
+                <view class="notice_item flex_box">
+                    <view class="notice_title">适用门店：</view>
+                    <view class="notice_text item_color">
+                        {{cardMsg.use_able_store}}
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="detail_card white_bg">
+            <view class="flex_box flex_middle flex_space buyCard_icon">
+                <view class="title_icon">次卡详情</view>
+                <view class="arrow">
+                    <image src="../../img/arrow_right.png"></image>
+                </view>
+            </view>
+            <view class="onceCard_wrap">
+                <view class="onceCard_list">
+                    <view class="onceCard_li" bindtap="cardBuy">
+                        <view class="card_tip">
+                            <image src="../../img/use_tip.png"></image>
+                        </view>
+                        <view class="card_msg">
+                            <view class="msg_img">
+                                <image src="../../img/use_card.png"></image>
+                            </view>
+                            <view class="flex_box flex_middle flex_space buy_detail">
+                                <view class="detail_left flex_box flex_middle">
+                                    <view class="head_img">
+                                        <image src="{{cardMsg.card_img}}"></image>
+                                    </view>
+                                </view>
+                                <view class="detail_text right">
+                                    <view class="flex_box flex_space">
+                                        <view>
+                                            <view class="detail_title">{{cardMsg.title}}</view>
+                                            <view class="detail_subtitle">{{cardMsg.project_name}}</view>
+                                        </view>
+                                    </view>
+                                    <view class="flex_box flex_midlle  flex_end full">
+                                        <view class="flex_box flex_middle buyWrap">
+                                            <view class="buyText">点击了解详情</view>
+                                            <view class="goBuy">
+                                                <image src="../../img/goBuy.png"></image>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view  class="onceCard_item flex_box flex_space flex_middle" bindtap="shareWrap" wx:if="{{is_give=='1'}}">
+                <view class="item_title fl">赠送给好友</view>
+                <view class="arrow fr flex_box flex_middle">
+                    <view class="item_send">可赠送{{last}}{{cardMsg.unit}}</view>
+                    <image src="../../img/arrow_right.png"></image>
+                </view>
+            </view>
+            <view class="onceCard_item flex_box flex_space flex_middle" wx:if="{{hasImg}}" bindtap="seeRecord">
+                <view class="item_title">使用记录</view>
+                <view class="arrow flex_box flex_middle">
+                    <view class="item_send">使用、转赠及充次记录</view>
+                    <image src="../../img/arrow_right.png"></image>
+                </view>
+            </view>
+            <view class="onceCard_item flex_box flex_space flex_middle" bindtap="seeOther">
+                <view class="item_title">其他可用次卡</view>
+                <view class="arrow flex_box flex_middle">
+                    <view class="item_send">查看</view>
+                    <image src="../../img/arrow_right.png"></image>
+                </view>
+
+            </view>
+        </view>
+      </view>
+    </view>
+    <view class="modal"  style="" wx:if="{{uploadModal}}">
+        <view class="middle">
+            <view class="middle_content">
+                <view class="content_top" style="background:url(https://np.pigcms.com/cashier/pigcms_tpl/Merchants/Static/images/upImg_bg.png) no-repeat center center;background-size:100%;">
+                    <view class="noImg" wx:if="{{!uploadShow}}">
+                        <view class="upImg_box">
+                            <view  bindtap="upload" class="up_img">
+                                <image src="../../img/up_img.png"></image>
+                            </view>
+                        </view>
+                        <view class="up_text center">请上传本人正面照片（请横拍）</view>
+                        <view class="close_modal close_up">
+                            <view class="close_up" bindtap="closeUp">
+                                <image src="../../img/close_up.png"></image>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="uploadImg" wx:if="{{uploadShow}}">
+                        <view href="javascript:;" class="hasImg_close" bindtap="closeImg">
+                            <image src="https://np.pigcms.com/cashier/pigcms_tpl/Merchants/Static/images/up_translate.png"></image>
+                        </view>
+                        <view class="upload_img">
+                            <image src="{{uploadSrc}}"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="content_down center">
+                    <view class="down_tittle1">用户到店消费时，需展示购买者正面清晰照片，以确保商家验证此卡为购买者本人</view>
+                    <view class="refer">
+                        <button class="uploadImgSub {{!uploadShow?'disabled':''}}" disabled="{{!uploadShow}}" bindtap="submitImg">提交</button>
+                    </view>
+                    <view class="refer_text">提交后不可更改</view>
+                </view>
+                <view class="modal_footer footer_img">
+                    <view class="close_modal block_ds" bindtap="closeUp">
+                        <image src="https://np.pigcms.com/cashier/pigcms_tpl/Merchants/Static/images/stop_up.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--分享-->
+    <view class="modal shareModal" wx:if="{{shareShow}}">
+        <view class="shareWrap">
+            <view class="shareTitle flex_box flex_middle">
+                <view class="title_text">分享给好友或朋友圈</view>
+                 <view class="title_img" bindtap="closeShare">
+                     <image src="../../img/close.png"></image>
+                 </view>
+            </view>
+            <view class="shareList flex_box flex_middle">
+                <view class="shareLi">
+                    <button hover-class='none' open-type='share' class="">
+                        <image src="../../img/weChat.png"></image><view>分享给好友</view>
+                    </button>
+                </view>
+
+                <view class="shareLi" bindtap="firentSave">
+                    <image src="../../img/friends.png"></image>
+                    <view>生成海报</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+

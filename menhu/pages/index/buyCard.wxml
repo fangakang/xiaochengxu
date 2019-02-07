@@ -1,0 +1,25 @@
+<view class="content">
+  <view class="pageTitle">
+    <view class="mainTitle">
+      <span class="fl iconfont icon-viphuiyuanhuangguan"></span>
+      {{cardList[0].title}}购买
+    </view>
+    <view class="notice">注：本卡一经售出，概不退换</view>
+    <view class="chooseType">请选择类型</view>
+  </view>
+  <view class="card">
+    <view class="cardType clearix" wx:for="{{cardList}}">
+      <view class="fl">
+        <view class="cardName">{{item.title}}</view>
+        <view class="useTime">有效期：{{item.validity}}天</view>
+      </view>
+      <view class="fr clearix buyGroup">
+        <view class="fl money " wx:if="{{item.sale_price>0}}"><span class="iconfont icon-qian"></span>{{item.sale_price}}</view>
+        <view class="fl money" wx:if="{{item.sale_price<=0}}"><span class="iconfont icon-qian"></span>{{item.original}}</view>
+        <view class="fl oldMoney"><span class="iconfont icon-qian">{{item.original}}</span></view>
+        <button wx:if="{{hadPhone}}" data-index="{{index}}" class="fl buyNow" bindtap="buy">立即购买</button>
+        <button wx:if="{{!hadPhone}}" data-index="{{index}}" class="fl buyNow"  open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">立即购买</button>
+      </view>
+    </view>
+  </view>
+</view>

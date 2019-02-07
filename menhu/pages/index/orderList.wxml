@@ -1,0 +1,130 @@
+<view class="content">
+  <view class="header">
+    <view data-id="{{item.id}}" bindtap='selectPage' wx:for="{{bannerList}}"><span class="{{item.id==type?'active':''}}">{{item.name}}</span></view>
+  </view>
+  <scroll-view class="orderList" scroll-y="{{canScroll}}" bindscrolltolower="scrollLoad" scroll-top="{{scrollTop}}" style='height:{{mainHeight}}px'>
+    <!-- 全部 -->
+    <view class="allData" wx:if="{{type==0}}">
+      <view class="order" wx:for="{{allData}}">
+        <view class="orderTitle clearix">
+            <view class="fl orderNo">订单编号：{{item.order_id}}</view>
+            <!-- <view class="fr orderTime" wx:if="{{item.ispay==0}}">{{item.add_times}}</view>
+            <view class="fr orderTime" wx:if="{{item.ispay==1}}">{{item.paytime}}</view> -->
+            <view class="status fr" wx:if="{{item.ispay==0&&item.over==0}}">待付款</view>
+            <view class="status fr"  wx:if="{{item.ispay==1&&item.usenum != item.num&&item.stmsg==-1&&item.over==0&&item.outtimenum==0}}">未使用</view>
+            <view class="status fr useAllTitle" wx:if="{{item.ispay==1&&item.usenum == item.num&&item.castatus==3}}">已用完</view>
+            <view class="status fr overTitle" wx:if="{{item.over==1&&item.castatus!=3||item.outtimenum>0&&item.ispay==1}}">已过期</view>
+            <view class="status fr" wx:if="{{item.stmsg!=-1 &&item.castatus==2}}">未到使用日期</view>
+        </view>
+        <view class="orderContent clearix" bindtap='toDetail' data-id='{{item.coupon_id}}'>
+          <image class="fl" src="{{item.allimage}}"></image>
+          <view class="fl goodsName">{{item.themename}}</view>
+        </view>
+        
+        <view class="orderFooter clearix">
+          <!-- <view class="fl time" wx:if="{{item.usenum != item.num&&item.stmsg!=-1}}">有效期至：{{item.stmsg}}</view>
+          <view class="fl time" wx:if="{{item.usenum != item.num&&item.stmsg==-1}}">有效期至：{{item.etime}}</view> -->
+          <view class="goods fl">共{{item.num}}件商品，实付款<span><span class="iconfont icon-qian"></span>{{item.goods_price}}</span></view>
+          <view class="payMoney fr" wx:if="{{item.ispay==0&&item.over==0}}" bindtap='agentPayCard' data-id="{{item.caoid}}" data-coupon="{{item.coupon_id}}"><button>付款</button></view>
+          <navigator class="useAll fr" wx:if="{{item.ispay==1&&item.usenum == item.num&&item.castatus==3&&item.refund!=2}}" url="use?cousuemeid={{item.cousuemeid}}&useOver=1"><button>已用完</button></navigator>
+          <navigator  class="canUse fr" wx:if="{{item.ispay==1&&item.usenum != item.num&&item.stmsg==-1&&item.over==0&&item.outtimenum==0&&item.refund!=2}}" url="use?cousuemeid={{item.cousuemeid}}"><button>使 用</button></navigator>
+          <navigator url="use?cousuemeid={{item.cousuemeid}}" class="viewDetail fr" wx:if="{{item.over==1&&item.castatus!=3||item.outtimenum>0&&item.ispay==1&&item.refund!=2}}"><button>查看详情</button></navigator>
+          <navigator class="viewDetail fr" url="use?cousuemeid={{item.cousuemeid}}" wx:if="{{item.stmsg!=-1 &&item.castatus==2&&item.refund!=2}}"><button>查看详情</button></navigator>
+          <view class="useAll fr" wx:if="{{item.ispay==1&&item.refund==2}}"><button>已退款</button></view>
+        </view>
+      </view>
+      <view class="noData" wx:if="{{noAll}}">
+        <image src='../../image/noOrder.png'></image>
+        <view>暂无数据...</view>
+      </view>
+      <loadAll wx:if="{{allComplete}}"></loadAll>   
+    </view>
+    <!-- 待付款 -->
+    <view class="willPay" wx:if="{{type==1}}">
+      <view class="order" wx:for="{{userPersonData}}">
+        <view class="orderTitle clearix">
+            <view class="fl orderNo">订单编号：{{item.order_id}}</view>
+            <view class="status fr">待付款</view>
+            <!-- <view class="fr orderTime">{{item.add_time}}</view> -->
+        </view>
+        <view class="orderContent clearix" bindtap='toDetail' data-id='{{item.coupon_id}}'>
+          <image class="fl" src="{{item.allimage}}"></image>
+          <view class="fl goodsName">{{item.themename}}</view>
+        </view>
+        <view class="orderFooter clearix">
+          <view class="goods fl">共{{item.num}}件商品，实付款<span><span class="iconfont icon-qian"></span>{{item.goods_price}}</span></view>
+          <!-- <view class="fl time">有效期至：{{item.end_time}}</view> -->
+          <view class="payMoney fr" bindtap='agentPayCard' data-id="{{item.id}}" data-coupon="{{item.coupon_id}}"><button>付款</button></view>
+        </view>
+      </view>
+      <view class="noData" wx:if="{{noUsePerson}}">
+        <image src='../../image/noOrder.png'></image>
+        <view>暂无数据...</view>
+      </view>
+      <loadAll wx:if="{{userPersonComplete}}"></loadAll>
+    </view>
+    <!-- 待使用 -->
+    <view class='willUse' wx:if="{{type==2}}">
+      <view class="order" wx:for="{{willUseData}}">
+        <view class="orderTitle clearix">
+            <view class="fl orderNo">订单编号：{{item.order_id}}</view>
+            <!-- <view class="fr orderTime">{{item.paytime}}</view> -->
+            <view class="status fr" wx:if="{{item.stmsg==-1}}">未使用</view>
+            <view class="status fr" wx:if="{{item.stmsg!=-1}}">未到使用日期</view>
+        </view>
+        <view class="orderContent clearix" data-id="{{item.coupon_id}}" bindtap="toDetail">
+          <image class="fl" src="{{item.allimage}}"></image>
+          <view class="fl goodsName">{{item.themename}}</view>
+        </view>
+        
+        <view class="orderFooter clearix">
+          <view class="goods fl">共{{item.caunum}}件商品，实付款<span><span class="iconfont icon-qian"></span>{{item.goods_price}}</span></view>
+          <!-- <view class="fl time" wx:if="{{item.stmsg!=-1}}">{{item.stmsg}}</view> -->
+          <!-- <view class="fl time" wx:if="{{item.stmsg==-1}}">有效期至：{{item.end_time}}</view> -->
+          <navigator wx:if="{{item.stmsg==-1}}" class="canUse fr" url="use?cousuemeid={{item.cousuemeid}}"><button>使 用</button></navigator>
+          <navigator class="viewDetail fr" url="use?cousuemeid={{item.cousuemeid}}" wx:if="{{item.stmsg!=-1}}"><button>查看详情</button></navigator>
+        </view>
+      </view>
+      <view class="noData" wx:if="{{noWillUse}}">
+        <image src='../../image/noUse.png'></image>
+        <view>暂无数据...</view>
+      </view>
+      <loadAll wx:if="{{willUseComplete}}"></loadAll>
+    </view>
+    <!-- 已使用 -->
+    <view class="used" wx:if="{{type==3}}">
+      <view class="order" wx:for="{{hadUse}}">
+        <view class="orderTitle clearix">
+            <view class="fl orderNo">订单编号：{{item.caoid}}</view>
+            <!-- <view class="fr orderTime">{{item.destroy_time}}</view> -->
+            <view class="status fr useAllTitle">已用完</view>
+        </view>
+        <view class="orderContent clearix" bindtap='toDetail' data-id='{{item.coupon_id}}'>
+          <image class="fl" src="{{item.allimage}}"></image>
+          <view class="fl goodsName">{{item.themename}}</view>
+        </view>
+        <view class="orderFooter clearix">
+          <view class="goods fl">共{{item.num}}件商品，实付款<span>￥{{item.goods_price}}</span></view>
+          <navigator class="useAll fr" url="use?cousuemeid={{item.cousuemeid}}&useOver=1"><button>已用完</button></navigator>
+        </view>
+      </view>
+      <view class="noData" wx:if="{{noHadUse}}">
+        <image src='../../image/noUse.png'></image>
+        <view>暂无数据...</view>
+      </view>
+      <loadAll wx:if="{{hadUseComplete}}"></loadAll>
+    </view>
+  </scroll-view>
+</view>
+<view class="authorize" wx:if="{{!authorize}}">
+    <view class="authorizeModal">
+      <view class="authorizeMsg">
+        <image src='../../image/authorize.png'></image>
+        <view>您的公开信息（昵称和头像等）</view>
+        <view>以便于查看优惠信息哦</view>
+      </view>
+      <button bindtap='modal_click_Hidden' class="getUserInfo" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+        <span class="iconfont icon-weixin1"></span>确定授权
+      </button>
+    </view>
+</view>

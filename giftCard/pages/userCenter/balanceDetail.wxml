@@ -1,0 +1,26 @@
+<scroll-view class="list" scroll-y="{{!noData}}" bindscrolltolower="loadMore">
+  <view class="body" wx:if="{{!noData}}">
+    <view  class="listContent" wx:for="{{dataList}}">
+      <view class="fl">
+        <view class="title">
+          <span wx:if="{{item.type==3||item.type==1}}">{{item.title}}</span>
+          <span wx:if="{{item.type==5}}">{{item.title}}</span>
+        </view>
+        <view class="cardNo">NO.{{item.cardno}}</view>
+        <view class="time">{{item.time}}</view>        
+      </view>
+      <view class="fr">
+        <view class="money {{item.type==3||item.type==1?'red':'green'}}">
+          <span wx:if="{{item.type==3||item.type==1}}">-{{item.money}}</span>
+          <span wx:if="{{item.type==5}}">{{item.money}}</span>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="loading" wx:if="{{loading}}">加载中...</view>
+  <view class="noData" wx:if="{{noData}}">
+    <image src='../../image/signNo.png'></image>
+    暂无数据...
+  </view>
+  <loadAll wx:if="{{loadAll}}"></loadAll>
+</scroll-view>

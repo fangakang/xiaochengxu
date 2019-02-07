@@ -1,0 +1,13 @@
+<view class="list">
+  <view class="listContent" wx:for="{{dataList}}">
+      <view class="fl">
+        <view class="title">{{item.title}}</view>
+        <view class="time">{{item.time}}</view>
+      </view>
+      <view class="fr">
+        <view class="money {{item.money>0?'green':'red'}}">
+          {{item.money}}
+        </view>
+      </view>
+  </view>
+</view>

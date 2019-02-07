@@ -1,0 +1,82 @@
+@import "../../icon/iconfont.wxss"; 
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.businessDetail {
+  padding:0rpx 20rpx;
+}
+
+.businessDetail>view {
+  overflow:hidden;
+  font-size:28rpx;
+  color:#999;
+  padding:20rpx 0;
+  border-bottom:1rpx dotted #efefef;
+}
+
+.shopName{
+   font-size: 32rpx;
+   color:#333;
+   width:100%;
+   overflow : hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 1;
+   -webkit-box-orient: vertical;
+ }
+ .shopShow .fl{
+   width: 80%;
+ }
+ .shopShow .fr{
+   width: 20%;
+   margin-top:40rpx;
+ }
+ .shopShow .fr view{
+   display: inline-block;
+   font-size: 60rpx;
+ }
+ .shopShow .fr view:first-child{
+   margin-right: 20rpx;
+ }
+ .shopAddress{
+   width:100%;
+   overflow : hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 1;
+   -webkit-box-orient: vertical;
+   margin-top:10rpx;
+   margin-bottom: 10rpx;
+ }
+ .businessTitle .shopTotal{
+   font-weight:normal;
+   color: #999;
+   font-size: 24rpx;
+ }
+ .businessTitle .shopTotal .iconfont{
+   float: right;
+   color: #999;
+   margin-top:5rpx;
+   margin-left:5px;
+   font-size:30rpx;
+ }
+ .businessDetail .icon-shijian{
+  color: #ffc824
+}
+.businessDetail .icon-dianhua{
+  color: #88b5ff
+}
+.businessDetail .icon-LC_icon_gps_line_2{
+  color: #ff9c61
+}
+.businessDetail .iconfont{
+  font-size: 36rpx;
+  margin-top: 2rpx;
+}
+ 
+
+
+

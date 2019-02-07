@@ -1,0 +1,56 @@
+/* pages/index/my.wxss */
+@import "../../icon/iconfont.wxss";
+.myPage{
+  padding: 25rpx;
+}
+.personMsg{
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  border-radius: 10rpx;
+  text-align: center;
+  padding: 50rpx 0;
+  box-shadow:0rpx 10rpx 10rpx #ddd;
+}
+.photo{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  margin: 0 auto;
+  border:10rpx solid rgba(255,255,255,.2)
+}
+.photo image{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+}
+.nickName{
+  color: #fff;
+  font-size: 36rpx;
+  margin-top: 20rpx;
+}
+.listContent{
+  margin-top: 50rpx;
+}
+.list{
+  line-height: 85rpx;
+}
+.lineName{
+  font-size: 34rpx;
+  color:#333;
+}
+.lineName .iconfont{
+  font-size: 40rpx;
+  color: #3bd76a;
+  display: inline-block;
+  margin-right: 30rpx;
+}
+.next{
+  font-size: 32rpx;
+  color:#333;
+}
+.next .iconfont{
+  color: #aaa;
+  display: inline-block;
+  margin-left: 20rpx;
+}

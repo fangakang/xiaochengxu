@@ -1,0 +1,124 @@
+@import "../../icon/iconfont.wxss";
+page{
+  background: #f3f3f3;
+}
+.body{
+  background: #fff;
+}
+.head{
+  text-align: center;
+  padding-top: 20rpx;
+  padding-bottom: 40rpx; 
+  position: relative;
+}
+.giftCard{
+  width: 515rpx;
+  height:250rpx;
+  margin: 0 auto;
+  border-radius:10rpx;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 30rpx;
+  overflow: hidden;
+  position: relative;
+}
+.logo{
+  width:84rpx;
+  height:84rpx;
+  border-radius:50%;
+  float:left;
+}
+.nameTitle{
+  float: left;
+  text-align:left;
+  margin-left:20rpx;
+  margin-top: 5rpx
+}
+.brand_name{
+  font-size: 30rpx;
+  color:#fff;
+}
+.brand_title{
+  font-size: 22rpx;
+  color:#fff;
+}
+.forever{
+  font-size: 24rpx;
+  color:#fff;
+  position: absolute;
+  right:30rpx;
+  bottom:30rpx;
+}
+.name{
+  font-size: 36rpx;
+  margin-top: 15rpx;
+  margin-bottom: 30rpx;
+}
+.money{
+  font-size: 50rpx;
+}
+.money span{
+  font-size: 36rpx;
+}
+.detailMsg{
+  display: flex;
+  text-align: center;
+  font-size: 36rpx;
+  color:#7041fd;
+  margin-top: 38rpx;
+  margin-bottom: 50rpx;
+}
+.saveCard{
+  border-right:2rpx solid #efefef
+}
+.detailMsg>view{
+  flex:1
+}
+.detailMsg .title{
+  font-size: 24rpx;
+  color:#333;
+}
+.menuList{
+  background: #fff;
+  margin-top: 20rpx;
+  padding-left: 30rpx;
+}
+.line{
+  overflow: hidden;
+  padding: 35rpx 30rpx 35rpx 0;
+  border-top:2rpx solid #eee;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float:right;
+  text-align: right;
+}
+.lineName{
+  font-size: 30rpx;
+  color:#202020;
+}
+.lineName .iconfont{
+  display: inline-block;
+  margin-right: 20rpx;
+}
+.view{
+  color: #ccc;
+  font-size: 24rpx;
+}
+.view .iconfont{
+  display: inline-block;
+  margin-left: 15rpx;
+  font-size: 24rpx;
+}
+.use{
+  display: inline-block;
+  width:326rpx;
+  line-height: 64rpx;
+  font-size: 30rpx;
+  color:#7041fd;
+  border: 2rpx solid #7041fd;
+  border-radius: 10rpx;
+  margin: 0 auto;
+}

@@ -1,0 +1,14 @@
+<view class="businessDetail">
+      <view class="shopShow" wx:for="{{shoplist}}">
+        <view class="fl">
+          <view class="shopName">{{item.business_name}}</view>
+          <view class="shopAddress">{{item.address}}</view>
+          <view class="shoptime" wx:if="{{item.t_datas}}">营业时间：{{item.t_datas}}</view>
+           <view class="shoptime" wx:if="{{!item.t_datas}}">营业时间：暂无</view>
+        </view>
+        <view class="fr">
+          <view class="iconfont icon-dianhua" bindtap='phoneCall' data-phone='{{item.telephone}}'></view>
+          <view class="iconfont icon-LC_icon_gps_line_2" bindtap='getLocation' data-latitude="{{item.latitude}}" data-longitude="{{item.longitude}}"></view>
+        </view>
+      </view>
+    </view>

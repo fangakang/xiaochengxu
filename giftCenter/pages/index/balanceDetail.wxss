@@ -1,0 +1,30 @@
+.list{
+  padding-left: 25rpx;
+  background: #fff;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float:right;
+}
+.listContent{
+  overflow: hidden;
+  padding:35rpx 25rpx 35rpx 0;
+  border-bottom: 2rpx solid #eee;
+}
+.title{
+  color:#333;
+  font-size: 30rpx;
+}
+.time{
+  color: #bbbaba;
+  font-size:24rpx;
+  margin-top: 15rpx;
+}
+.red{
+  color:#e54b37;
+}
+.green{
+  color:#32c35e;
+}

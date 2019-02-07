@@ -1,0 +1,70 @@
+/**index.wxss**/
+@import "../../icon/iconfont.wxss";
+.myPage{
+  padding: 20rpx;
+}
+.shopContent {
+  position:relative;
+  border-radius:16rpx;
+  height:200rpx;
+  background-repeat:no-repeat;
+  background-size:100% auto;
+  margin-bottom:40rpx;
+  box-shadow:0 10rpx 10rpx #ddd;
+}
+
+.pageTitle{
+  font-size: 26rpx;
+  color:#666;
+  margin-bottom: 20rpx;
+}
+.cardContent{
+  height:100%;
+  border-radius:10rpx;
+  background: rgba(0,0,0,.2)
+}
+.cardMsg{
+  margin-top: 28rpx;
+}
+.logo image{
+  width: 150rpx;
+  height:150rpx;
+  border-radius: 50%;
+  margin: 28rpx;
+}
+.cardName{
+  font-size: 40rpx;
+  color: #fff;
+}
+.cardNum{
+  font-size: 32rpx;
+  color:#fff;
+}
+.cardDetail{
+  color: #fff;
+}
+.cardDetail .iconfont{
+  font-size: 28rpx;
+}
+.cardDetail>view{
+  margin-right: 40rpx;
+}
+.searchGroup{
+  background: #f2f3f5;
+  padding:5rpx;
+  border-radius: 30rpx;
+  margin-bottom: 30rpx;
+}
+.searchGroup .iconfont{
+  color: #b2b2b2;
+  margin-left:25rpx;
+  margin-top:10rpx;
+  margin-right:15rpx;
+}
+.searchInput input{
+  font-size: 26rpx;
+  width: 600rpx;
+}
+.noData{
+  margin-top: 200rpx;
+}

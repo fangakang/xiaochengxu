@@ -1,0 +1,67 @@
+<view class="wholeContent" wx:if="{{loadComplete}}">
+  <view class="buyMsg">
+    <view class='cardMsg' style="background-image:url({{orderDetail.cardDetail.background_loc_url}})">
+      <image class="logo" src="{{orderDetail.cardDetail.logo_url}}"></image>
+      <view class="nameTitle">
+        <view class="brand_name">{{orderDetail.cardDetail.brand_name}}</view>
+        <view class="brand_title">{{orderDetail.cardDetail.title}}</view>
+      </view>
+    </view>
+    <view class="title">{{orderDetail.catitle}}</view>
+    <view class="total" style="display:none">
+      <view class="totalMoney">
+        <view class="subTitle f24">总面值</view>
+        <view class="money">
+          <view class="f24">￥</view>
+          <view class="f50">{{orderDetail.totals}}</view>
+        </view>
+      </view>
+      <view class="totalSheets">
+        <view class="subTitle f24">总张数</view>
+        <view class="sheets">
+          <view class="f50">1</view>
+          <view class="f24">张</view>
+        </view>
+      </view>
+    </view>
+    <view class="giftList f26" style="display:none">
+      <view class="giftName">100元礼品卡</view>
+      <view class="part">x1</view>
+    </view>
+  </view>
+  <view class="description">
+    <view class="line">
+      <view class="lineName">订单编号</view>
+      <view class='fr'>{{orderDetail.order_id}}</view>
+    </view>
+    <view class="line">
+      <view class="lineName">订单类型</view>
+      <view class='fr'>购买礼品卡</view>
+    </view>
+    <view class="line">
+      <view class="lineName">实付金额</view>
+      <view class='fr'>￥{{orderDetail.goods_price}}</view>
+    </view>
+    <view class="line">
+      <view class="lineName">支付时间</view>
+      <view class='fr'>{{orderDetail.paytime}}</view>
+    </view>
+    <!-- <view class="line">
+      <view class="lineName">成团时间</view>
+      <view class='fr'>2017-12-11 11:20:20</view>
+    </view> -->
+    <view class="line">
+      <view class="lineName">支付方式</view>
+      <view class='fr'><span wx:if="{{orderDetail.pay_way=='weixin'}}">微信支付</span></view>
+    </view>
+    <view class="line">
+      <view class="lineName">订单状态</view>
+      <view class='fr'>
+        <span wx:if="{{orderDetail.ispay==0&&orderDetail.status==1}}" class="waitPay">待付款</span>
+        <span wx:if="{{orderDetail.ispay==1}}" class="alreadyPay">已支付</span>
+        <span wx:if="{{orderDetail.payStatus==3}}" class="reback">已退款</span>
+        <span wx:if="{{orderDetail.status==2}}" class="cancelPay">已取消</span> 
+      </view>
+    </view>
+  </view>
+</view>

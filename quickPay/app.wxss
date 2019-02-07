@@ -1,0 +1,83 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.fl{
+  float: left;
+}
+.fr{
+  float:right;
+}
+.clearfix{
+  overflow: hidden;
+}
+button::after{
+  border:none
+}
+.save{
+  color:#fff;
+  background: #1fb922;
+  width: 90%;
+  margin-top: 90rpx;
+}
+.authorize{
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 200;
+}
+.authorizeModal{
+  background: #fff;
+  position: fixed;
+  padding: 20rpx;
+  top:300rpx;
+  left:110rpx;
+  width:500rpx;
+  border-radius: 10rpx;
+}
+.authorizeMsg{
+  text-align: center;
+  font-size: 30rpx;
+  color:#999;
+  line-height: 45rpx;
+}
+.getUserInfo{
+  background: #1aad19;
+  color: #fff;
+  font-size: 30rpx;
+  width:260rpx;
+  line-height: 80rpx;
+  margin-top: 30rpx;
+}
+.getUserInfo .iconfont{
+  font-size:38rpx;
+  float:left;
+  margin-left:15rpx;
+  margin-top:3rpx;  
+}
+.authorizeMsg image{
+  width:250rpx;
+  height:250rpx;
+  margin-top:20rpx;
+}
+.noData{
+  text-align: center;
+  font-size:30rpx;
+  color:#999;
+}
+.noData image{
+  width: 360rpx;
+  height:270rpx;
+}
+button::before{
+  border:none;
+}

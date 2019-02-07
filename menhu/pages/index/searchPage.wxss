@@ -1,0 +1,204 @@
+/* pages/index/searchPage.wxss */
+@import "../../icon/iconfont.wxss";
+page{
+  background: #fefefe;
+}
+button::after{
+  border: none;
+}
+.header{
+  background: #fff;
+  padding: 20rpx 40rpx 20rpx 30rpx;
+}
+.searchHeader{
+  border:1rpx solid #ddd;
+  padding:0px 20rpx;
+  border-radius:60rpx;
+  position: relative;
+  width: 535rpx;
+  height:68rpx;
+}
+.searchHeader .iconfont{
+  font-size: 38rpx;
+  color:#999;
+  margin-right: 20rpx;
+  margin-top: 15rpx;
+}
+.searchHeader input{
+  font-size: 28rpx;
+  color:#333;
+  width: 435rpx;
+  display: inline-block;
+  margin-top: 10rpx;
+}
+.cancle{
+  font-size: 32rpx;
+  color: #333;
+  padding:15rpx;
+}
+.history{
+  padding:40rpx;
+  color:#aaa;
+}
+.historyTitle{
+  font-size: 32rpx;
+}
+.historyList view{
+  display: inline-block;
+  border: 1px solid #aaa;
+  font-size: 28rpx;
+  padding:10rpx 20rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+}
+.goodsList{
+  padding: 20rpx 0rpx 20rpx 40rpx;
+  width: 710rpx;
+  height: 986rpx;
+}
+.goodsContent{
+  padding-bottom: 20rpx;
+  margin-top:20rpx;
+  border-bottom: 1rpx solid #eee;
+  position: relative;
+  background: #fff;
+  padding-left:0;
+  padding-right: 0;
+  text-align: left;
+  line-height:1;
+}
+.goodsImg image{
+  width: 200rpx;
+  height:200rpx;
+}
+.goodsMsg{
+  margin-left: 40rpx;
+}
+.goodsName{
+  font-size: 26rpx;
+  height:55rpx;
+  color:#333;
+  width:430rpx;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.nowPrice {
+  font-size:34rpx;
+  display:inline-block;
+  margin-right:20rpx;
+  color: #fb2d37
+}
+.oldPrice {
+  text-decoration:line-through;
+  font-size:28rpx;
+  color: #999;
+}
+.goodsStatus{
+  display:inline-block;
+  color:#fff;
+  font-size:26rpx;
+  line-height: 56rpx;
+  border-radius:28rpx;
+  width:140rpx;
+  text-align:center;
+  position: absolute;
+  z-index: 5;
+  right:28rpx;
+  bottom:25rpx;
+}
+.canBuy{
+  background: #fb2d37
+}
+.overBtn{
+  background: #ddd
+}
+.saleOut{
+  background: #999;
+}
+.searchNo{
+  text-align: center;
+  font-size:30rpx;
+  color:#999;
+}
+.searchNo image{
+  width:250rpx;
+  height:230rpx;
+  margin: 0 auto;
+  margin-top:200rpx;
+}
+.delete{
+  position:absolute;
+  right:150rpx;
+  top:26rpx;
+  z-index: 5;
+  width:60rpx;
+  height:60rpx;
+  text-align:center;
+}
+.delete .iconfont{
+  color: #999;
+  font-size: 40rpx;
+}
+
+/* 2018.8.1 */
+.goodsList {
+  padding: 20rpx 0rpx 20rpx 30rpx
+}
+.goodsImg image{
+  border-radius: 10rpx;
+}
+.goodsMsg{
+  margin-left: 30rpx;
+}
+.nowPrice .iconfont{
+  font-size: 34rpx;
+}
+.oldPrice .iconfont{
+  font-size: 28rpx;
+}
+.memberPrice{
+  width: 80rpx;
+  height:35rpx;
+  margin-left: 20rpx;
+}
+.notMember{
+  margin-top: 95rpx;
+}
+.isMember{
+  margin-top: 56rpx;
+}
+.clearHistory{
+  text-align: center;
+  font-size: 28rpx;
+  padding: 10rpx 0;
+  margin-top: 30rpx;
+}
+.clearHistory span{
+  display: inline-block;
+  border-bottom: 1rpx solid #aaa
+}
+.goodsImg{
+  position: relative;
+  width:200rpx;
+  height:200rpx;
+}
+.over{
+  position: absolute;
+  width: 200rpx;
+  height:200rpx;
+  top:0;
+  bottom:0;
+  background: rgba(0,0,0,.5);
+  z-index: 10;
+  border-radius: 10rpx;
+  text-align: center
+}
+.over>image{
+  width:130rpx;
+  height:130rpx;
+  margin-top: 35rpx;
+}

@@ -1,0 +1,68 @@
+/**index.wxss**/
+@import "../../icon/iconfont.wxss";
+.myPage{
+  padding: 20rpx;
+  padding-bottom: 100rpx;
+}
+.pageTitle{
+  font-size: 26rpx;
+  color:#666;
+  margin-bottom: 20rpx;
+}
+.shopContent{
+  position: relative;
+  border-radius: 16rpx;
+  height:200rpx;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  margin-bottom: 40rpx;
+  box-shadow: 0 10rpx 10rpx #ddd;
+}
+.contentMain {
+  height:100%;
+  border-radius:10rpx;
+  background: rgba(0,0,0,.2)
+}
+.logo image{
+  width: 130rpx;
+  height:130rpx;
+  border-radius: 50%;
+  margin: 0 25rpx;
+  margin-top: 30rpx
+}
+.shopName{
+  font-size: 40rpx;
+  color: #fff;
+  margin-top: 70rpx
+}
+.more{
+  font-size: 30rpx;
+  color: #fff;
+  position: absolute;
+  bottom:25rpx;
+  right:25rpx;
+}
+.more image{
+  width:50rpx;
+  height:50rpx;
+  border-radius: 50%;
+}
+.noData .scanLogo{
+  width:354rpx;
+  height:345rpx;
+}
+.noData .appLogo{
+  width:264rpx;
+  height:112rpx;
+}
+.logoContent{
+  margin: 100rpx 0 150rpx 0;
+}
+.scanCode{
+  background: #30cd7d;
+  color:#fff;
+  margin-top: 120rpx;
+}
+.scanCode .iconfont{
+  font-size: 36rpx;
+}

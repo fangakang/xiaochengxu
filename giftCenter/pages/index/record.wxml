@@ -1,0 +1,61 @@
+<view class="body">
+  <view class="record" wx:for="{{allCard}}" wx:if="{{item.total!=0&&!viewFail}}">
+      <navigator hover-class="none" url="memberCard?tempnum={{item.tempnum}}" class="content" style="background-image:url({{item.backimage}})">
+        <view class="cardMsg" >
+          <view class="logo fl">
+            <image src="{{item.logo_url}}"></image>
+          </view>
+          <view class="cardType fl">
+            <view class="name">{{item.brand_name}}</view>
+            <view class="type">{{item.title}}</view>
+          </view>
+        </view>
+        <view class="validity" bindtap='showDetail' data-id="{{index}}">
+          <view class="period fl">永久有效</view>
+          <view class="money fr"><span>当前可用</span>￥{{item.total}}</view>
+        </view>
+        <view class="use" wx:if="{{item.juli<=1000}}">附近可用</view>
+      </navigator>
+      <view class="detailContent" wx:if="{{item.detailFlag}}">
+        <view class="line" wx:for="{{item.detail}}" wx:for-item="detail" wx:key="time">
+          <view class="fl time">{{detail.time}}</view>
+          <view class="fr msg">{{detail.msg}}</view>
+        </view>
+      
+        <view class="btnGroup">
+          <view class="recharge fr">充值到账户</view>
+          <view class="send fr">赠送给好友</view>
+        </view>
+      </view>
+  </view>
+  <view class="record"  wx:for="{{allCard}}" wx:if="{{item.total==0&&viewFail}}">
+      <navigator hover-class="none" url="memberCard?tempnum={{item.tempnum}}" class="content" style="background-image:url({{item.backimage}})">
+        <view class="cardMsg" >
+          <view class="logo fl">
+            <image src="{{item.logo_url}}"></image>
+          </view>
+          <view class="cardType fl">
+            <view class="name">{{item.brand_name}}</view>
+            <view class="type">{{item.title}}</view>
+          </view>
+        </view>
+        <view class="validity" bindtap='showDetail' data-id="{{index}}">
+          <view class="period fl">永久有效</view>
+          <view class="money fr"><span>当前可用</span>￥{{item.total}}</view>
+        </view>
+      </navigator>
+      <view class="detailContent" wx:if="{{item.detailFlag}}">
+        <view class="line" wx:for="{{item.detail}}" wx:for-item="detail" wx:key="time">
+          <view class="fl time">{{detail.time}}</view>
+          <view class="fr msg">{{detail.msg}}</view>
+        </view>
+      
+        <view class="btnGroup">
+          <view class="recharge fr">充值到账户</view>
+          <view class="send fr">赠送给好友</view>
+        </view>
+      </view>
+  </view>
+  <view class="viewFail" bindtap='viewFail' wx:if="{{!viewFail&&notAvailable!=0}}">查看已失效的储值卡（{{notAvailable}}）</view>
+  <view class="viewUse" bindtap='viewUse'  wx:if="{{viewFail}}">查看可用的储值卡（{{available}}）</view>
+</view>

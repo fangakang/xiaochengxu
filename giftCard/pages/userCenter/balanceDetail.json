@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "消费明细",
+  "navigationBarBackgroundColor": "#f24c36",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "loadAll": "../component/loadAll"
+  }
+}

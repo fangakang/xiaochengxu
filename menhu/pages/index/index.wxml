@@ -1,0 +1,112 @@
+<form wx:if="{{loadComplate}}" bindsubmit="toDetail" report-submit='true'>
+ <!-- <scroll-view class="content" id="content" style="height:{{mainHeight}}px;" scroll-y  bindscrolltolower="scrollLoad" bindscrolltoupper="refresh"> -->
+    <view class="searchHeader" bindtap='searchPage'>
+      <span class="iconfont icon-sousuo fl"></span>
+      <view class="searchView">搜索商品</view>
+    </view>
+    <view class="advertiseOne">
+      <button formType="submit" wx:if="{{advertisementList.length==1}}" data-id="{{item.id}}" wx:for="{{advertisementList}}">
+        <image src="{{item.image}}" class="bannerImg"></image>
+      </button>
+    </view>
+    <swiper wx:if="{{advertisementList.length>1}}" style='height:450rpx;' circular="false" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='indexBanner' indicator-color="rgba(255,255,255,0.3)" indicator-active-color="#ffffff">
+      <swiper-item wx:for="{{advertisementList}}" class="advertisementList">
+        <button formType="submit" data-id="{{item.id}}">
+          <image src="{{item.image}}" class="slide-image" />
+        </button>
+      </swiper-item>
+    </swiper>
+    <!-- 分类不多于4个 -->
+    <view class="headNav" wx:if="{{allCateGory.length<=4}}">
+      <view bindtap="getAllData"><span class="{{id==''?'active':''}}">全部</span></view>
+      <view bindtap='searchType' wx:for="{{allCateGory}}" data-id="{{item.id}}">
+        <span class="{{id==item.id?'active':''}}">{{item.categoryname}}</span>
+      </view>
+    </view>
+    <!-- 分类多于4个 -->
+    <view class="headNav" wx:if="{{allCateGory.length>4}}">
+      <swiper style='height:98rpx;' class="navSwiper" display-multiple-items="5" indicator-dots="{{indicatorDots2}}" autoplay="{{autoplay2}}" >
+        <swiper-item bindtap="getAllData">
+            <span class="{{id==''?'active':''}}">全部</span>
+        </swiper-item>
+        <swiper-item  bindtap='searchType' wx:for="{{allCateGory}}" data-id="{{item.id}}">
+          <span class="{{id==item.id?'active':''}}">{{item.categoryname}}</span>
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class="recommend">
+      <span>实力推荐</span>
+      <view class="fr location">
+        <view class="latest {{latest?'selected':''}}" bindtap="selectLatest">最新</view>
+        <view class="near {{near?'selected':''}}" bindtap="selectNear">附近</view>
+      </view>
+    </view>
+    <view class="foodList">
+      <view class="food clearix"  wx:for="{{allData}}">
+        <button formType="submit" class='clearix foodListBtn' data-id='{{item.id}}'>
+          <view class='foodPic fl'>
+            <image src='{{item.allimage}}'></image>
+            <view class="over" wx:if="{{item.tempFlag==1}}">
+              <image src='../../image/saleOver.png'></image>
+            </view>
+            <view class="over" wx:if="{{item.tempFlag==2}}">
+              <image src='../../image/over.png'></image>
+            </view>
+          </view>
+          <view class="foodMsg fl">
+            <view class="foodName">{{item.themename}}</view>
+            <!-- 非会员 -->
+            <view class="money clearfix notMember" wx:if="{{item.memberprice==-1}}">
+              <span class="nowMoney fl"><span class="iconfont icon-qian"></span>{{item.saleprice}}</span> 
+              <span class="oldMoney fl"><span class="iconfont icon-qian">{{item.price}}</span></span> 
+            </view>
+            <!-- 会员 -->
+            <view class="money clearfix isMember" wx:if="{{item.memberprice>-1}}">
+              <view class="memberPriceLogo">
+                <image class="memberPrice" src='../../image/memberPrice.png'></image>
+              </view>
+              <view class='clearfix'>
+                <span class="nowMoney fl"><span class="iconfont icon-qian"></span>{{item.memberprice}}</span> 
+                <span class="oldMoney fl"><span class="iconfont icon-qian">{{item.price}}</span></span> 
+              </view>
+            </view>
+          </view>
+        </button>
+        
+        <button wx:if="{{item.tempFlag==0}}" class="buyNow" formType="submit" data-id='{{item.id}}'>立即购买</button>
+        <button wx:if="{{item.tempFlag==1}}" class="overBtn" formType="submit" data-id='{{item.id}}'>已售罄</button>
+        <button wx:if="{{item.tempFlag==2}}" class="overBtn" formType="submit" data-id='{{item.id}}'>已结束</button>
+      </view>
+      <loadAll wx:if="{{loadAll}}"></loadAll>
+    </view>
+  <!-- </scroll-view> -->
+  <footer page-num="{{page}}" id="footView"></footer>
+  <view class="shopIn" bindtap='shopInShow'>
+    <image src='../../image/shopIn.png'></image>
+  </view>
+</form>
+
+<view class="shopInMask" wx:if="{{shopIn}}">
+  <view class="shopInContent">
+    <image src='../../image/maskBg.png'></image>
+    <view class="contact clearix">
+      <span class="iconfont icon-dianhua1 fl"></span>
+      <view class="fl phoneNum">{{service_tel}}</view>
+      <button class="phoneCall fl" bindtap='phoneCall'>拨号</button>
+    </view>
+    <view class="iconfont icon-cancel" bindtap='shopInHide'></view>
+  </view>
+  
+</view>
+<view class="authorize" wx:if="{{!authorize}}">
+    <view class="authorizeModal">
+      <view class="authorizeMsg">
+        <image src='../../image/authorize.png'></image>
+        <view>您的公开信息（昵称和头像等）</view>
+        <view>以便于查看优惠信息哦</view>
+      </view>
+      <button bindtap='modal_click_Hidden' class="getUserInfo" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+        <span class="iconfont icon-weixin1"></span>确定授权
+      </button>
+    </view>
+</view>

@@ -1,0 +1,156 @@
+<!--index.wxml-->
+<view class="container1  bodyWrap {{isMember && hasImg?'noMember':''}} {{!isMember && !hasImg?'noImg':''}}">
+    <view wx:if="{{containShow}}">
+        <view class="onceCard_top">
+            <view class="tip_text" wx:if="{{hasImg}}">
+                <view class="tip_icon">
+                    <image src="../../img/tip_icon.png"></image>
+                </view>
+                到店使用时，商家以确保持卡人与核销人为同一人，需要用户上传其真实个人照片，一旦提交成功，不可修改。
+                <view class="uploadImg" bindtap="upImg">去上传</view>
+            </view>
+            <view class="flex_box flex_middle tab_nav"  bindtap="tabClick" wx:if="{{isMember}}">
+                <view class="tab_li {{tab_index==1?'active':''}}"><view data-index="1">可购买</view></view>
+                <view class="tab_li {{tab_index==2?'active':''}}"><view data-index="2" id="hhh">可使用</view></view>
+                <view class="tab_li {{tab_index==3?'active':''}}"><view data-index="3">已失效</view></view>
+            </view>
+        </view>
+        <scroll-view  scroll-y   bindscrolltolower="listMore" class="scrollWrap {{isMember && hasImg?'scrollMem':''}} {{!isMember && !hasImg?'scrollnoImg':''}}">
+            <view class="onceCard_list" wx:if="{{useCard}}" >
+                <view class="onceCard_li {{tab_index==3?'nouse':''}}" bindtap="cardBuy" wx:for="{{cardList}}" data-id="{{item.id}}">
+                    <view class="card_tip">
+                        <image src="../../../img/use_tip.png" wx:if="{{tab_index!=3}}"></image>
+                        <image src="../../../img/nouse_tip.png"  wx:if="{{tab_index==3}}"></image>
+                    </view>
+                    <view class="card_msg">
+                        <view class="msg_img">
+                            <image src="../../../img/use_card.png" wx:if="{{tab_index!=3}}"></image>
+                            <image src="../../../img/nouse_card.png" wx:if="{{tab_index==3}}"></image>
+                        </view>
+                        <view class="card_detail flex_box flex_middle flex_space">
+                            <view class="detail_left flex_box flex_middle">
+                                <view class="head_img">
+                                    <image src="{{item.card_img}}"></image>
+                                </view>
+                            </view>
+                            <view class="detail_text right">
+                                <view class="flex_box flex_space">
+                                    <view>
+                                        <view class="detail_title">{{item.title}}</view>
+                                        <view class="detail_subtitle">{{item.project_name}}</view>
+                                    </view>
+                                    <view class="times_num" wx:if="{{tab_index==1}}">低至{{item.average}}元/{{item.unit}} </view>
+                                    <view class="flex_box flex_end can_use" wx:if="{{tab_index!=1}}">
+                                        可用 <view class="use_num SourceHan">{{item.alltotal}}</view>次
+                                    </view>
+                                </view>
+                                <view class="flex_box flex_midlle flex_space">
+                                    <view class="flex_box flex_middle time_wrap">
+                                        <view class="use_time">
+                                            <image src="../../../img/use_time.png" wx:if="{{tab_index!=3}}"></image>
+                                            <image src="../../../img/nouse_time.png" wx:if="{{tab_index==3}}"></image>
+                                        </view>
+                                        <view class="time">{{item.time_validity.m}}</view>
+                                    </view>
+                                    <view class="flex_box flex_middle buyWrap">
+                                        <view class="buyText" wx:if="{{tab_index==1}}">去购买</view>
+                                        <view class="buyText" wx:if="{{tab_index==2}}">去使用</view>
+                                        <view class="goBuy" wx:if="{{tab_index!=3}}">
+                                            <image src="../../../img/goBuy.png"></image>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view wx:if="{{noList}}" class="no_list">没有数据了！</view>
+            <view class="emptyList" wx:if="{{emptyList}}">
+                没有列表数据！
+            </view>
+        </scroll-view>
+    </view>
+
+
+    <!--<view class="seeOther" bindtap="seeCard"  wx:if="{{useCard}}">查看已购买的到期次卡（5）</view>-->
+    <!--过期的次卡-->
+    <view class="onceCard_list" wx:if="{{!useCard}}">
+        <view class="onceCard_li nouse">
+            <view class="card_tip">
+                <image src="../../../img/nouse_tip.png"></image>
+            </view>
+            <view class="card_msg">
+                <view class="msg_img">
+                    <image src="../../../img/nouse_card.png"></image>
+                </view>
+                <view class="card_detail flex_box flex_middle flex_space">
+                    <view class="detail_left flex_box flex_middle">
+                        <view class="head_img">
+                            <image src="../../../img/head_img.png"></image>
+                        </view>
+                    </view>
+                    <view class="detail_text right">
+                        <view class="flex_box flex_space">
+                            <view>
+                                <view class="detail_title">海底捞火锅</view>
+                                <view class="detail_subtitle">次卡简称</view>
+                            </view>
+                            <view class="flex_box flex_end can_use">
+                                可用 <view class="use_num SourceHan">10</view>次
+                            </view>
+                        </view>
+                        <view class="flex_box flex_midlle flex_space">
+                            <view class="flex_box flex_middle time_wrap">
+                                <view class="use_time">
+                                    <image src="../../../img/nouse_time.png"></image>
+                                </view>
+                                <view class="time">2018.03.12-2018.04.12</view>
+                            </view>
+                            <!--<view class="flex_box flex_middle buyWrap">-->
+                                <!--<view class="buyText">去购买</view>-->
+                                <!--<view class="goBuy">-->
+                                    <!--<image src="../../img/goBuy.png"></image>-->
+                                <!--</view>-->
+                            <!--</view>-->
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="seeOther gray"  wx:if="{{!useCard}}" bindtap="seeCard">查看还在使用中的次卡（5）</view>
+
+     <!--非会员领取会员卡   -->
+    <view class="modal" wx:if="{{memCard}}">
+        <view  class="content">
+            <view class="content_text">
+                请先领取会员卡，才能购买次卡
+            </view>
+            <view class="modal_footer flex_box flex_middle">
+                <view class="footer_btn" bindtap="cardClose">取消</view>
+                <view class="footer_btn">
+                    <view bindtap="cardSure" wx:if="{{cardFlag==1}}">领取会员卡</view>
+                    <view wx:if="{{cardFlag==2}}">
+                        <navigator  path="pages/index/index" target="miniProgram" app-id="wxeb490c6f9b154ef9"  extra-data="{{cardExt}}">领取会员卡</navigator>
+                    </view>
+                   </view>
+            </view>
+        </view>
+    </view>
+    <view class="authorize" wx:if="{{!authorize}}">
+        <view class="authorizeModal">
+            <view class="authorizeMsg">
+                <view>您的公开信息（昵称和头像等）</view>
+                <view>以便于查看优惠信息哦</view>
+                <view>
+                    <button bindtap='modal_click_Hidden' class="getUserInfo" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+                    <span class="iconfont icon-weixin1"></span>确定授权
+                    </button>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--图片上传组件-->
+    <upload upload-wrap="{{uploadWrap}}"></upload>
+</view>

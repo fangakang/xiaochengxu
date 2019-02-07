@@ -1,0 +1,200 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='allBody' wx:if="{{loadComplete}}">
+  <view class="content">
+    <view class="headImg" wx:if="{{allData.imageArr.length==1}}">
+      <image  src='{{allData.imageArr[0]}}'></image>
+    </view>
+    <swiper wx:if="{{allData.imageArr.length>1}}" style='height:750rpx;' circular="false" indicator-dots="{{indicatorDots}}"autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='indexBanner' indicator-color="rgba(255,255,255,0.3)" indicator-active-color="#ffffff">
+      <swiper-item wx:for="{{allData.imageArr}}">
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+    </swiper>
+    <view class="headerMsg">
+      <view class="pricePart">
+          <view class="title fl">
+            {{allData.themename}}
+          </view>
+          <view class="fr keepLine" bindtap="collect" style='display:none'>
+            <view class="iconfont {{collection?'icon-xin2':'icon-xin'}}"></view>
+            <view class="keep">收藏</view>
+          </view>
+          <view class="fr">
+            <view class="iconfont icon-yulan"></view>
+            <view class="peopleNum">{{allData.browse}}人</view>
+          </view>
+      </view>
+    
+      <view class="goodsNum">
+        <!-- 非会员价格 -->
+        <view class="pricePart fl" wx:if="{{memberDetail.is_member==0}}">
+          <view class="fl nowPrice"><span class="iconfont icon-qian"></span><span class="priceNum">{{allData.saleprice}}</span></view>
+          <view class="fl oldPrice">
+            <span class="iconfont icon-qian">{{allData.price}}</span>
+          </view>
+        </view>
+        <!-- 会员价格不存在 -->
+        <view class="pricePart fl" wx:if="{{memberDetail.is_member!=0&&allData.memberprice!=-1}}">
+          <view class="fl nowPrice"><span class="iconfont icon-qian"></span><span class="priceNum">{{allData.memberprice}}</span></view>
+          <view class="fl oldPrice">
+            <span class="iconfont icon-qian">{{allData.price}}</span>
+          </view>
+        </view>
+        <!-- 会员价格存在-->
+        <view class="pricePart fl" wx:if="{{memberDetail.is_member!=0&&allData.memberprice==-1}}">
+          <view class="fl nowPrice"><span class="iconfont icon-qian"></span><span class="priceNum">{{allData.saleprice}}</span></view>
+          <view class="fl oldPrice">
+            <span class="iconfont icon-qian">{{allData.price}}</span>
+          </view>
+        </view>
+
+        <view class="numPart fr">
+            <view class="soldNum fl">已售：{{allData.receive_num}}件</view>
+            <view class="remainNum fr">
+              库存：
+              <span wx:if="{{allData.allquantity!='-1'}}">{{allData.quantity}}件</span>
+              <span wx:if="{{allData.allquantity=='-1'}}">不限制</span>
+              
+            </view>
+        </view> 
+      </view>
+      <view class="quickOpen" bindtap="quickOpen" wx:if="{{memberDetail.is_member==0&&allData.memberprice!=-1}}">
+        <image src='../../image/quickOpen.png'></image>
+        <view class="vipName clearfix">
+          <view class="tara fl"><image src='../../image/tara.png'></image></view>
+          <view class="openType fl">{{cardInfo.title}}</view>
+        </view>
+        
+        <view class="openNotice">开通{{cardInfo.title}}立减<span>{{allData.reduceMoney}}</span>元</view>
+      </view>
+    </view>
+    <view class="useProcess" >
+      <view class="noticeTitle">
+        <span class="iconfont icon-gouwuche"></span><span>使用流程</span>
+      </view>
+      <!-- <view class="processTitle">
+        <view><span class="iconfont icon-gouwuche"></span>使用流程</view>
+        <view class="fr" style='display:none'>使用详情<span class="iconfont icon-icon"></span></view>
+      </view> -->
+      <view class="processContent">
+        <view class="process">
+          <span class="stepOne">1</span>
+          <view class="step center">
+            <view>选择商品，</view>
+            <view>点击立即购买</view>
+          </view>
+        </view>
+        <view class="process">
+          <span class="stepTwo">2</span>
+          <view class="step">
+            <view>购买完成，</view>
+            <view>订单页选择使用</view>
+          </view>
+        </view>
+        <view class="process">
+          <span class="stepThree">3</span>
+          <view class="step center">
+            <view>出示核销码，</view>
+            <view>给工作人员</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="businessMsg">
+      <view class="businessTitle">
+        <span class="iconfont icon-dianpu1"></span><span>可用门店</span>
+        <span class="fr shopTotal">共{{shoplist.length}}家</span>
+      </view>
+      <!-- <view class="name">— {{shopShow.business_name}} —</view> -->
+      <view class="businessDetail">
+        <view class="shopShow" wx:for="{{shopShow}}">
+          <view class="fl">
+            <view class="shopName">{{item.business_name}}</view>
+            <view class="shopAddress">{{item.address}}</view>
+            <view class="shoptime" wx:if="{{item.t_datas}}">营业时间：{{item.t_datas}}</view>
+            <view class="shoptime" wx:if="{{!item.t_datas}}">营业时间：暂无</view>
+          </view>
+          <view class="fr">
+            <view class="iconfont icon-dianhua" bindtap='shopCall' data-phone='{{item.telephone}}' wx:if="{{item.telephone||service_tel}}"></view>
+            <view class="iconfont icon-LC_icon_gps_line_2" bindtap='getLocation' data-latitude="{{item.latitude}}" data-longitude="{{item.longitude}}"></view>
+          </view>
+        </view>
+        <view class="viewMore" bindtap="viewMore" wx:if="{{shoplist.length>3}}">查看更多</view>
+      </view>
+    </view>
+    <view class="useNotice">
+      <view class="noticeTitle">
+        <span class="iconfont icon-jingshigantanhao"></span><span>使用须知</span>
+      </view>
+      <view class="noticeContent">
+        <view class="noticeLine" wx:for="{{allData.merdesc}}">
+          <span class="spot fl"></span>
+          <view class="fl noticeDetail">{{item}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="goodsDetail">
+      <view class="detailTitle">
+        <span class="iconfont icon-chakanxiangqing"></span><span>商品详情</span>
+      </view>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="fl indexAndService">
+      <view class="index fl" bindtap="toIndex">
+        <view class="iconfont icon-shouye1"></view>
+        <view>首页</view>
+      </view>
+      <view class="phoneService fl" bindtap='phoneCall' wx:if="{{service_tel}}">
+        <view class="iconfont icon-lianxikefu1"></view>
+        <view>客服</view>
+      </view>
+    </view>
+    <view class="fr footerBuy" wx:if="{{allData.tempFlag==0}}">
+      <button wx:if="{{!hadPhone}}" class="getPhone"  open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">立即购买</button>
+      <view wx:if="{{hadPhone}}" class="buyBtn" bindtap='buy' > 立即购买</view>
+    </view>
+    <view class='fr footerBuy' wx:if="{{allData.tempFlag==1}}">
+      <view  class="buyBtn overBtn" > 已售罄</view>
+    </view>
+    <view class='fr footerBuy' wx:if="{{allData.tempFlag==2}}">
+      <view  class="buyBtn overBtn" > 已结束</view>
+    </view>
+  </view>
+  <view class="shareBtn" bindtap='share'>
+      <view class="iconfont icon-emizhifeiji"></view>
+      <view>分享</view>
+  </view>
+</view>
+
+<view class="shareMask" wx:if="{{maskShow}}">
+    <view class="maskContent">
+      <!-- <view class="maskHead">
+        <view class="maskTitle">赚￥10.00</view>
+        <view class="maskSub">好友通过你的分享购买了此商品，你就可以赚钱</view>
+      </view> -->
+      <view class="maskBody">
+        <view class="iconfont icon-guanbi" bindtap='closeMask'></view>
+        <button class="saveImg" bindtap='saveImg'>
+            <view><image src='../../image/friends.png'></image></view>
+            <view>生成海报</view>
+          </button>
+          <button class="shareTo" open-type='share'>
+            <view><image src='../../image/weChat.png'></image></view>
+            <view>分享给好友</view>
+          </button>
+      </view>
+    </view>
+</view>
+<view class="authorize" wx:if="{{!authorize}}">
+    <view class="authorizeModal">
+      <view class="authorizeMsg">
+        <image src='../../image/authorize.png'></image>
+        <view>您的公开信息（昵称和头像等）</view>
+        <view>以便于查看优惠信息哦</view>
+      </view>
+      <button bindtap='modal_click_Hidden' class="getUserInfo" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+        <span class="iconfont icon-weixin1"></span>确定授权
+      </button>
+    </view>
+</view>

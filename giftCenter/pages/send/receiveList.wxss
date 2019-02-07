@@ -1,0 +1,138 @@
+.msgContent{
+  position: relative;
+}
+.headBg{
+  width: 750rpx;
+  height:140rpx;
+}
+.msgContent{
+  background: #fff;
+}
+.personMsg{
+  position: relative;
+  text-align: center;
+  padding: 75rpx 50rpx 0 50rpx;
+}
+.photo{
+  position: absolute;
+  left:315rpx;
+  top:-70rpx;
+}
+.photo image{
+  width:130rpx;
+  height:130rpx;
+  border-radius: 65rpx;
+}
+.nickName{
+  font-size: 34rpx;
+  color: #333;
+}
+.thanks{
+  font-size: 24rpx;
+  color:#999;
+  width:500rpx;
+  margin: 0 auto;
+  margin-top: 35rpx;
+  line-height: 40rpx;
+  padding-bottom:40rpx;
+  
+}
+.giftMsg{
+  background: #fff;
+  padding: 0rpx 75rpx 60rpx 75rpx;
+  text-align: center;
+}
+.giftMsg>view{
+  padding-top:60rpx;
+  border-top:10rpx dotted #eee;
+}
+.giftMsg image{
+  width:550rpx;
+  height:330rpx;
+  border-radius: 10rpx;
+}
+.giftName{
+  margin-top: 30rpx;
+  color: #333;
+  font-size: 30rpx;
+}
+.send{
+  margin: 0 auto;
+  margin-top: 50rpx;
+  color:#ca292f;
+  font-size: 34rpx;
+  text-align: center;
+  width: 312rpx;
+  line-height: 76rpx;
+  border-radius: 38rpx;
+  border:2rpx solid #ca292f;
+}
+.giftList{
+  background: #fff;
+  margin-top: 20rpx;
+  padding: 40rpx 0;
+}
+.giftHead{
+  padding-left: 35rpx;
+  margin-bottom: 30rpx;
+}
+.giftHead image{
+  width: 203rpx;
+  height:2rpx;
+  display: inline-block
+}
+.sendPart{
+  display: inline-block;
+  margin:0 32rpx;
+  position: relative;
+  top:10rpx;
+  font-size: 32rpx;
+  color:#999;
+}
+.sendPart span{
+  color: #f63
+}
+.listContent{
+  padding:0 40rpx;
+}
+.gift{
+  overflow: hidden;
+  padding:30rpx 0;
+  border-bottom: 2rpx solid #eee;
+}
+.gift image{
+  width: 160rpx;
+  height:90rpx;
+}
+.giftImg{
+  margin-right: 30rpx;
+}
+.fl{
+  float:left;
+}
+.fr{
+  float:right;
+}
+.name{
+  color:#333;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+.date{
+  color:#999;
+  font-size: 24rpx;
+}
+.reeivePeople{
+  width: 165rpx;
+  text-align: right;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  font-size: 24rpx;
+  color:#f63;
+  margin-top: 30rpx;
+}
+.useNotice{
+  font-size:30rpx;
+  color:#1aac19;
+}

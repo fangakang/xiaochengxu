@@ -1,0 +1,91 @@
+.head{
+  background: #f24c36;
+  text-align: center;
+  color:#fff;
+  padding:105rpx 0;
+}
+.money{
+  font-size: 110rpx;
+}
+.balance{
+  font-size: 26rpx;
+}
+.content{
+  overflow: hidden;
+  margin-top: 30rpx;
+}
+.priceContent{
+  text-align: center;
+  float: left;
+  width: 315rpx;
+  padding:30rpx 0;
+  background: #fff;
+  border-radius: 10rpx;
+  border:2rpx solid #ddd;
+  margin-left: 38rpx;
+  margin-bottom: 30rpx;
+}
+.oldPrice{
+  color:#333;
+  font-size: 34rpx;
+}
+.offerPrice{
+  color:#999;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+.content .choose{
+  border-color:#f24c36;
+}
+.inputMoney{
+  width: 605rpx;
+  background: #fff;
+  display: inline-block;
+  padding: 25rpx 35rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  font-size: 28rpx;
+  color:#333;
+  margin-left: 38rpx;
+  margin-top: 15rpx;
+}
+.inputMoney span{
+  margin-top: 10rpx;
+}
+.inputMoney input{
+  display: inline-block;
+  margin-left: 195rpx;
+  text-align: right;
+}
+.inputMoney .yuan{
+  color:#999;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float:right;
+}
+.rechargeBtn{
+  line-height: 90rpx;
+  background: #f24c36;
+  color:#fff;
+  text-align: center;
+  width:670rpx;
+  margin-left: 38rpx;
+  border-radius: 10rpx;
+  margin-top: 60rpx;
+}
+.footer{
+  padding-bottom: 30rpx
+}
+.notice{
+  font-size: 20rpx;
+  text-align: center;
+  margin-top: 25rpx;
+  color:#999;
+}
+.notice navigator{
+  display: inline-block;
+  color: #f24c36;
+}

@@ -1,0 +1,35 @@
+page{
+  background: #fff
+}
+.title{
+  padding: 20rpx;
+  font-size: 30rpx;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+.detail{
+  text-align: center;
+}
+.detail image{
+  margin: 0 auto;
+}
+.wordIntroduce{
+  text-align: left;
+}
+.detailTitle{
+  padding:20rpx 0 0 0;
+  font-size:30rpx;
+  color:#333;
+}
+.detailWord{
+  word-break: break-all;
+  word-wrap:break-word;
+  padding:20rpx 0;
+  font-size:30rpx;
+  color:#666;
+  text-indent: 70rpx;
+}
+.detail{
+  padding: 20rpx;
+  border-bottom: 1px solid #ddd;
+}

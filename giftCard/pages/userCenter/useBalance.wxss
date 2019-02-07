@@ -1,0 +1,81 @@
+@import "../../icon/iconfont.wxss";
+page{
+  background: #fff;
+}
+.head{
+  background: #f24c36;
+  color:#fff;
+  text-align: center;
+  padding-top: 20rpx;
+  padding-bottom: 30rpx;
+}
+.title{
+  font-size: 26rpx;
+  color:#facdc7;
+}
+.money{
+  font-size: 100rpx;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+}
+.forever{
+  display: inline-block;
+  color:#ffdd00;
+  font-size: 26rpx;
+  line-height: 54rpx;
+  padding: 0 40rpx;
+  border: 2rpx solid #ffdd00;
+  border-radius: 27rpx;
+}
+.body{
+  background: #fff;
+  padding-top:30rpx;
+  text-align: center;
+  padding-bottom: 30rpx;
+}
+.tip{
+  color:#999;
+  font-size: 30rpx;
+  margin-bottom: 45rpx;
+}
+.myQrcode{
+  margin: 0 auto;
+  margin-bottom: 30rpx;
+}
+.number{
+  font-size: 48rpx;
+  color:#f24c36;
+  margin-bottom: 20rpx;
+}
+.change{
+  font-size: 26rpx;
+  color:#999;
+}
+.change .iconfont{
+  display: inline-block;
+  margin-right: 5rpx;
+  font-size:26rpx;
+}
+.list{
+  font-size: 30rpx;
+  text-decoration: underline;
+  margin-top: 10rpx;
+}
+.noCode image{
+  width:750rpx;
+  height:190rpx;
+  margin-top:70rpx;
+}
+.noCode view{
+  font-size:28rpx;
+  margin-top:20rpx;
+  color:#333;
+}
+.noCode .backToBuy{
+  color: #f24c36;
+  text-decoration: underline;
+  display: inline-block
+}
+.active{
+  color:#facdc7;
+}

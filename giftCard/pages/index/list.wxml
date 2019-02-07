@@ -1,0 +1,32 @@
+<view class="contant">
+  <view class="gift" wx:for="{{giftList}}">
+    <view class="fl">
+      <image class="cardImg" src="{{item.background_loc_url}}"></image>
+    </view>
+    <view class="fl nameContent">
+      <view class="giftTitle">{{item.title}}</view>
+      <view class="cradNo">
+        购买时间：{{item.addtime}} 
+        <view class="select fr iconfont {{item.selectFlag==true?'icon-duihao2':''}}" wx:if="{{item.status==0}}" bindtap="select" data-id="{{index}}" data-val="{{item.id}}"></view>
+      </view>
+      <!-- <view class="status red" wx:if="{{item.status==0}}">未激活</view>
+      <view class="status green" wx:if="{{item.status==1}}">已充值</view>
+      <view class="status blue" wx:if="{{item.status==2}}">已激活</view> -->
+    </view>
+  </view>
+</view>
+<view class="footer">
+  <button bindtap='send'>
+    <view class="send">
+      <view class="iconfont icon-fenxiang"></view>转赠
+    </view>
+  </button>
+  
+  <!-- <view class="use" bindtap='canUse'>
+    <view class="iconfont icon-paypal"></view>使用
+  </view> -->
+  <!-- <view class="quanXuan">
+    <view class="all fl">全选</view>
+    <view class="selectAll fl iconfont {{selectAll==true?'icon-duihao2':''}}" bindtap='selectAll'></view> 
+  </view> -->
+</view>

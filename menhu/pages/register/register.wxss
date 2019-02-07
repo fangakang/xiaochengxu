@@ -1,0 +1,191 @@
+/* pages/register/register.wxss */
+@import "../../icon/iconfont.wxss";
+page{
+  background: #fff;
+  height:100%;
+}
+.headNote{
+  background:#eee;
+  font-size:26rpx;
+  padding:16rpx;
+  color:#666;
+  line-height: 36rpx;
+  word-break: break-word;
+  white-space: normal;
+  word-wrap: normal;
+  text-align:justify;
+}
+.mainContent{
+  height:100%;
+  width: 100%;
+}
+.logo image{
+  width: 750rpx;
+  height: 180rpx;
+  margin: 0 auto;
+}
+.body{
+  /* background: #00ce94; */
+  padding:0rpx 30rpx;
+}
+.registerContent{
+  background: #fff;
+  border-radius:6rpx;
+  padding:20rpx;
+  padding-bottom: 0;
+  /* box-shadow: 4rpx 6rpx 10rpx rgba(0,0,0,.34) */
+}
+.formLabel{
+  margin-bottom: 30rpx;
+  font-size: 30rpx;
+  overflow: hidden;
+  position: relative;
+}
+.formLabel input{
+  font-size: 30rpx;
+  border:1rpx solid #e5e6e7;
+  background: #fff;
+  padding: 13rpx 24rpx;
+  color: #333;
+  width: 68%;
+}
+.formLabel .iconfont{
+  position: absolute;
+  color:#bbb;
+  right:15rpx;
+  top:20rpx;
+}
+.formLabel .labelName{
+  color:#333;
+  width:150rpx;
+  text-align: right;
+  line-height: 83rpx;
+}
+.radio{
+  margin-right: 30rpx;
+  color:#666;
+}
+radio .wx-radio-input{
+  width: 30rpx;
+  height: 30rpx;
+}
+radio .wx-radio-input.wx-radio-input-checked::before{
+  font-size: 28rpx;
+}
+.listContent{
+  padding: 10rpx 0;
+}
+.formLabel .code{
+  width: 40%;
+}
+.nickGroup{
+  width: 68%;
+}
+.nickGroup .userInput{
+  width: 100%;
+}
+.sexInput{
+  display: none;
+}
+.nickGroup .notice{
+  margin-left: 0;
+}
+.getCode{
+  font-size: 30rpx;
+  color:#666;
+  border-radius: 0;
+  background: #fff;
+  border-left:1rpx solid #e5e6e7;
+  padding: 0;
+  line-height: 77.5rpx;
+  text-align: center;
+  width: 50%;
+}
+.getCode::after{
+  border: none;
+}
+.submitBtn{
+  color: #fff;
+}
+.notAgree{
+  background: rgba(251, 45, 55, .5);
+}
+.agree{
+  background: #fb2d37
+}
+.submitBtn::after{
+  border:1rpx solid rgba(251, 45, 55, .5);
+}
+.notice{
+  color:#f00;
+  margin-left: 150rpx;
+}
+.formLabel .error{
+  border: 1rpx dotted #f00;
+}
+.hide{
+  display: none;
+}
+.checkbox{
+  text-align: center;
+}
+.protocol{
+  display: inline-block;
+  color:#666;
+}
+.protocol span{
+  color:#337ab7
+}
+.checkboxGroup{
+  display: inline-block
+}
+.bottomCheck{
+  text-align: center
+}
+checkbox .wx-checkbox-input {
+  width: 30rpx;
+  height: 30rpx;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fb2d37;
+}
+.service{
+  background: rgba(251, 45, 55, .7);
+  border-radius: 50%;
+  color:#fff;
+  font-size: 24rpx;
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 40rpx;
+  position: fixed;
+  right:20rpx;
+  bottom:225rpx;
+}
+.service .iconfont{
+  font-size: 40rpx;
+  float: left;
+  width: 100%;
+  margin-top: 10rpx;
+}
+.codeGroup{
+  width:75%;
+  border:1rpx solid #e5e6e7;
+  overflow: hidden;
+}
+.codeGroup input{
+  border:none;
+}
+.noticeMsg{
+  font-size: 28rpx;
+  color:#fb2d37;
+  margin-bottom: 10rpx;
+}
+.radio-group{
+  margin-top: 15rpx;
+}

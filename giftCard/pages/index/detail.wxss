@@ -1,0 +1,411 @@
+@import "../../icon/iconfont.wxss";
+page{
+  background: #fff
+}
+.hasMask{
+  position: fixed;
+  z-index: 10;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  overflow: hidden;
+}
+swiper{
+  height:325rpx
+}
+swiper-item{
+  text-align: center;
+  width:620rpx !important;
+  padding-top: 20rpx
+}
+swiper-item image{
+  border-radius:10rpx;
+  width:550rpx;
+  height:290rpx;
+  margin: 0 auto;
+}
+.headTitle .iconfont{
+  display: inline-block;
+  font-size:44rpx;
+  position:relative;
+  top:8rpx;
+}
+.selectTitle .iconfont{
+  display: inline-block;
+  font-size:38rpx;
+  position:relative;
+  top:5rpx;
+}
+.headTitle,.selectTitle{
+  font-size: 30rpx;
+  padding-left: 40rpx;
+  margin:20rpx;
+  color:#555;
+}
+.successIcon{
+  background:#1aad19;
+  position:absolute;
+  top:1rpx;
+  right:20rpx;
+  color:#fff;
+  width:40rpx;
+  line-height: 40rpx;
+  border-radius:50%;
+}
+.slide .iconfont{
+  font-size: 22rpx;
+  font-weight: bold;
+}
+.show{
+  display: block
+}
+.notShow{
+  display: none;
+}
+.giftContent{
+  overflow: hidden;
+  padding-bottom:140rpx;
+  padding-left:50rpx;
+  padding-top:20rpx;
+}
+.giftMsg{
+  float:left;
+  border-radius:10rpx;
+  border: 2rpx solid #ddd;
+  width:300rpx;
+  text-align: center;
+  box-shadow:0rpx 0rpx 10px #ddd;
+  margin-bottom:20rpx;
+  margin-right: 45rpx;
+  position: relative;
+}
+.giftImg{
+  padding:20rpx 20rpx 10rpx 20rpx;
+  border-bottom: 2rpx solid #ddd
+}
+.giftImg image{
+  width:120rpx;
+  height:120rpx;
+}
+.name{
+  font-size:24rpx;
+  color:#333;
+  overflow: hidden;
+  margin-top: 10rpx;
+}
+.giftName1{
+  margin-bottom: 8rpx;
+  height:70rpx;
+  width:255rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.giftName{
+  float:left;
+}
+.money{
+  float:right;
+}
+.addCard{
+  font-size: 30rpx;
+}
+.add{
+  padding:20rpx;
+}
+.addBtn{
+  color:#f24c36;
+}
+.lessAdd{
+  text-align: center;
+}
+.lessAdd view{
+  display: inline-block;
+  padding: 20rpx;
+  width:50%;
+}
+.lessBtn{
+  border-right: 2rpx solid #ddd;
+  color:#555;
+}
+.giftAmount{
+  color:#fff;
+  background: #f24c36;
+  font-size: 26rpx;
+  position: absolute;
+  line-height: 40rpx; 
+  width:40rpx;
+  border-radius: 50%;
+  top:-12rpx;
+  right:-15rpx;
+  text-align: center
+}
+.showStatus{
+  display: block;
+}
+.hideStatus{
+  display: none;
+}
+.footer{
+  overflow: hidden;
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:30rpx 30rpx;
+  border-top:1px solid #ddd;
+  background: #fff;
+}
+.f24{
+  font-size:24rpx;
+}
+.f26{
+  font-size:26rpx;
+}
+.f28{
+  font-size: 28rpx;
+}
+.number{
+  color:#999;
+}
+.f30{
+  font-size:30rpx;
+}
+.f38{
+  font-size:38rpx;
+}
+.totalPrice{
+  color:#222;
+}
+.totalPrice view{
+  display: inline-block;
+}
+.buyBtn{
+  width: 160rpx;
+  color: #fff;
+  background: #f24c36;
+  line-height: 70rpx;
+  font-size: 30rpx;
+}
+.footerLeft{
+  float:left;
+}
+.footerRight{
+  float:right;
+  margin-top: 10rpx;
+}
+.maskView{
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  top:0;
+  background: rgba(0,0,0,.5)
+}
+.mask{
+  position: fixed;
+  bottom:0;
+  width:100%;
+  background: #fff;
+}
+.maskTitle{
+  padding:20rpx;
+  border-bottom:1px solid #ddd;
+}
+.maskTitle .iconfont{
+  font-size: 38rpx;
+  color:#222;
+  display: inline-block;
+}
+.maskGift{
+  padding:40rpx;
+  position: relative;
+  min-height: 80rpx;
+}
+.maskGift image{
+  width:200rpx;
+  height: 200rpx;
+}
+.giftMsg2{
+  display: inline-block;
+  margin-left: 20rpx;
+  position: absolute;
+  top:40rpx;
+}
+.giftMsg2 view{
+  margin-bottom: 15rpx
+}
+.giftMsg2 .f26{
+  color: #f24c36;
+  font-size: 26rpx;
+}
+.maskImg{
+  position: relative;
+  border-bottom:1px solid #ddd;
+}
+.modalAdd{
+  position: absolute;
+  color:#fff;
+  background: #f24c36;
+  padding:5rpx;
+  border-radius:5rpx;
+  top:50rpx;
+  right:60rpx;
+}
+.description{
+  padding: 40rpx;
+}
+.line{
+  margin-bottom: 10rpx;
+  color:#999;
+}
+.line .lineName{
+  color: #222;
+}
+.line .viewShop{
+  color: #f24c36
+}
+.line view,.line navigator {
+  display: inline-block;
+  font-size:30rpx;
+}
+.useNotice{
+  overflow: hidden;
+}
+.useNotice .lineName{
+  float: left;
+  margin-top: 12rpx;
+}
+.noticeDetail{
+  width:75%;
+  float: left;
+  margin-top: 12rpx;
+  height:342rpx;
+  overflow-y: scroll;
+}
+.maskContent{
+  height:700rpx;
+}
+.noticeDetail{
+  word-break:break-all;
+}
+.maskShow{
+  display: block;
+}
+.maskHide{
+  display: none;
+}
+.btnShow{
+  display: block;
+}
+.btnHide{
+  display: none;
+}
+.defaultBtn{
+  color: rgba(255,255,255,.5)
+}
+.giftNoImg{
+  padding: 35rpx 25rpx;
+  border-bottom:2rpx solid #ddd;
+  font-size:26rpx;
+  color:#333;
+  text-align: left;
+}
+.imgContent{
+  text-align: center;
+}
+.imgContent image{
+  border-radius:20rpx;
+  width:615rpx;
+  height:350rpx;
+  margin: 0 auto;
+  margin-top: 40rpx;
+}
+.imgList{
+  overflow: hidden;
+  padding-left: 64rpx;
+}
+.smallImg{
+  float: left;
+  width:180rpx;
+  height:110rpx;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin-right:26rpx;
+  margin-bottom:20rpx;
+  border-radius:10rpx;
+  border:6rpx solid #fff;
+}
+.smallImg .hoverTrue{
+  width:180rpx;
+  height:110rpx;
+  background: rgba(255,255,255,.5)
+}
+.active{
+  border:6rpx solid #f24c36;
+}
+.payBody{
+  width: 625rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  text-align: center;
+  padding-top: 35rpx;
+  position: relative;
+  padding-bottom:58rpx;
+  top:260rpx;
+  left:60rpx;
+}
+.payBody image{
+  width: 135rpx;
+  height:160rpx;
+  margin: 0 auto;
+}
+.payBody .maskTitle{
+  font-size: 40rpx;
+  padding:0;
+  border-bottom:none;
+}
+.payBody .subTitle{
+  font-size: 26rpx;
+  text-align: center;
+  color: #5b667a;
+  margin-top:25rpx;
+  line-height: 40rpx;
+}
+.payBody .maskFooter{
+  overflow: hidden;
+  margin-top: 50rpx;
+}
+.payBody .maskFooter view,.payBody .maskFooter button{
+  float:left;
+  line-height: 76rpx;
+  width: 250rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  margin-left: 45rpx;
+}
+.giveUp{
+  background: #ececec;
+  color: #666
+}
+.continuePay{
+  color:#fff;
+  background: #f24c36;
+}
+.payBody .maskView .iconfont{
+  position: absolute;
+  color:#f24c36;
+  font-size: 40rpx;
+  right:20rpx;
+  top:20rpx;
+}
+.payBody .iconfont{
+  position: absolute;
+  color:#f24c36;
+  font-size: 40rpx;
+  right:20rpx;
+  top:20rpx;
+}

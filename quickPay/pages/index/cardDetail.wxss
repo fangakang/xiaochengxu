@@ -1,0 +1,121 @@
+/* pages/index/cardDetail.wxss */
+@import "../../icon/iconfont.wxss";
+.myPage{
+  padding: 20rpx;
+}
+.card{
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+  border-radius:20rpx;
+  box-shadow: 0 10rpx 10rpx #ddd;
+  height:370rpx;
+  position: relative;
+}
+.cardContent{
+  height: 100%;
+  background: rgba(0,0,0,.2);
+  border-radius:20rpx;
+  padding: 0 35rpx;
+}
+.cardDetail{
+  margin-top: 15rpx
+}
+.pic{
+  width: 130rpx;
+  height:130rpx;
+  border-radius: 50%;
+  margin-right: 25rpx;
+}
+.pic image{
+  width: 130rpx;
+  height:130rpx;
+  border-radius: 50%;
+}
+.cardMsg{
+  padding-top: 35rpx;
+}
+.cardName{
+  font-size: 40rpx;
+  color: #fff;
+  margin-bottom: 15rpx;
+}
+.introduce{
+  font-size: 28rpx;
+  color:#fff;
+}
+.carNo{
+  position: absolute;
+  font-size: 32rpx;
+  color: #fff;
+  bottom:35rpx;
+}
+.icon-erweima{
+  font-size: 45rpx;
+  color: #fff;
+  position: absolute;
+  top:40rpx;
+  right:35rpx;
+}
+.cardFlex{
+  display: flex;
+  margin-top: 65rpx;
+  margin-bottom: 40rpx;
+}
+.cardFlex>view{
+  flex: 1;
+  text-align: center;
+}
+.num{
+  color: #1fb922;
+  font-size: 64rpx;
+}
+.title{
+  color: #999;
+  font-size: 24rpx;
+}
+.cardFlex image{
+  width: 1rpx;
+  height:60rpx;
+  margin-top: 35rpx;
+}
+.useTitle{
+  display: flex;
+}
+.useTitle>view{
+  flex: 1;
+  text-align: center;
+  font-size: 28rpx;
+  color:#333;
+}
+.useTitle .line{
+  padding-top: 22rpx;
+}
+.useTitle .line view{
+  border-bottom: 1rpx solid #efefef;
+}
+.shopContent{
+  border-bottom: 1rpx solid #efefef;
+  padding: 35rpx 0;
+}
+.shopName{
+  color:#333;
+  font-size: 30rpx;
+  margin-bottom: 15rpx;
+}
+.time,.payType{
+  color: #999;
+  font-size: 26rpx;
+}
+.money{
+  font-size: 34rpx;
+  margin-bottom: 15rpx;
+}
+.plus{
+  color: #30b01f
+}
+.less{
+  color:#333;
+}
+.noData{
+  margin-top: 100rpx;
+}

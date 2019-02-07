@@ -1,0 +1,75 @@
+<view wx:if="{{loadComplete}}">
+  <view class="wholeContent">
+    <view class="buyMsg">
+      <view class='giftCard' style="background-image:url({{theCardData.background_loc_url}})">
+        <image class="logo" src="{{theCardData.logo_url}}"></image>
+        <view class="nameTitle">
+          <view class="brand_name">{{theCardData.brand_name}}</view>
+          <view class="brand_title">{{theCardData.title}}</view>
+        </view>
+      </view>
+      <view class="title">{{theCardData.title}}</view>
+      <view class="total">
+        <view class="totalMoney">
+          <view class="subTitle f26">总面值</view>
+          <view class="money">
+            <view class="f24">￥</view>
+            <view class="f50">{{totalMoney}}</view>
+          </view>
+        </view>
+        <view class="totalSheets">
+          <view class="subTitle f26">总张数</view>
+          <view class="sheets">
+            <view class="f50">{{totalNum}}</view>
+            <view class="f24">张</view>
+          </view>
+        </view>
+      </view>
+      <view class="giftList f30" wx:for="{{cardDetail}}">
+        <view class="giftName">{{item.title}}</view>
+        <view class="part">x{{item.giftnum}}</view>
+      </view>
+    </view>
+    <view class="description">
+      <view class="line">
+        <view class="lineName">有效时间</view>
+        <view>永久有效</view>
+      </view>
+      <view class="line">
+        <view class="lineName">使用门店</view>
+        <view class="w75 viewShop" bindtap="viewShop">查看门店</view>
+      </view>
+      <view class="line">
+        <view class="lineName use">使用须知</view>
+        <view class="useNotice w75">
+          {{theCardData.description}}
+        </view>
+      </view>
+      <view class='line'>
+        <view class="lineName use">特权说明</view>
+        <view class="useNotice w75">{{theCardData.privilege}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="footer" wx:if="{{!recharge&&cardDetail[0].status!=6}}">
+    <button  bindtap="send" wx:if="{{!personUse}}">
+      <view class="send">
+        <view class="iconfont icon-fenxiang"></view>
+        转赠
+      </view>
+    </button>
+    <button bindtap='canUse' wx:if="{{!personUse}}">
+      <view class="personUse">
+        <view class="iconfont icon-paypal"></view>
+        自用
+      </view>
+    </button> 
+    <button bindtap='recharge'>
+      <view class="recharge">
+        <view class="iconfont icon-qia"></view>
+        充值到余额
+      </view>
+    </button>
+  </view>
+</view>
+

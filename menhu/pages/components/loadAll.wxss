@@ -1,0 +1,23 @@
+/* pages/component/loadAll.wxss */
+.loadAll{
+  display: flex;
+  height:50rpx;
+  margin-top: 20rpx;
+}
+.loadAll>view{
+  flex:1;
+  color:#bbb;
+  font-size: 26rpx;
+  text-align: center
+}
+.line image{
+  height:2rpx;
+  width:150rpx;
+  margin-top: 20rpx;
+}
+.line .fl{
+  float: left
+}
+.line .fr{
+  float: right
+}

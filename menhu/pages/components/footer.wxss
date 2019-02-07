@@ -1,0 +1,28 @@
+/* pages/components/footer.wxss */
+@import '../../icon/iconfont.wxss';
+.footer{
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background: #fff;
+  display: flex;
+  padding: 10rpx 0;
+  border-top:1rpx solid #efefef;
+  z-index: 20;
+  height:80rpx;
+}
+.pageTo{
+  flex:1;
+  text-align: center;
+  font-size: 22rpx;
+  color: #999;
+  height: 80rpx;
+}
+.pageTo.active{
+  color:#fb2d37;
+}
+.pageTo .iconfont{
+  font-size: 44rpx;
+  height:48rpx;
+}

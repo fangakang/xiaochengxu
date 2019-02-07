@@ -1,0 +1,34 @@
+<form class="content" bindsubmit="agentPayCard" report-submit='true'>
+  <view class="notice">
+    请您于下单<span>5分钟</span>内完成支付，逾时订单将自动取消
+  </view>
+  <view class="personMsg">
+    <view class="personTitle fl">
+      <span class="iconfont icon-geren"></span>  {{orderDetail.truename}}
+    </view>
+    <view class="fr phoneNum">{{orderDetail.phone}}</view>
+    <!-- <view class="phoneTo clearix">
+      <view class="fl who">联系人：{{orderDetail.truename}}</view>
+      <view class="fr phoneNum">{{orderDetail.phone}}</view>
+    </view> -->
+  </view>
+  <view class="orderMsg">
+    <view class="orderTitle">
+      <span class="iconfont icon-jilu"></span>  订单信息
+    </view>
+    <view class="orderNo">订单编号：{{orderDetail.order_id}}</view>
+    <view class="orderTime">下单时间：{{add_time}}</view>
+    <view class="goodsMsg clearix">
+      <image class="fl" src="{{quan.imageArr[0]}}"></image>
+      <view class="fl goodsName">{{quan.themename}}</view>
+    </view>
+    <view class="leaveMsg clearix">
+      <span class="fl">备注留言：</span>
+      <input value="{{desc}}" bindinput='descInput' class="fl msgInput" placeholder='对本次交易的附加要求'></input>
+    </view>
+    <view class="total">
+      共{{num}}件商品 合计：<span><span class="iconfont icon-qian"></span>{{orderDetail.goods_price}}</span>
+    </view>
+  </view>
+  <button class="footer" formType="submit">立即支付</button>
+</form>

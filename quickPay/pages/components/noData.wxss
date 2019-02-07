@@ -1,0 +1,10 @@
+/* pages/components/noData.wxss */
+.noData{
+  text-align: center;
+  font-size:30rpx;
+  color:#999;
+}
+.noData image{
+  width: 360rpx;
+  height:270rpx;
+}

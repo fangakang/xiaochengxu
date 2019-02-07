@@ -1,0 +1,122 @@
+<scroll-view style="height: 1200rpx;" class="body" scroll-y="{{!noData}}" bindscrolltolower="lower" wx:if="{{loadComplete}}">
+  <view class="nav" wx:if="{{is_store==0}}">
+    <view data-status="{{item.status}}" class="navList" data-id="{{index}}" wx:for="{{navList}}" bindtap="select">
+      <span class="{{item.active?'active':''}}">{{item.name}}</span>
+    </view>
+  </view>
+   <!-- <view class="selectPage" wx:if="{{is_store==1}}">
+      <view class="selectPart">
+        <view class="obtainRecord {{receiveOrder?'active':''}}" bindtap="receiveOrder">获取记录</view>
+        <view class="joinRecord {{activityOrder?'active':''}}" bindtap="activityOrder">参与记录</view>
+      </view>
+    
+  </view>-->  
+  <view wx:if="{{receiveOrder}}" class=" bodyContent {{buy?'pb100':''}}" >
+    <view class="content">
+      <view class="cardList"  wx:for="{{allPresentData}}" wx:if="{{item.show}}">
+        <view class="cardContent" bindtap="detail" data-gcid="{{item.gcid}}" data-type="{{item.outid}}" data-id="{{index}}" data-status="{{item.status}}">
+          <view class="cardImg fl">
+            <image src="{{item.backimage}}"></image>
+            <view class="status"></view>
+          </view>
+          <view class="cardDetail fl">
+            <view class="cardName">{{item.price}}元{{item.title}}</view>
+            <view class="time">
+                <span wx:if="{{item.outid==14}}">领取时间</span> <span wx:if="{{item.outid!=14}}">购买时间</span>：{{item.addtime}}
+            </view>
+            <view class="msg">
+              <span wx:if="{{is_store==0}}">{{item.guvenae}}</span>
+              <span wx:if="{{is_store==1}}">卡号：{{item.card_no}}</span>
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{item.outid!=14&&chooseShow&&item.status!=7&&item.status!=6&&item.status!=8}}" class="select fr iconfont {{item.selectFlag?'icon-duihao2':''}}" data-id="{{index}}" bindtap="chooseCard"></view>
+      </view>
+      <view class="noData" wx:if="{{noData}}">
+        <image src='../../image/signNo.png'></image>
+        <view>暂无数据...</view>
+      </view>
+    </view>
+  </view>
+  <!-- 活动参与 -->
+  <view wx:if="{{activityOrder}}" class="activityOrder">
+    <view  class="orderContent {{index==0?'first':''}}" wx:for="{{orderList}}">
+      <view class="title">
+        <view class="fl orderNum">
+          <image class="shopLogo" src="{{item.logo}}"></image>
+          <view class="shopMsg">
+              <view class="shopName">{{item.merca}}</view>
+          </view> 
+        </view>
+        <view class="fr status">
+          <span wx:if="{{item.activityStatus==1}}" class="continue">进行中</span>
+          <span wx:if="{{item.activityStatus==0}}" class="endding">已结束</span>
+        </view>
+      </view>
+      <view class="content">
+        <view class="fl image">
+          <image class="pic" src="{{item.background_loc_url}}"></image>
+        </view>
+        <view class="fl orderMsg">
+          <view class="name">{{item.title}}</view>
+          <!-- 拼团 -->
+          <view class="group" wx:if="{{item.activityType==1}}">
+            <view class="fl">
+              <span class="groupPrice price">￥{{item.groupPrice}}</span>
+              <span class="peopleNum">{{item.peopleNum}}人拼单</span>
+            </view>
+            <view class="fr">
+              <span class="time">{{item.groupTime}}</span>  
+            </view>
+          </view>
+          <!-- 砍价 -->
+          <view class="cutPrice" wx:if="{{item.acttype==1}}">
+            底价￥{{item.nprice}}
+          </view>
+          <!-- 秒杀 -->
+          <view class="secondPrice" wx:if="{{item.activityType==3}}">
+            秒杀价￥{{item.secondPrice}}
+          </view>
+        </view>
+      </view>
+      <view class="orderFooter">
+        <view class="payContent">
+          <view class="msgLeft fl">
+            <view  wx:if="{{item.acttype==1}}">{{item.remard}}</view>
+          </view>
+          <view class="btnGroup fr">
+            <view wx:if="{{item.acttype==2}}" class="btn viewGroup">查看拼团</view>
+            <view wx:if="{{item.acttype==1}}" class="btn viewBargain">查看砍价</view>
+            <view wx:if="{{item.activityType==3}}" class="btn viewSecond">查看秒杀</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="pullNotice" wx:if="{{pullShow&&!loadAll}}">加载中...</view>
+   <view class="loadAll" wx:if="{{loadAll}}">
+    <view class="line">
+      <image class="fr" src="../../image/line.png"></image>
+    </view>
+    <view>没有更多数据了</view>
+    <view class="line">
+      <image class="fl" src="../../image/line.png"></image>
+    </view>
+   </view>
+  <view class="footer" wx:if="{{chooseShow}}">
+    <view class="send" bindtap='send'>
+      <view class="iconfont icon-fenxiang"></view>赠送给好友
+    </view>
+    <view class="recharge">
+      <view class="iconfont icon-qia"></view>充值到余额
+    </view>
+    <!-- <view class="quanXuan">
+      <view class="all">全选</view>
+      <view class="selectAll iconfont {{selectAll?'icon-duihao2':''}}" bindtap='selectAll'></view> 
+    </view> -->
+  </view>
+</scroll-view>
+<!-- 授权 -->
+<authorize modal-hidden="{{authorize}}"></authorize>
+

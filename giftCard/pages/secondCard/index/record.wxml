@@ -1,0 +1,53 @@
+<view class="container">
+    <scroll-view  scroll-y   bindscrolltolower="listMore" class="scrollWrap">
+        <view class="record_list">
+            <view class="record_li flex_box flex_middle flex_space" wx:for="{{record}}">
+                <view class="record_left">
+                    <view class="record_title">{{item.desc}}</view>
+                    <view class="record_time gray">{{item.addtime}}</view>
+                </view>
+                <view class="record_right item_color flex_box flex_end" wx:if="{{item.order_id>0}}">
+                    <view class="record_icon">￥</view>
+                    <view class="record_money">{{item.remarks}}</view>
+                </view>
+                <view class="record_right  flex_box flex_end" wx:if="{{item.status=='2'}}">
+                    被<view class="record_name">{{item.remarks}}</view>领取
+                </view>
+                <view class="record_right  flex_box flex_end" wx:if="{{item.order_id<=0  &&  item.status!='2'}}">
+                    {{item.remarks}}
+                </view>
+            </view>
+
+            <!--<view class="record_li flex_box flex_middle flex_space">-->
+            <!--<view class="record_left">-->
+            <!--<view class="record_title">使用一次</view>-->
+            <!--<view class="record_time gray">2018-04-05 10:30</view>-->
+            <!--</view>-->
+            <!--</view>-->
+
+            <!--<view class="record_li flex_box flex_middle flex_space">-->
+            <!--<view class="record_left">-->
+            <!--<view class="record_title">转赠一次</view>-->
+            <!--<view class="record_time gray">2018-04-05 10:30</view>-->
+            <!--</view>-->
+            <!--<view class="record_right  flex_box flex_end">-->
+            <!--被<view class="record_name">是喜宝呀</view>领取-->
+            <!--</view>-->
+            <!--</view>-->
+
+            <!--<view class="record_li flex_box flex_middle flex_space">-->
+            <!--<view class="record_left">-->
+            <!--<view class="record_title">转赠一次</view>-->
+            <!--<view class="record_time gray">2018-04-05 10:30</view>-->
+            <!--</view>-->
+
+            <!--<view class="record_right  flex_box flex_end">-->
+            <!--待领取-->
+            <!--</view>-->
+            <!--</view>-->
+        </view>
+        <view class="emptyList" wx:if="{{emptyList}}">
+            没有列表数据！
+        </view>
+    </scroll-view>
+</view>

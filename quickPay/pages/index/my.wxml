@@ -1,0 +1,44 @@
+<view class="myPage">
+  <view class="personMsg" style="background-image:url({{userInfo.cardBg}})">
+    <view class="photo">
+      <image src='{{avatarurl}}'></image>
+    </view>
+    <view class='nickName'>{{userInfo.nickname}}</view>
+  </view>
+  <view class='listContent'>
+    <navigator url="personMsg" class="list clearfix">
+        <view class="fl lineName">
+            <span class="iconfont icon-gerenziliao1"></span>个人资料  
+        </view>
+        <view class="fr next">
+          <span class="iconfont icon-arrow-right-copy"></span>
+        </view>
+    </navigator>
+    <navigator url="cardList" class="list clearfix">
+        <view class="fl lineName">
+            <span class="iconfont icon-qiabao"></span>卡包  
+        </view>
+        <view class="fr next">
+          {{userInfo.cardNum}}张会员卡<span class="iconfont icon-arrow-right-copy"></span>
+        </view>
+    </navigator>
+    <!-- <view class="list clearfix">
+        <view class="fl lineName">
+            <span class="iconfont icon-youhuiquandaijinquan"></span>优惠券  
+        </view>
+        <view class="fr next">
+          <span class="iconfont icon-arrow-right-copy"></span>
+        </view>
+    </view> -->
+    <navigator url="consumeDetail" class="list clearfix">
+        <view class="fl lineName">
+            <span class="iconfont icon-jilumian"></span>消费记录  
+        </view>
+        <view class="fr next">
+          <span class="iconfont icon-arrow-right-copy"></span>
+        </view>
+    </navigator>
+  </view>
+</view>
+
+<footer page-num="{{page}}"></footer>

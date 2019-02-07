@@ -1,0 +1,32 @@
+{
+  "pages":[
+    "pages/index/balanceDetail",
+    "pages/index/myOrder",
+    
+     
+    "pages/index/record",
+    
+    "pages/index/activity",
+    
+    "pages/index/memberCard",
+    "pages/index/saveCard",
+    "pages/index/useBalance",
+    "pages/index/index",
+    "pages/index/recharge",
+    "pages/index/orderDetail",
+    
+    "pages/index/giftDetail",
+    "pages/send/receiveList",
+    "pages/send/sendGift",
+    "pages/send/sendStatus",
+    "pages/send/share",
+    "pages/send/sendSuccess",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#f24c36",
+    "navigationBarTitleText": "个人中心",
+    "navigationBarTextStyle":"white"
+  }
+}

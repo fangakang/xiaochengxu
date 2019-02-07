@@ -1,0 +1,55 @@
+.list{
+  height:1200rpx;
+}
+.body{
+  padding-left: 25rpx;
+  background: #fff;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float:right;
+  margin-top: 20rpx;
+}
+.listContent{
+  overflow: hidden;
+  padding:35rpx 25rpx 35rpx 0;
+  border-bottom: 2rpx solid #eee;
+}
+.title{
+  color:#333;
+  font-size: 30rpx;
+}
+.time{
+  color: #bbbaba;
+  font-size:24rpx;
+  
+}
+.red{
+  color:#e54b37;
+}
+.green{
+  color:#32c35e;
+}
+.noData{
+  text-align:center;
+  font-size:30rpx;
+  margin-top:200rpx;
+  color:#999;
+}
+.noData image{
+  width: 750rpx;
+  height:190rpx;
+}
+.loading{
+  text-align:center;
+  font-size:30rpx;
+  color:#bbb;
+  margin-top:20rpx;
+}
+.cardNo{
+  font-size: 24rpx;
+  color:#bbb;
+  margin-top: 15rpx;
+}

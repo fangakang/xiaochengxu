@@ -1,0 +1,9 @@
+<view class="loadAll">
+  <!-- <view class="line">
+    <image class="fr" src="../../image/line.png"></image>
+  </view> -->
+  <view>没有更多数据了</view>
+  <!-- <view class="line">
+    <image class="fl" src="../../image/line.png"></image>
+  </view> -->
+</view>

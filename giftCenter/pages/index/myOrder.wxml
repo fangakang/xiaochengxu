@@ -1,0 +1,77 @@
+
+<scroll-view style="height: 590px;" class="body" scroll-y bindscrolltolower="lower">
+  <view class="nav">
+    <view data-status="{{item.status}}" data-pay="{{item.is_pay}}" class="navList" data-id="{{index}}" wx:for="{{navList}}" bindtap="select">
+      <span class="{{item.active?'active':''}}">{{item.name}}</span>
+    </view>
+  </view>
+  <form bindsubmit="cancle" report-submit="true">
+    <view wx:if="{{item.show}}" class="orderContent {{index==0?'first':''}}" wx:for="{{allOrder}}">
+      <view class="title">
+        <view class="fl orderNum">
+          <image class="shopLogo" src="{{item.cardDetail.logo_url}}"></image>
+          <view class="shopMsg">
+              <view class="shopName">{{item.meruser}}</view>
+              <view>订单编号：{{item.id}}</view>
+          </view> 
+        </view>
+        <view class="fr status">
+          <span wx:if="{{item.ispay==0&&item.status==1}}" class="waitPay">待付款</span>
+          <span wx:if="{{item.ispay==1&&item.status==1}}" class="alreadyPay">已支付</span>
+          <span wx:if="{{item.payStatus==3}}" class="reback">已退款</span>
+          <span wx:if="{{item.status==2}}" class="cancelPay">已取消</span> 
+        </view>
+      </view>
+      <!-- 礼品卡 -->
+      <view class="content" wx:if="{{item.ismuch!=1}}">
+        <view class="fl image">
+          <image class="pic" src="{{item.cardDetail.background_loc_url}}"></image>
+          <view class="type">{{item.actidesc}}</view>
+        </view>
+        <view class="fl orderMsg">
+          <view class="name">{{item.catitle}}</view>
+          <view class="time">{{item.orderaddtime}}</view>
+        </view>
+        <view class="fr price">
+          <view class="nowPrice">￥{{item.soureTotal}}</view>
+          <view class="oldPrice">￥{{item.totals}}</view>
+          <view class="num"><span class="iconfont icon-guanbi"></span>{{item.anum}}</view>
+        </view>
+      </view>
+      <!-- 礼品卡卡包 -->
+      <view class="cardContent" wx:if="{{item.ismuch==1}}">
+        <view class="fl cardImg">
+          <image src="{{item.cardDetail.background_loc_url}}"></image>
+          <view class="type">{{item.actidesc}}</view>
+        </view>
+        <view class="fl">
+          <view class="cardTitle">
+            礼品卡卡包<span>（共{{item.totals}}元）</span>
+          </view>
+          <view class="goodDetail">
+            含: {{item.desc}}
+          </view>
+          <view class="time2">{{item.orderaddtime}}</view>
+        </view>
+      </view>
+      
+      <view class="orderFooter">
+        <view class="payMoney">实付：<span>￥{{item.goods_price}}</span></view>
+        <view class="payContent">
+          <view class="remainTime fl" wx:if="{{item.ispay==0&&item.status==1}}">
+            <span class="iconfont icon-shijian"></span>
+            支付剩余{{item.paytime}}
+          </view>
+          <view class="btnGroup fr">
+            <button formType="submit" class="cancel" bindtap='getStatus' data-index="{{index}}" data-status="{{item.status}}" data-id="{{item.id}}"  wx:if="{{item.ispay==0&&item.status==1}}">取消订单</button>
+            <button class="delete" data-index="{{index}}" data-id="{{item.id}}" bindtap='deleteOrder' wx:if="{{item.status==2}}">删除订单</button>
+            <button class="delete" data-index="{{index}}" data-id="{{item.id}}" bindtap='deleteOrder' wx:if="{{item.ispay==1&&item.status==1}}">删除订单</button>
+            <button class="payNow" data-index="{{index}}" data-id="{{item.id}}" wx:if="{{item.ispay==0&&item.status==1}}" bindtap="pay">去支付</button>
+            <navigator class="viewOrder" url="orderDetail?id={{item.id}}" wx:if="{{item.ispay==1}}">查看订单</navigator>
+          </view>
+        </view>
+      </view>
+    </view>
+  </form>
+  
+</scroll-view>

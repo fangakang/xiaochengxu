@@ -1,0 +1,38 @@
+<view class="myPage" wx:if="{{loadComplete}}">
+    <view class="pageTitle" wx:if="{{!noData}}">我去过的店</view>
+    <view class="shopList">
+      <view class="shopContent" bindtap="jupmPage" data-id="{{item.mid}}" wx:for="{{shopList}}" style="background-image:url({{item.cardBg}})">
+        <view class="contentMain clearfix">
+          <view class="fl logo">
+            <image src='{{item.cardLogo}}'></image>
+          </view>
+          <view class="shopName fl">{{item.brandName}}</view>
+          <view class="more"><span class="fl">立即使用</span><span class="iconfont icon-icon"></span></view>
+        </view>
+      </view>
+    </view>
+    <loadAll wx:if="{{loadAll&&!noData}}"></loadAll>
+    <view class="noData" wx:if="{{noData}}">
+      <view class="noDataImg logoContent">
+        <image class="appLogo" src="../../image/huiLogo.png"></image>
+      </view>
+      <view class="noDataImg">
+        <image class="scanLogo" src="../../image/scanLogo.png"></image>
+      </view>
+      <button class="scanCode" bindtap="scanCode"><span class="iconfont icon-erweima1"></span> 扫一扫去付款</button>
+    </view>
+
+    <footer wx:if="{{!noData}}" page-num="{{page}}"></footer>
+</view>
+<view class="authorize" wx:if="{{!authorize}}">
+    <view class="authorizeModal">
+      <view class="authorizeMsg">
+        <image src='../../image/authorize.png'></image>
+        <view>您的公开信息（昵称和头像等）</view>
+        <view>以便于查看优惠信息哦</view>
+      </view>
+      <button bindtap='modal_click_Hidden' class="getUserInfo" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+        <span class="iconfont icon-weixin1"></span>确定授权
+      </button>
+    </view>
+</view>

@@ -1,0 +1,36 @@
+<view class="body">
+  <view class="title">
+    <view class="sendHeart active">送心意</view>
+    <view class="lottery">发起抽奖</view>
+  </view>
+  <view class="out">
+    <view class="mainContent">
+      <view class="swiperContent">
+        <swiper class="swiper-box" data-id="{{index}}" bindchange="swiperChange" indicator-active-color="{{indicatorActiveColor}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+          <block wx:for="{{cardDetail}}">
+            <swiper-item>
+              <image src="{{item.background_loc_url}}" class="slide-image" width="355" height="150"/>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <view class="swiperTitle" wx:for="{{cardDetail}}" wx:if="{{item.flasg}}">{{item.title}}</view>
+      <view class="sendLine">
+        <view class="lineTitle fl">可赠送心意（份）</view>
+        <view class="part">{{sumNum}}</view>
+      </view>
+      <view class="sendLine">
+        <view class="lineTitle fl">每人领取（份）</view>
+        <view class="inputNum">
+          <input bindinput="inputNum" class="{{errorNum==true?'error':''}}" type="number"/>
+        </view>
+        <view class="noticeMsg {{errorNum==true?'errorShow':'errorHide'}}">*已超过份数，最多可赠送{{sumNum}}位好友</view>
+      </view>
+      <view class="textInput">
+        <textarea col bindinput="inputWord" placeholder='请输入祝福语' value="{{thankWord}}"></textarea> 
+      </view>
+      <view class="sendBtn" bindtap="send">发送</view>
+    </view>
+    <view class="bgLine"></view>
+  </view>
+</view>

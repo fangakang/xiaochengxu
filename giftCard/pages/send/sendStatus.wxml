@@ -1,0 +1,61 @@
+<view class="body" wx:if="{{loadComplate}}">
+  <form bindsubmit="openSubmit" report-submit="true">
+    <image class="bgImg" src="../../image/successBg.png"></image>
+    <view class="mainContent">
+      <!-- 领取礼品 -->
+      <view class="content receiveGift" wx:if="{{receive}}">
+        <view class="receiveTitle">
+          <view>请在24小时内领取，否则过时后将礼品卡</view>
+          <view>退至赠送人</view>
+        </view>
+        <view class="photo">
+          <image src="{{photo}}"></image>
+        </view>
+        <view class="nickName">{{nickName}}</view>
+        <view class="pleaseOpen">送出一份心意，请打开</view>
+        <button class="open" formType="submit">
+          <image src="../../image/open.png"></image>
+        </button>
+      </view>
+      <!--重复领取 -->
+      <view class="content received" wx:if="{{received}}">
+        <image class="giftIcon" src="../../image/gift.png"></image>
+        <view class="overTitle">礼品已领取</view>
+        <view class="overNotice">
+          <view>您已领取，请勿重复领取</view>
+        </view>
+        <view class="seeOtherBtn" bindtap='personReceive'>查看领取情况</view>
+      </view>
+      <!-- 礼品已领完 -->
+      <view class="content receiveOver" wx:if="{{receiveOver}}">
+        <image class="giftIcon" src="../../image/gift.png"></image>
+        <view class="overTitle">礼品已领完</view>
+        <view class="overNotice">
+          <view>你来晚一步，已被其他人领取，您也可以</view>
+          <view>前往<navigator url='../index/index' class="toGiftCenter">礼品中心</navigator>单独选购</view>
+        </view>
+        <view class="seeOtherBtn" bindtap='seeList'>看看谁领了</view>
+      </view>
+      <!-- 已过期 -->
+      <view class="content expired" wx:if="{{expired}}">
+        <image class="giftIcon" src="../../image/gift.png"></image>
+        <view class="overTitle">礼品领取过期</view>
+        <view class="expiredNotice">
+          <view>礼品已超过24小时。无法领取。如已领</view>
+          <view>取，可在“<navigator url="../userCenter/saveCard?tempnum=" class="myOrder">我的记录</navigator>”中查看</view>
+        </view>
+      </view>
+      <view class="viewOther" wx:if="{{receive&&seeOther}}" bindtap='seeList'>看看谁领了</view>
+    </view>
+  </form>
+</view>
+<view class="authorizeMask" wx:if="{{!authorize}}">
+  <view class="personMsg">
+    <view class="authorizeNotice">
+      为了正常体验礼品卡小程序，请先用户授权
+    </view>
+    <view class="authorizeFooter">
+      <button bindtap='modalHidden' class="getUserInfo" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权</button>
+    </view>
+  </view>
+</view>

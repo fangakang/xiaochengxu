@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/index/detail",
+    "pages/index/invite",
+    "pages/index/send",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "砍价",
+    "navigationBarTextStyle":"black"
+  }
+}

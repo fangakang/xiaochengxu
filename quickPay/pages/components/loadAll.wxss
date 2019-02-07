@@ -1,0 +1,7 @@
+/* pages/components/loadAll.wxss */
+.loadAll{
+  text-align: center;
+  font-size: 30rpx;
+  color: #999;
+  margin-top: 10rpx;
+}

@@ -1,0 +1,61 @@
+@import "../../icon/iconfont.wxss";
+page{
+  background: #fff;
+}
+.body{
+  padding-left:30rpx;
+}
+.title{
+  text-align: center;
+  color: #999;
+  font-size: 28rpx;
+  padding:20rpx;
+  border-bottom: 2rpx solid #efefef;
+}
+.shopList{
+  overflow: hidden;
+  padding:20rpx;
+  border-bottom: 2rpx solid #efefef
+}
+.shopContent{
+  padding-right: 20rpx;
+  border-right: 2rpx solid #efefef;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float:right;
+}
+.shop{
+  position: relative;
+}
+.name{
+  font-size: 32rpx;
+  color:#333;
+  width: 555rpx;
+}
+.address{
+  margin-top: 10rpx;
+  width: 280rpx;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:1;
+  overflow:hidden;
+  font-size: 28rpx;
+  color:#999;
+}
+.distance{
+  position: absolute;
+  font-size: 28rpx;
+  color:#999;
+  right:20rpx;
+  top:15rpx;
+}
+.fr .iconfont{
+  font-size: 55rpx;
+  color:#86d24a;
+  padding: 20rpx 0rpx;
+  width:85rpx;
+  text-align:center;
+}

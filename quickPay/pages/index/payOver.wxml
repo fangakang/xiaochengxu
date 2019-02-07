@@ -1,0 +1,9 @@
+<view class="myPage">
+  <view class="logo">
+    <image src='{{cardLogo}}'></image>
+  </view>
+  <view class="beneficiary">{{name}}</view>
+  <view class="payPrice"><span class="iconfont icon-qian">{{goods_price}}</span></view>
+  <view class="oldPrice" wx:if="{{goods_price!=old_price}}"><span class="iconfont icon-qian">{{old_price}}</span></view>
+  <button class="closeBtn" bindtap='toIndex'>关闭</button>
+</view>

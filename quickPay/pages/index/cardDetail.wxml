@@ -1,0 +1,55 @@
+<view class="myPage" wx:if="{{loadComplete}}">
+  <view class="card" style="background-image:url({{memberInfo.cardBg}})">
+    <view class="cardContent">
+      <view class="cardMsg clearfix">
+          <view class="pic fl">
+            <image src="{{memberInfo.cardLogo}}"></image>
+          </view>
+          <view class="fl cardDetail">
+            <view class="cardName">{{memberInfo.title}}</view>
+            <view class="introduce">{{memberInfo.brandName}}</view>
+          </view>
+      </view>
+      <view class="iconfont icon-erweima"></view>
+      <view class="carNo">{{memberInfo.card_no}}</view>
+    </view>
+  </view>
+  <view class="cardFlex">
+    <view class="point">
+      <view class="num">{{memberInfo.points}}</view>
+      <view class="title">积分</view>
+    </view>
+    <image src='../../image/line1.png'></image>
+    <view class="balance">
+      <view class="num">{{memberInfo.money}}</view>
+      <view class="title">余额</view>
+    </view>
+  </view>
+  <view class="useTitle">
+    <view class="line">
+      <view></view>
+    </view>
+    <view>会员卡使用详情</view>
+    <view class="line">
+      <view></view>
+    </view>
+  </view>
+  <view class="shopList">
+    <view class="shopContent clearfix" wx:for="{{orderData}}">
+        <view class="fl shopMsg">
+          <view class="shopName">{{item.storename}}</view>
+          <view class="time">{{item.time}}</view>
+        </view>
+        <view class="fr">
+          <view class="{{item.changeMoney>0?'plus':'less'}} money">{{item.changeMoney}}</view>
+          <view class="payType">{{item.payType}}</view>
+        </view>
+        
+    </view>
+  </view>
+  <loadAll wx:if="{{loadAll&&!noData}}"></loadAll>
+  <view class="noData" wx:if="{{noData}}">
+    <image src="../../image/noData.png"></image>
+    <view>暂无数据...</view>
+  </view>
+</view>

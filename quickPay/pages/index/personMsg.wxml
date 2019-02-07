@@ -1,0 +1,28 @@
+<view class="myPage">
+  <view class="msgList">
+    <view class="list clearfix">
+      <view class="listName fl">用户昵称</view>
+      <view class="listContent fl">
+        <input value="{{nickname}}" bindinput='enterNick'></input>
+      </view>
+    </view>
+    <view class="list clearfix">
+      <view class="listName fl">手机号码</view>
+      <view class="listContent fl">
+        <span wx:if="{{hadPhone}}" class="phone">{{phone}}</span>
+        <button wx:if="{{!hadPhone}}" class="getPhone" open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">微信授权一键绑定手机号</button>
+      </view>
+    </view>
+    <view class="list clearfix">
+      <view class="listName fl">出生日期</view>
+      <view class="listContent fl">
+        <picker mode="date" value="{{date}}"  start="1900-01-01" end="2037-12-31" bindchange="bindDateChange">
+          <view class="picker">
+             {{date}}
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <button class="save" bindtap='saveRechargeUserInfo'>保 存</button>
+</view>

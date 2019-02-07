@@ -1,0 +1,115 @@
+<!--logs.wxml-->
+<view class="page SourceHan" wx:if="{{containShow}}">
+    <view class="container">
+
+      <view class="card_top">
+        <view class="card_logo">
+          <image src="{{detailMsg.card_img}}"></image>
+        </view>
+      </view>
+
+      <view class="card_down">
+          <view class="top white_bg">
+              <view class="card_mercent gray">{{detailMsg.title}}</view>
+              <view class="card_name">{{detailMsg.project_name}}</view>
+              <view class="card_list flex_box flex_middle">
+                  <view class="card_item" wx:for="{{detailNum}}" wx:if="{{item.m=='1'}}">
+                      <view data-index="{{index}}" data-cishu="{{item.s}}" data-price="{{item.t}}" class="card_detail  {{tipIndex==index?'active':''}} {{item.l-item.total!=0?'canBuy':''}}" bindtap="choceNum" data-total="{{item.total}}" data-limit="{{item.l}}">
+                          <view class="card_num gray SourceHan">{{item.s}}{{detailMsg.unit}}</view>
+                          <view class="flex_box card_money"><view class="qian_icon">￥</view><view class="money_num din">{{item.t}}</view></view>
+                          <view wx:if="{{item.l!=0 && item.l}}">
+                              <view class="num_tip" wx:if="{{item.total>0  && item.l-item.total>0}}">还再购{{item.l-item.total}}张</view>
+                              <view class="num_tip" wx:if="{{item.total==0 && item.l}}">限购{{item.l}}次</view>
+                              <view class="num_tip" wx:if="{{item.l-item.total<=0}}">已达限</view>
+                          </view>
+
+                      </view>
+                  </view>
+              </view>
+          </view>
+
+        <view class="notice_tip flex_box flex_middle">
+            <view class="notice_img ">
+                <image src="../../img/notice_img.png"></image>
+            </view>
+            <view class="notice_middle white_bg">
+                <view class="notice_line"></view>
+            </view>
+
+            <view class="notice_img img_right">
+                <image src="../../img/notice_img.png"></image>
+            </view>
+        </view>
+        <view class="list_wrap white_bg">
+            <view class="notice_list">
+                <view class="notice_item flex_box">
+                    <view class="notice_title">可用时间：</view>
+                    <view class="notice_text">
+                        {{detailMsg.time_validity.m}}
+                    </view>
+                </view>
+                <view class="notice_item flex_box">
+                    <view class="notice_title">使用说明：</view>
+                    <view class="notice_text">
+                        {{detailMsg.use_reward_bonus}}
+                    </view>
+                </view>
+                <view class="notice_item flex_box">
+                    <view class="notice_title">适用门店：</view>
+                    <view class="notice_text item_color">
+                        {{detailMsg.use_able_store}}
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="detail_card white_bg">
+            <view class="flex_box flex_middle flex_space buyCard_icon">
+                <view class="title_icon">次卡详情</view>
+                <view class="arrow">
+                    <image src="../../img/arrow_right.png"></image>
+                </view>
+            </view>
+            <view class="onceCard_wrap">
+                <view class="onceCard_list">
+                    <view class="onceCard_li" bindtap="cardBuy">
+                        <view class="card_tip">
+                            <image src="../../img/use_tip.png"></image>
+                        </view>
+                        <view class="card_msg">
+                            <view class="msg_img">
+                                <image src="../../img/use_card.png"></image>
+                            </view>
+                            <view class="flex_box flex_middle flex_space buy_detail">
+                                <view class="detail_left flex_box flex_middle">
+                                    <view class="head_img">
+                                        <image src="{{detailMsg.card_img}}"></image>
+                                    </view>
+                                </view>
+                                <view class="detail_text right">
+                                    <view class="flex_box flex_space">
+                                        <view>
+                                            <view class="detail_title">{{detailMsg.title}}</view>
+                                            <view class="detail_subtitle">{{detailMsg.project_name}}</view>
+                                        </view>
+                                    </view>
+                                    <view class="flex_box flex_midlle  flex_end full">
+                                        <view class="flex_box flex_middle buyWrap">
+                                            <view class="buyText">点击了解详情</view>
+                                            <view class="goBuy">
+                                                <image src="../../img/goBuy.png"></image>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+      </view>
+      <view class="footer" bindtap="buyNow">
+          立即购买
+      </view>
+    </view>
+</view>

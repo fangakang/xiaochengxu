@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "余额使用",
+  "navigationBarBackgroundColor": "#f24c36",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "authorize": "../component/authorize"
+  }
+}

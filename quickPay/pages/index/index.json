@@ -1,0 +1,11 @@
+{
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "backgroundTextStyle": "dark",
+  "navigationBarTitleText": "惠付款",
+  "usingComponents":{
+    "footer": "../components/footer",
+    "loadAll":"../components/loadAll",
+    "noData":"../components/noData"
+  }
+}

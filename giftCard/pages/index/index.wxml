@@ -1,0 +1,192 @@
+<!--index.wxml-->
+<view class="container {{introduce?'unScroll':''}}" wx:if="{{loadComplete}}">
+  <view class='head'>
+     <image src="{{nav_img}}" style='width:750rpx;height:600rpx'></image> 
+  </view>
+  <view class='content'>
+    <view class="spellGroup" wx:if="{{groupData.img}}">
+      <view class="chiseseTitle">
+        <image src='../../image/line.png'></image>
+        <view class='color222'>爱拼团</view>
+        <image src='../../image/line.png'></image>
+      </view>
+      <view class="englishTitle">SPELL GROUP</view>
+      <view class="imgContent">
+        <image class="groupImg" src="{{groupData.img}}"></image>
+        <view class="groupType">{{groupData.need_num}}人团</view>
+        <view class="activityDetail">
+          <view class="groupPrice">
+              <view class="price">
+                <view class="f26">拼团价：</view> <view class="f24">￥</view><view class="f30">{{groupData.gprice}}</view>
+                <view class="original f24">￥{{groupData.old_price}}</view>
+              </view>
+              <view class="f24">{{groupData.remain_num}}</view>
+          </view>
+          <view class="endTime">
+            <view class="f24" wx:if="{{groupTime.start}}">距离开始</view>
+            <view class="f24" wx:if="{{!groupTime.start}}">距离结束</view>
+            <view class="f26">{{groupTime.hour}}:{{groupTime.minute}}:{{groupTime.second}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="groupFooter">
+        <view class='color222'>{{groupData.title}}</view>
+        <button class="notStart" wx:if="{{groupTime.start}}">尚未开始</button>
+         <button wx:if="{{!groupTime.start}}">去拼团</button> 
+      </view>
+    </view>
+    <!-- 砍价 -->
+    <view class="bargaining" wx:if="{{bargainData.flag}}">
+      <view class="chiseseTitle">
+        <image src='../../image/line.png'></image>
+        <view class='color222'>砍价购</view>
+        <image src='../../image/line.png'></image>
+      </view>
+      <view class="englishTitle">BARGAINING</view>
+      <view class="secondContent">
+        <view class="product">
+          <image src='{{bargainData.img}}'></image>
+          <view class="participate">{{bargainData.peopleNum}}参与</view>
+        </view>
+        <view class="productDetail">
+          <view class="f32 color222">{{bargainData.title}}</view>
+          <view class="remain f24 color999">剩余{{bargainData.num-bargainData.intonum}}份</view>
+          <view class="lowPrice">
+            <view class="f26 colorR">最低价：</view> <view class="f24 colorR">￥</view><view class="f30 colorR">{{bargainData.price}}</view>
+            <view class="original f24 color999">￥{{bargainData.old_price}}</view>
+          </view>
+          <view class='btnCon'>
+            <button class="notStart" wx:if="{{bargainTime.start}}">尚未开始</button>
+            <button wx:if="{{!bargainTime.start}}" bindtap="cutPrice">去砍价</button>
+            <view class="f26"><span wx:if="{{bargainTime.start}}">距离开始</span><span wx:if="{{!bargainTime.start}}">距离结束</span>{{bargainTime.hour}}:{{bargainTime.minute}}:{{bargainTime.second}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='secondKill' style="display:none">
+        <view class="chiseseTitle">
+          <image src='../../image/line.png'></image>
+          <view class="color222">秒杀</view>
+          <image src='../../image/line.png'></image>
+        </view>
+        <view class="englishTitle">SECOND KILL</view>
+        <view class="secondContent">
+          <view class="product">
+            <image src='../../image/camera.png'></image>
+            <view class="participate">1546参与</view>
+          </view>
+          <view class="productDetail">
+            <view class="f32 color222">米家小白智能摄像机</view>
+            <view class="remain f24 color999">剩余20份</view>
+            <view class="lowPrice">
+              <view class="f26 colorR">最低价：</view> <view class="f24 colorR">￥</view><view class="f30 colorR">380.00</view>
+              <view class="original f24 color999">￥580.00</view>
+            </view>
+            <view class='btnCon'>
+              <button>去秒杀</button>
+              <view class="f26">距离结束{{killTime.hour}}:{{killTime.minute}}:{{killTime.second}}</view>
+            </view>
+          </view>
+        </view>
+    </view>
+    <view class="themeChoose">
+      <view class="chiseseTitle">
+        <image src='../../image/line.png' style="width:15%"></image>
+        <view class="color222">{{data.nominate_title}}</view>
+        <image src='../../image/line.png' style="width:15%"></image>
+      </view>
+      <view class="englishTitle">THEME CHOOSE</view>
+      <view class="themeContent">
+        <navigator wx:for="{{imgArray}}" class="giftCon" url="detail?id={{item.id}}&name={{item.title}}">
+          <image src='{{item.card_img}}'></image>
+          <view class="f28 color777 themtTitle">{{item.title}}</view>
+        </navigator>
+      </view>
+      <view class="loadAll" wx:if="{{loadAll&&imgArray.length>2}}">
+        <view class="line">
+          <image class="fr" src="../../image/line.png"></image>
+        </view>
+        <view>没有更多数据了</view>
+        <view class="line">
+          <image class="fl" src="../../image/line.png"></image>
+        </view>
+      </view>
+      <view class="noGiftCard" wx:if="{{imgArray.length==0}}">
+        <image src='../../image/noGiftCard.png'></image>
+        <view>当前商家未创建礼品卡或已下架，无法购买</view>
+      </view>
+    </view>
+  </view>
+  <button class="share fixedBtn" open-type="share">
+    <view class="iconfont icon-share-square"></view>
+    <view class="word">分享</view>
+  </button>
+  <button class="introduce fixedBtn" bindtap="showMask">
+    <view class="iconfont icon-dianpu1"></view>
+    <view class="word">商家介绍</view>
+  </button>
+  <button class="service fixedBtn" wx:if="{{is_store==1}}" style="display:none">
+    <view class="iconfont icon-lianxikefu"></view>
+    <view class="word">客服</view>
+  </button>
+</view>
+<!-- <view class="footer">
+  <navigator class="active" hover-class='none'>
+    <view class="iconfont icon-shouye1"></view>
+    <view>首页</view>
+  </navigator>
+  <view hover-class='none' wx:if="{{is_store==1}}" bindtap="showMask">
+    <view class="iconfont icon-dianpu1"></view>
+    <view>商家介绍</view>
+  </view>
+  <view hover-class='none' wx:if="{{is_store==1}}">
+    
+  </view>
+  <navigator hover-class='none' url="../userCenter/record?merdesc={{merdescOriginal}}" wx:if="{{is_store==1}}">
+    <view class="iconfont icon-qianbao"></view>
+    <view>我的卡包</view>
+  </navigator>
+  <navigator hover-class='none' wx:if="{{is_store==1}}" url="../userCenter/saveCard?tempnum=">
+    <view class="iconfont icon-jilu"></view>
+    <view>我的记录</view>
+  </navigator>
+  <navigator hover-class='none' wx:if="{{is_store==0}}">
+    <view class="iconfont icon-dianpu1"></view>
+    <view>开店</view>
+  </navigator>
+  <navigator hover-class='none' wx:if="{{is_store==0}}">
+    <view class="iconfont icon-zuji"></view>
+    <view>足迹</view>
+  </navigator>
+  <navigator hover-class='none' wx:if="{{is_store==0}}">
+    <view class="iconfont icon-lianxikefu"></view>
+    <view>客服</view>
+  </navigator>
+  <navigator url="../userCenter/record" hover-class='none' wx:if="{{is_store==0}}">
+    <view class="iconfont icon-geren"></view>
+    <view>我的</view>
+  </navigator>
+</view> -->
+<!-- <button class="use fixedBtn" bindtap="use" wx:if="{{is_store==1}}">
+  <view class="iconfont icon-paypal"></view>
+  <view class="word">使用</view>
+</button>   -->
+
+<view class="introduceMask" wx:if="{{introduce}}">
+  <view class="maskContent">
+    <view class="maskTitle">
+      <image src="../../image/title.png"></image>
+      <span>商家介绍</span>
+    </view>
+    <view class="maskBody">
+      <view class="indent" wx:for="{{merdesc}}">
+       {{item}}
+      </view>
+    </view>
+    <view class="maskFooter">
+      <button bindtap="closeMask">我知道了</button>
+    </view>
+  </view>
+</view> 
+<!-- 授权 -->
+<authorize modal-hidden="{{authorize}}"></authorize>  

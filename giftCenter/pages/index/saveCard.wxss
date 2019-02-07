@@ -1,0 +1,125 @@
+@import "../../icon/iconfont.wxss";
+.nav{
+  display: flex;
+  background: #fff;
+  color:#333;
+  font-size: 28rpx;
+  padding:25rpx 0;
+  position: fixed;
+  width:750rpx;
+  z-index: 200;
+}
+.navList{
+  flex:1;
+  text-align: center;
+}
+.navList span{
+  display: inline-block;
+  padding:10rpx 25rpx;
+  border-bottom: 6rpx solid #fff;
+}
+.navList .active{
+  border-bottom: 6rpx solid #f24c36;
+  color: #f24c36;
+}
+.body{
+  padding-top:130rpx;
+  padding-bottom: 85rpx;
+}
+.content{
+  background: #fff;
+  overflow: hidden;
+  
+}
+.cardList{
+  padding:30rpx 24rpx;
+  overflow: hidden;
+  position: relative;
+}
+.cardImg{
+  margin-right: 20rpx;
+}
+.cardImg image{
+  width:220rpx;
+  height:132rpx;
+}
+.fl{
+  float: left
+}
+.cardName{
+  font-size:32rpx;
+  color:#333;
+}
+.time{
+  font-size: 24rpx;
+  color:#999;
+  margin:15rpx 0;
+}
+.msg{
+  font-size: 24rpx;
+  color:#f63;
+}
+.select {
+  width:40rpx;
+  height:40rpx;
+  border-radius:50%;
+  border:1px solid #ddd;
+  position:absolute;
+  font-size:42rpx;
+  color:#1aad19;
+  right:35rpx;
+  bottom:80rpx;
+}
+.footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  display:flex;
+  background:#fff;
+  padding:35rpx 0rpx;
+}
+.footer>view{
+  flex:1;
+  text-align:center;
+  color:#333;
+  font-size:28rpx;
+  border-right:1px solid #ddd;
+  line-height:35rpx;
+}
+.footer>view:last-child{
+  border-right:none; 
+}
+.footer .iconfont {
+  color:#1aad19;
+  display:inline-block;
+  margin-right:10rpx;
+}
+.all {
+  margin-right:75rpx;
+}
+.selectAll {
+  width:40rpx;
+  height:40rpx;
+  border-radius:50%;
+  border:1px solid #ddd;
+  display:inline-block;
+  font-size:42rpx;
+  position:absolute;
+  right:65rpx;
+  top:33rpx;
+}
+.quanXuan .icon-duihao2 {
+  border:none;
+  top:38rpx;
+  right:70rpx;
+}
+.cardContent{
+  overflow: hidden;
+  display: inline-block;
+}
+.cardList .icon-duihao2{
+  border: none;
+  bottom:84rpx;
+  right:40rpx;
+}

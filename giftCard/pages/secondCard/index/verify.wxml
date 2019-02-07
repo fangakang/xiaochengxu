@@ -1,0 +1,157 @@
+<!--logs.wxml-->
+<view class="page SourceHan">
+    <view class="container" wx:if="{{containShow}}">
+
+      <view class="card_top">
+        <view class="card_logo">
+            <image src="{{cardMsg.card_img}}"></image>
+        </view>
+      </view>
+
+      <view class="card_down">
+          <view class="top white_bg">
+              <view class="card_mercent gray">{{cardMsg.title}}</view>
+              <view class="card_name">{{cardMsg.project_name}}</view>
+              <!--非分享人打开,可领取-->
+              <view class="upload_wrap">
+                  <view class="upload_gray" wx:if="{{flags==8}}">转赠中</view>
+                  <view class="{{flags==0?'draw_text':''}} upload_gray" wx:if="{{flags!=0}}">{{flags_text}}</view>
+                  <view class="upBtn_wrap" wx:if="{{flags==0}}">
+                      <view class="upload_btn" bindtap="receive">立即领取</view>
+                  </view>
+                  <view class="upBtn_wrap" wx:if="{{flags==2 && cardMsg.status=='1'}}">
+                      <view class="upload_btn" bindtap="bugNow">立即购买</view>
+                  </view>
+                  <view class="upload_btn uploadBtn_lag" wx:if="{{flags==9}}" bindtap="seeMyCard">
+                      查看我的其他次卡
+                  </view>
+              </view>
+              <!--&lt;!&ndash;非分享人打开,已被其他人领取&ndash;&gt;-->
+              <!--<view class="upload_wrap">-->
+
+                  <!--<view class="upBtn_wrap">-->
+                      <!--<view class="upload_btn">立即领取</view>-->
+                  <!--</view>-->
+              <!--</view>-->
+              <!--&lt;!&ndash;分享人打开&ndash;&gt;-->
+              <!--<view class="upload_wrap upload_gray">-->
+                  <!--<view class="">转赠中</view>-->
+                  <!--<view>24小时后无人领取将自动退回</view>-->
+              <!--</view>-->
+              <!--&lt;!&ndash;分享人打开,已被领取&ndash;&gt;-->
+              <!--<view class="upload_wrap">-->
+                  <!--<view class="draw_text">已被XXX领取</view>-->
+                  <!--<view class="upload_btn">-->
+                      <!--查看我的其他次卡-->
+                  <!--</view>-->
+              <!--</view>-->
+          </view>
+
+        <view class="notice_tip flex_box flex_middle">
+            <view class="notice_img ">
+                <image src="../../img/notice_img.png"></image>
+            </view>
+            <view class="notice_middle white_bg">
+                <view class="notice_line"></view>
+            </view>
+
+            <view class="notice_img img_right">
+                <image src="../../img/notice_img.png"></image>
+            </view>
+        </view>
+        <view class="list_wrap white_bg">
+            <view class="notice_list">
+                <view class="notice_item flex_box">
+                    <view class="notice_title">可用时间：</view>
+                    <view class="notice_text">
+                        {{cardMsg.time_validity.m}}
+                    </view>
+                </view>
+                <view class="notice_item flex_box">
+                    <view class="notice_title">使用说明：</view>
+                    <view class="notice_text">
+                        {{cardMsg.use_able_give}}
+
+                    </view>
+                </view>
+                <view class="notice_item flex_box">
+                    <view class="notice_title">适用门店：</view>
+                    <view class="notice_text item_color">
+                        {{cardMsg.use_able_store}}
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="detail_card white_bg">
+            <view class="flex_box flex_middle flex_space buyCard_icon">
+                <view class="title_icon">次卡详情</view>
+                <view class="arrow">
+                    <image src="../../img/arrow_right.png"></image>
+                </view>
+            </view>
+            <view class="onceCard_wrap">
+                <view class="onceCard_list">
+                    <view class="onceCard_li" bindtap="cardBuy">
+                        <view class="card_tip">
+                            <image src="../../img/use_tip.png"></image>
+                        </view>
+                        <view class="card_msg">
+                            <view class="msg_img">
+                                <image src="../../img/use_card.png"></image>
+                            </view>
+                            <view class="flex_box flex_middle flex_space buy_detail">
+                                <view class="detail_left flex_box flex_middle">
+                                    <view class="head_img">
+                                        <image src="../../img/head_img.png"></image>
+                                    </view>
+                                </view>
+                                <view class="detail_text right">
+                                    <view class="flex_box flex_space">
+                                        <view>
+                                            <view class="detail_title">{{cardMsg.title}}</view>
+                                            <view class="detail_subtitle">{{cardMsg.project_name}}</view>
+                                        </view>
+                                    </view>
+                                    <view class="flex_box flex_midlle  flex_end full">
+                                        <view class="flex_box flex_middle buyWrap">
+                                            <view class="buyText">点击了解详情</view>
+                                            <view class="goBuy">
+                                                <image src="../../img/goBuy.png"></image>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="onceCard_item flex_box flex_space flex_middle" wx:if="{{flags>6}}" bindtap="seeMyCard">
+                <view class="item_title">其他可用次卡（分享人的)</view>
+                <view class="arrow">
+                    <image src="../../img/arrow_right.png"></image>
+                </view>
+            </view>
+        </view>
+      </view>
+    </view>
+    <!--非会员领取会员卡   -->
+    <view class="modal" wx:if="{{memCard}}">
+        <view  class="content">
+            <view class="content_text">
+                请先领取会员卡，才能购买次卡
+            </view>
+            <view class="modal_footer flex_box flex_middle">
+                <view class="footer_btn" bindtap="cardClose">取消</view>
+                <view class="footer_btn">
+                    <view bindtap="cardSure" wx:if="{{cardFlag==1}}">领取会员卡</view>
+                    <view wx:if="{{cardFlag==2}}">
+                        <navigator  path="pages/index/index" target="miniProgram" app-id="wxeb490c6f9b154ef9"  extra-data="{{cardExt}}">领取会员卡</navigator>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 授权 -->
+    <authorize modal-hidden="{{authorize}}"></authorize>
+</view>

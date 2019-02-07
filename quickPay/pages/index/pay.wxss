@@ -1,0 +1,434 @@
+/* pages/index/paySecond.wxss */
+@import "../../icon/iconfont.wxss";
+page{
+  background:#f2f3f5;
+}
+.noPhone{
+  text-align: left;
+  background: #f2f3f5;
+  font-size: 26rpx;
+  color:#ff5d05;
+  padding-top: 10rpx;
+}
+.cardList{
+  padding: 35rpx 25rpx;
+}
+.cardContent{
+  position: relative;
+  border-radius: 16rpx;
+  height:210rpx;
+  box-shadow: 0 10rpx 10rpx #ddd;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+.contentMain{
+  height:100%;
+  border-radius: 10rpx;
+  background: rgba(0,0,0,.2)
+}
+.cardMsg{
+  margin-top: 28rpx;
+}
+.logo image{
+  width: 150rpx;
+  height:150rpx;
+  border-radius: 50%;
+  margin: 28rpx;
+}
+.cardName{
+  font-size: 40rpx;
+  color: #fff;
+}
+.cardNum{
+  font-size: 32rpx;
+  color:#fff;
+}
+.cardDetail{
+  color: #fff;
+}
+.cardDetail .iconfont{
+  font-size: 28rpx;
+}
+.cardDetail>view{
+  margin-right: 40rpx;
+}
+.msgList{
+  background: #fff;
+  padding:0 30rpx;
+  padding-right:0;
+}
+.list{
+  line-height:90rpx;
+  border-bottom:1rpx solid #efefef;
+  padding-right: 30rpx;
+}
+.listName{
+  font-size: 34rpx;
+  color:#333;
+}
+.listContent {
+  text-align: right;
+  font-size: 34rpx;
+  color: #333;
+  position: relative
+}
+.couponPart{
+  padding-right: 0;
+}
+.shopNameList{
+  width:400rpx;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.listContent .iconfont{
+  color:#999;
+}
+.listContent input{
+  font-size: 32rpx;
+  color: #333;
+  width:400rpx;
+  text-align: right;
+  margin-top: 20rpx;
+}
+.payPart{
+  background: #fff;
+  padding:40rpx 20rpx;
+  margin-top: 20rpx;
+}
+.chooseList{
+  border:1rpx solid #ddd;
+  border-radius: 10rpx;
+  text-align: center;
+  width: 200rpx;
+  padding: 30rpx 0;
+}
+.chooseList{
+  margin-left: 25rpx;
+  margin-bottom: 25rpx;
+}
+.chooseList.active{
+  border:1rpx solid #1fb922;
+  background: #f2fbf2
+}
+.rechargeMoney{
+  font-size: 30rpx;
+  color:#666;
+}
+.sendMoney{
+  color: #1fb922;
+  font-size: 24rpx;
+  margin-top: 20rpx
+}
+.sendMoney span{
+  font-size: 42rpx;
+}
+.notice{
+  font-size: 28rpx;
+  color:#666;
+  text-align: center;
+  margin-top: 5rpx;
+}
+.notice span{
+  color: #1fb922;
+}
+.balancePay{
+  font-size: 36rpx;
+  color: #333;
+  margin-top: 25rpx;
+  border:1rpx solid #ddd;
+}
+.wechatPay{
+  border:1rpx solid #ddd;
+  margin-top: 30rpx;
+  color: #333;
+}
+.footBtn{
+  background: #fff;
+  padding: 60rpx 20rpx;
+}
+.keyBord{
+  position: fixed;
+  right:0;
+  bottom:0;
+  left:0;
+  background: #fff;
+}
+.bordTitle{
+  background: #fff;
+  color: #333;
+  font-size: 26rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #efefef;
+  border-top: 1rpx solid #efefef;
+  height: 80rpx;
+  position: relative;
+}
+.close{
+  position: absolute;
+  color:#999;
+  right:0;
+  padding:0 20rpx;
+  line-height: 80rpx;
+}
+.bordTitle .pointNum{
+  color: #1fb922
+}
+.keyContent{
+  display: flex;
+  border-top:1rpx solid #f2f3f5
+}
+.leftKey{
+  flex: 3
+}
+.rightKey{
+  flex:1
+}
+.leftKey .key{
+  color: #333;
+  font-size: 40rpx;
+  width:33.33333%;
+  text-align: center;
+  border-right:1rpx solid #efefef;
+  box-sizing: border-box;
+  line-height: 110rpx;
+  border-bottom: 1rpx solid #efefef;
+}
+.zeroKey{
+  color: #333;
+  font-size: 40rpx;
+  width:66.66666%;
+  text-align: center;
+  border-right:1rpx solid #efefef;
+  box-sizing: border-box;
+  line-height: 110rpx;
+}
+.rightKey>view{
+  width: 100%;
+  text-align: center
+}
+.rightKey .iconfont{
+  color: #b2b2b2;
+  font-size:50rpx;
+}
+.deleteKey{
+  line-height: 222rpx;
+  border-bottom: 1rpx solid #efefef;
+  box-sizing: border-box;
+}
+.sureBtn{
+  color: #1fb922;
+  font-size: 45rpx;
+  padding: 45rpx 0
+}
+.totalMoney{
+  color: #1fb922;
+  font-size: 40rpx;
+}
+.totalMoney .iconfont{
+  color: #1fb922;
+  font-size: 28rpx;
+}
+.totalMoney .icon-bianji1{
+  font-size: 36rpx;
+  display:inline-block;
+  padding:0 5rpx;
+}
+.shouldPay{
+  color: #ff5d05;
+  font-size: 40rpx;
+}
+.shouldPay .iconfont{
+  font-size: 28rpx;
+  color: #ff5d05;
+}
+
+
+@keyframes twinkling{
+	from{
+		opacity:0;
+	}
+	to{
+		opacity:1;
+	}
+}
+
+
+.wiget_number_show {
+	animation: twinkling 1s infinite ease-in-out;
+  width: 4rpx;
+  height:35rpx;
+  position: absolute;
+  background: #999;
+  right:-10rpx;
+  top:28rpx
+}
+
+.mask{
+  position: fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background: rgba(0,0,0,.5);
+  z-index: 100;
+}
+.maskContent{
+  position: fixed;
+  right:0;
+  bottom:0;
+  left:0;
+  background: #fff;
+  text-align: center;
+  font-size: 28rpx;
+  color:#333;
+}
+.maskTitle{
+  line-height: 80rpx;
+  position: relative;
+  border-bottom: 1rpx solid #ddd;
+}
+.closeMask{
+  position: absolute;
+  color:#999;
+  right:0;
+  padding:0 20rpx
+}
+.couponContent{
+  max-height: 400rpx;
+  overflow-y: scroll;
+}
+.couponList{
+  line-height: 95rpx;
+  border-bottom: 1rpx solid #efefef;
+  font-size: 32rpx;
+}
+.couponList.active{
+  color:#1fb922;
+}
+.remarkModal{
+  background: #fff;
+  position: fixed;
+  top:150rpx;
+  left:100rpx;
+  right: 100rpx;
+  border-radius: 10rpx;
+}
+.remarkTitle{
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 70rpx;
+  border-bottom: 1rpx solid #efefef;
+}
+.remarkContent{
+  padding:30rpx;
+}
+.remarkText{
+  border: 1rpx solid #efefef;
+  width: 100%;
+  padding: 15rpx;
+  font-size: 30rpx;
+  color: #333;
+  box-sizing: border-box;
+}
+.maskFooter{
+  border-top:1rpx solid #efefef;
+  display: flex;
+  font-size: 30rpx;
+}
+.maskFooter>view{
+  flex: 1;
+  text-align: center;
+  padding: 20rpx 0;
+}
+.maskCancle{
+  border-right:1rpx solid #efefef;
+  color:#666;
+}
+.maskSure{
+  color: #1fb922;
+}
+.remarkDetail{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width:500rpx;
+}
+.firstStepOver{
+  margin-top: 40rpx;
+  background: #1fb922;
+  color: #fff;
+  width: 80%;
+}
+.backPoint{
+  text-align:center;
+  font-size:26rpx;
+  margin-top:15rpx;
+  color:#999;
+}
+.passTitle{
+  background: #fff;
+  color: #333;
+  font-size: 32rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #efefef;
+  border-top: 1rpx solid #efefef;
+  line-height: 80rpx;
+  position: relative;
+}
+.password{
+  position: fixed;
+  right:0;
+  bottom:0;
+  left:0;
+  background: #fff;
+  text-align: center;
+}
+.dot{
+  width:70rpx;
+  height:70rpx;
+  line-height: 85rpx;
+  border:1rpx solid #ddd;
+  border-right:none;
+  text-align: center;
+  font-size: 50rpx
+}
+.dot:last-child{
+  border-right:1rpx solid #ddd;
+}
+.inputGroup{
+  display: inline-block;
+  margin: 0 auto;
+}
+.passwordNotice{
+  font-size: 32rpx;
+  color:#333;
+  line-height: 40rpx;
+  padding:20rpx 80rpx;
+  height:90rpx;
+}
+.passContent{
+  margin-top: 20rpx;
+}
+.passKey{
+  width: 33.3333%;
+  color:#333;
+  box-sizing: border-box;
+  border-right: 1rpx solid #ddd;
+  border-top:1rpx solid #ddd;
+  line-height: 95rpx;
+  font-size: 40rpx;
+}
+.passKey:nth-child(3n){
+  border-right:none;
+}
+.passKey .iconfont{
+  font-size: 45rpx;
+}
+.greenBtn{
+  background: #1fb922;
+  color: #fff;
+}
+.secondStep,.notStyle{
+  margin-top: 20rpx;
+}

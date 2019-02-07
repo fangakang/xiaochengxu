@@ -1,0 +1,48 @@
+view{
+  font-family:"SourceHanSansCN-Regular" !important;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.record_li{
+  padding: 28rpx 24rpx;
+  border-top: 1px solid rgb(239,239,239);
+  background: #fff;
+}
+.record_title{
+  font-size: 30rpx;
+  line-height: 30rpx;
+  padding-bottom: 24rpx;
+}
+.record_time{
+  font-size: 24rpx;
+  line-height: 18rpx;
+}
+.record_icon{
+  font-size: 24rpx;
+  line-height: 18rpx;
+}
+.record_money{
+  font-size: 50rpx;
+  line-height: 38rpx;
+}
+.flex_end{
+  align-items: flex-end;
+}
+.item_color{
+  color: rgb(61,147,252);
+}
+.record_right{
+  font-size: 30rpx;
+}
+.record_name{
+  font-size: 34rpx;
+}
+.scrollWrap{
+  height:1200rpx;
+}
+.emptyList{
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 28rpx;
+}

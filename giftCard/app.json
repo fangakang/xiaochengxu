@@ -1,0 +1,71 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/quickPay/index",
+    "pages/quickPay/finish",
+    "pages/secondCard/index/index",
+    "pages/cutPrice/index",
+    "pages/entityCard/index",
+    "pages/index/personMsg",
+    "pages/index/buyDetail",
+    "pages/index/allShop",
+    "pages/index/list",
+    "pages/index/detail",
+    "pages/send/receiveList",
+    "pages/send/sendGift",
+    "pages/send/sendStatus",
+    "pages/send/share",
+    "pages/send/sendSuccess",
+    "pages/userCenter/record",
+    "pages/userCenter/memberCard",
+    "pages/userCenter/useBalance",
+    "pages/userCenter/saveCard",
+    "pages/userCenter/giftDetail",
+    "pages/userCenter/activity",
+    "pages/userCenter/orderDetail",
+    "pages/userCenter/myOrder",
+    "pages/userCenter/balanceDetail",
+    "pages/cutPrice/invite",
+    "pages/cutPrice/detail",
+    "pages/cutPrice/send",
+    "pages/logs/logs",
+    "pages/secondCard/index/buyCard",
+    "pages/secondCard/index/buyDetail",
+    "pages/secondCard/index/cardDetail",
+    "pages/secondCard/index/personMsg",
+    "pages/secondCard/index/record",
+    "pages/secondCard/index/verify",
+    "pages/secondCard/upload/upload",
+    "pages/index/shopDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#3c3c3c",
+    "selectedColor": "#f24c36",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "image/indexActive.png",
+        "iconPath": "image/index.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "image/cardActive.png",
+        "iconPath": "image/card.png",
+        "pagePath": "pages/userCenter/record",
+        "text": "我的卡包"
+      },
+      {
+        "selectedIconPath": "image/recordActive.png",
+        "iconPath": "image/record.png",
+        "pagePath": "pages/userCenter/saveCard",
+        "text": "我的记录"
+      }
+    ]
+  }
+}

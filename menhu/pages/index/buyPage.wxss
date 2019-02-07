@@ -1,0 +1,162 @@
+/* pages/index/buyPage.wxss */
+@import "../../icon/iconfont.wxss"; 
+page{
+  background: #efefef;
+}
+.content{
+  padding-bottom: 130rpx;
+}
+.notice{
+  font-size: 26rpx;
+  color: #999;
+  text-align: center;
+  padding:15rpx;
+}
+.notice span{
+  color: #fb2d37
+}
+.mealOrder{
+  padding: 20rpx 20rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #eee;
+}
+.mealMsg image{
+  width: 150rpx;
+  height:150rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+}
+.mealName{
+  color: #333;
+  font-size: 28rpx;
+  width:520rpx;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  height:80rpx;
+  margin-bottom: 28rpx;
+  margin-top: 5rpx;
+}
+.money{
+  font-size: 36rpx;
+  color: #fb2d37;
+}
+.money .oldprice{
+  font-size: 26rpx;
+  color:#999;
+  text-decoration: line-through
+}
+.mealNum {
+  margin-top: 20rpx;
+}
+.numName{
+  color:#666;
+  font-size: 30rpx;
+}
+.less,.add{
+  color: #333;
+  line-height:50rpx;
+  width:60rpx;
+  text-align: center;
+  border: 1rpx solid #ddd;
+  font-size: 40rpx;
+}
+.num{
+  color: #333;
+  line-height:50rpx;
+  border: 1rpx solid #ddd;
+  font-size: 32rpx;
+  padding: 0 20rpx;
+  border-left:none;
+  border-right:none;
+}
+.personMsg{
+  padding: 0 20rpx;
+  background: #fff;
+  margin-top: 20rpx;
+}
+.label{
+  font-size: 30rpx;
+  color:#333;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #eee;
+  position: relative
+}
+.label:last-child{
+  border: none
+}
+.labContent{
+  /* position: absolute;
+  top:20rpx;
+  left:200rpx; */
+  width: 500rpx;
+}
+.labContent input{
+  text-align: right;
+}
+.labName{
+  width: 200rpx;
+  margin-top: 5rpx;
+}
+.footer{
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background: #fff;
+  padding-left: 20rpx;
+  z-index: 10;
+  height:108rpx;
+}
+.totalPrice{
+  font-size: 34rpx;
+  color:#333;
+  margin-top: 30rpx;
+}
+.totalPrice span{
+  font-size: 30rpx;
+  color:#fb2d37;
+}
+.totalPrice .fontBig{
+  font-size: 40rpx;
+}
+.cancle,.buyNow,.getPhone{
+  font-size: 36rpx;
+  padding: 0rpx 50rpx;
+  color:#fff;
+  display: inline-block;
+  height: 108rpx;
+  line-height: 108rpx;
+}
+.cancle{
+  background: #ff9c61; 
+}
+.buyNow,.getPhone{
+  background: #fb2d37
+}
+.getPhone{
+  border-radius: 0;
+}
+/* 2018.8.1 */
+.numName{
+  line-height: 50rpx;
+}
+.totalPrice{
+  margin-top: 0;
+  line-height: 108rpx;
+}
+.footer {
+  height: 108rpx;
+  line-height: 108rpx;
+}
+.saleprice .iconfont{
+  font-size: 36rpx;
+}
+.oldprice .iconfont{
+  font-size: 26rpx;
+}
+.totalPrice .iconfont{
+  font-size: 34rpx;
+}

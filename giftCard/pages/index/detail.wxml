@@ -1,0 +1,120 @@
+<form class="{{hasMask?'hasMask':''}}" report-submit wx:if="{{loadComplete}}">
+  <view class="imgContent">
+    <image wx:for="{{imgUrls}}" src="{{item.url}}" wx:if="{{item.active}}"></image>
+  </view>
+  <view class="headTitle">
+    <view class="iconfont icon-wode_lipinqia"></view>
+    选择卡面
+  </view>
+  <view class="imgList">
+    <view bindtap="selectCard" data-id="{{index}}" data-theme="{{item.id}}" class="smallImg {{item.active?'active':''}}" wx:for="{{imgUrls}}" style="background-image:url({{item.url}})">
+      <view class="{{item.active?'':'hoverTrue'}}"></view>
+    </view>
+  </view>
+  <!-- <view class='slide'>
+    <swiper display-multiple-items="{{displayItems}}" indicator-dots="{{indicatorDots}}"autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}"current="{{current}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item bindtap="swipclick" data-id="{{index}}" data-theme="{{item.id}}">
+          <view class="successIcon {{item.iconShow==true?'show':'notShow'}}">
+            <view class="iconfont icon-zhengque"></view>
+          </view>
+          <image  src="{{item.url}}" data-id="{{index}}" class="slide-image {{item.active==true?'active':'unactive'}}"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view> -->
+  <view class="selectTitle">
+    <view class="iconfont icon-qian1"></view>
+    选择礼品
+  </view>
+  <view class="giftContent">
+  <!-- 有图片 -->
+    <view wx:if="{{!item.url}}" class="giftMsg" wx:for="{{giftList}}">
+      <view class="giftNoImg" bindtap="openMask" data-id="{{index}}">
+          <view class="giftName1">{{item.newTitle}}</view>
+          <view>{{item.money}}元</view>
+      </view>
+      <!-- 没图片 -->
+      <view wx:if="{{item.url}}" class="giftImg" bindtap="openMask" data-id="{{index}}">
+        <image src="{{item.url}}"></image>
+        <view class="name">
+          <view class="giftName">{{item.newTitle}}</view>
+          <view class="money">{{item.money}}元</view>
+        </view>
+      </view>
+      <!-- 添加礼品卡 -->
+      <view class="addCard">
+        <view class="add {{item.add==false?'showStatus':'hideStatus'}}" bindtap="giftAdd" data-id="{{index}}">
+          <view class='iconfont icon-jia addBtn'></view>
+        </view>
+        <view class="lessAdd {{item.add==true?'showStatus':'hideStatus'}}">
+          <view class='iconfont icon-jian1 lessBtn' bindtap="giftLess" data-id="{{index}}"></view>
+          <view class='iconfont icon-jia addBtn' bindtap="giftAdd" data-id="{{index}}"></view>
+        </view>
+      </view>
+      <view class="giftAmount {{item.add==true?'showStatus':'hideStatus'}}">{{item.num}}</view>
+    </view>
+  </view>
+  <view class="footer">
+      <view class="footerLeft">
+        <view class="number f26">共{{part}}份</view>
+        <view class="totalPrice">
+          <view class="f28">￥</view>
+          <view class="f38">{{totalPrice}}</view>
+        </view>
+      </view>
+      <view class="footerRight">
+        <button wx:if="{{!payBtn}}" class="buyBtn defaultBtn">购买</button>
+        <button bindtap="buy" wx:if="{{payBtn&&phone!=''}}" class="buyBtn">购买</button>
+        <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" wx:if="{{payBtn&&phone==''}}" class="buyBtn">购买</button>
+      </view> 
+  </view>
+  <view class="maskView {{item.maskShow==true?'maskShow':'maskHide'}}" wx:for="{{giftList}}">
+    <view class="mask">
+      <view class="maskTitle">
+        <view class="iconfont icon-guanbi" bindtap="closeMask" data-id="{{index}}"></view>
+      </view>
+      <view class="maskContent">
+        <view class="maskImg">
+          <view class="maskGift">
+            <image wx:if="{{item.url}}" src="{{item.url}}"></image> 
+            <view class="giftMsg2">
+              <view class="f30">{{item.newTitle}}</view>
+              <view class="f26">{{item.money}}元</view>
+            </view>
+          </view>
+          <view class="modalAdd iconfont icon-jia" bindtap="giftAdd" data-id="{{index}}"></view>
+        </view>
+        <view class="description">
+          <view class="line">
+            <view class="lineName">适用门店：</view>
+            <view  class="viewShop" bindtap="viewShop">查看全部门店</view >
+          </view>
+          <view class="line" style="margin-top:5rpx">
+            <view class="lineName">有效时间：</view>
+            <view>永久有效</view>
+          </view>
+          <view class="line useNotice">
+            <view class="lineName">使用须知：</view>
+            <view class="noticeDetail">{{cardDetail.description}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="maskView payMask" wx:if="{{payCancle}}">
+    <view class="payBody">
+      <view class="iconfont icon-cancel" bindtap='closePayMask'></view>
+      <image src='../../image/fail.png'></image>
+      <view class="maskTitle">支付失败</view>
+      <view class="subTitle">
+        <view>请在{{payCount}}内到我的订单中可</view>
+        <view>继续完成支付，过期将此订单关闭</view>
+      </view>
+      <view class="maskFooter">
+        <view class="giveUp" bindtap='closePayMask'>放弃支付</view>
+        <button class="continuePay"  bindtap="buy">继续支付</button>
+      </view>
+    </view>
+  </view>
+</form>

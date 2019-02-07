@@ -1,0 +1,81 @@
+
+<view class="mainContent">
+  <view class="headNote">城市惠选，聚集本地实体异业商家，提供给粉丝附近促销、打折、优惠的信息活动平台。商家申请入驻后，会享受到平台活动而带来的大量到店客户。（商户后台需在PC端登录，申请入驻后，客服将在第一时间内与您联系。）</view>
+  <view class="body">
+    <view class="registerContent">
+      <form bindsubmit="formSubmit" class="formTable" report-submit='true'>
+        <view class="formLabel">
+          <view class="labelName fl">商户名称：</view>
+          <input class="userInput fl" name="wxname" type="text" value="{{wxname}}" bindinput="wxnameInput" placeholder="*商户名称"></input>
+          <span class="iconfont icon-guanbi" wx:if="{{wxname}}" bindtap="clearWxname"></span>
+        </view>
+        <view class="formLabel">
+          <view class="labelName fl">注册账户：</view>
+          <input class="userInput fl {{errorAccount?'error':''}}" value="{{account}}" name="username" type="text" placeholder="*注册账户" bindinput="accountInput"></input>
+          <view class="notice" wx:if="{{errorAccount}}">*{{errorAccount}}</view>
+          <span class="iconfont icon-guanbi" wx:if="{{account}}" bindtap="clearAccount"></span>
+        </view>
+        <view class="formLabel">
+          <view class="clearix">
+              <view class="labelName fl">设置密码：</view>
+              <input class="userInput fl {{errorPass?'error':''}}" name="password"  type="password" value="{{password}}"  bindinput="enterPassword" placeholder="*设置密码"></input>
+          </view>
+          <view class="notice" wx:if="{{errorPass}}">*{{errorPass}}</view>
+          <span class="iconfont icon-guanbi" wx:if="{{password}}" bindtap="clearPass"></span>
+        </view>
+        <view class="formLabel">
+          <view class="clearfix">
+            <view class="labelName fl">联系人：</view>
+            <view class="nickGroup fl">
+              <input class="userInput connectPeople {{errorNick?'error':''}}" name="nick" bindinput="nickInput" value="{{nick}}"  placeholder="*联系人"></input>
+              <span class="iconfont icon-guanbi" wx:if="{{nick}}" bindtap="clearNick"></span>
+              <view class="notice" wx:if="{{errNick}}">*不能有特殊字符</view>
+              <view class="genderGroup">
+                <radio-group class="radio-group" bindchange="radioChange">
+                  <label class="radio" wx:for="{{sex}}">
+                    <radio value="{{item.value}}" checked="{{item.checked}}" color="#fb2d37" />
+                    {{item.name}}
+                  </label>
+                </radio-group>
+                <input class="sexInput" name="sex" value="{{genderValue}}"></input>
+              </view>
+            </view>
+            
+          </view>
+        </view>
+        <view class="formLabel">
+          <view class="clearix">
+            <view class="labelName fl">手机号：</view>
+            <input class="userInput fl {{errorPhone?'error':''}}" name="phone" type="number" value="{{phone}}" bindinput="enterPhone" bindblur="checkPhone" maxlength="11" placeholder="*手机号"></input>
+            <span class="iconfont icon-guanbi" wx:if="{{phone}}" bindtap="clearPhone"></span>
+          </view>
+          <view class="notice" wx:if="{{errorPhone}}">*{{errorPhone}}</view>
+        </view>
+        <view class="formLabel clearix">
+          <view class="labelName fl">验证码：</view>
+          <view class="fl clearix codeGroup">
+            <input class="code fl" name="code" placeholder="输入验证码" type="number" maxlength="6"></input>
+            <button class="getCode fl" bindtap="getCode" wx:if="{{canSend}}">{{buttonText}}</button>
+            <button class="getCode fl" wx:if="{{!canSend}}">{{buttonText}}</button>
+          </view>
+          
+        </view>
+        <view class="formLabel bottomCheck">
+          <checkbox-group bindchange="checkboxChange" class="checkboxGroup">
+            <label class="checkbox">
+              <checkbox value="0" checked="{{agree}}" />
+            </label>
+          </checkbox-group>
+          <view class="protocol">同意<span bindtap="seeProcotol">《入驻服务协议》</span></view>
+        </view>
+        <view class="formLabel">
+          <button class="submitBtn {{agree?'agree':'notAgree'}}" form-type="submit">申请入驻</button>
+        </view>
+      </form>
+    </view>
+  </view>
+  <view class="service" bindtap="phoneCall" wx:if="{{servicePhone}}">
+    <view class="iconfont icon-kefu"></view>
+    <view>客服</view>
+  </view>
+</view>

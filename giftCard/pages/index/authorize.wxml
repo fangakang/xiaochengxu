@@ -1,0 +1,8 @@
+<view class="content">
+  <view class="notice">为了正常体验礼品卡小程序，请先用户授权</view>
+  <view class="btn_group">
+    <view>
+      <button class="authorize" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">确定</button>
+    </view>
+  </view>
+</view>

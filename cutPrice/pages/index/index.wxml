@@ -1,0 +1,199 @@
+<!--index.wxml-->
+<form bindsubmit="cutMoney" report-submit wx:if="{{loadComplete}}">
+  <view class="container {{!footerShow?'':'paddingb80'}}">
+    <view class='head'>
+     <image src="{{barDetail.img}}" style='width:750rpx;height:360rpx'/>
+      <view class="remain">仅剩{{barDetail.num}}件</view>
+      <view class="goodsTitle">{{barDetail.title}}</view>
+      <view class="activityStatus">
+        <view class="timing" wx:if="{{!soldOver&&!activityEnd}}">
+          <view class="day">{{day}}</view>天
+          <view class="hour">{{hour}}</view>时
+          <view class="minute">{{minute}}</view>分
+          <view class="second">{{second}}</view>秒  <span wx:if="{{notstart}}">开始</span><span wx:if="{{!notstart}}">结束</span>
+        </view>
+        <view class="activityEnd" wx:if="{{activityEnd}}">活动已结束，无法参与</view>
+        <view class="soldOver" wx:if="{{soldOver}}">库存不足，暂时无法参与</view>
+      </view>
+      
+      <view class="wrap">
+          <view class="progressBar">
+            <view class="current {{cur<50?'on_right':''}}" style="right:{{cur-2}}%" wx:if="{{cur<50}}">
+              当前价￥{{current_price}}
+            </view>
+            <view class="current {{cur>=50?'on_left':''}}" style="left:{{101-cur}}%" wx:if="{{cur>=50}}">
+              当前价￥{{current_price}}
+            </view>
+            <view class="progressBar_inner" style="width:{{100-cur}}%">
+              <span class="slider"></span>
+            </view>
+          </view>
+          <view class="clearfix price_p">
+            <span class="e fl">原价￥{{old_price}}</span>
+            <span class="s fr">底价￥{{price}}</span>
+          </view>
+      </view>
+      <view class="cutNotice">今天帮砍刀数已砍完，欢迎明天继续帮砍2刀</view>
+    </view>
+    <view class="body">
+      <view class="playNotice">
+        <view class="bodyTitle">玩法说明</view>
+        <view class="playContent">
+            <view wx:for="{{barDetail.descbire}}">{{item}}</view>
+        </view>
+        <view class="activityTime">
+          <view class="iconfont icon-shijian"></view>
+          <view>活动时间：{{beginDate}} ~ {{endDate}}</view>
+        </view>
+      </view>
+      <view class="friends {{goodsShow==true?'show':'notShow'}}">
+        <view class="bodyTitle">砍价亲友团</view>
+        <view class="friendsTitle">
+          <view class="fl color3 f26">砍价亲友团（{{allFriends.length}}）</view>
+          <view class="fr color9 f24" bindtap='friendsMask'>查看更多</view>
+        </view>
+        <view class="friendsList">
+          <view class="firendsPic" wx:for="{{partsFriend}}">
+            <image src="{{item.avatarurl}}"></image>
+            <view class="helpPrice">￥{{item.price}}</view>
+          </view>
+          <view class="moreFriends" bindtap='friendsMask'>
+            <image src="../../image/more.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="detailAndRanking">
+        <view class="bodyTitle detailTitle {{goodsShow==true?'choosen':'notChoosen'}}" bindtap='goodShow'>商品详情</view>
+        <view class="bodyTitle rankingTitle {{rankShow==true?'choosen':'notChoosen'}}" bindtap='rankShow'>排行榜</view>
+        <view class="goodsContent {{goodsShow==true?'show':'notShow'}}">
+          <view class="line">
+            <view class="lineName">适用门店</view>
+            <navigator  class="viewShop f26 color6">全部门店</navigator >
+          </view>
+          <view class="line" wx:if="{{wxcardDrtail.service_phone!=''}}">
+            <view class="lineName">商户电话</view>
+            <view class="f26 color6">{{wxcardDrtail.service_phone}}</view>
+          </view>
+          <view class="line useNotice">
+            <view class="lineName">使用须知</view>
+            <view class="noticeDetail f26 color6">
+              {{wxcardDrtail.description}}
+            </view>
+          </view>
+          <view class="line">
+            <view class="lineName">特权说明</view>
+            <view class="f26 color9">{{wxcardDrtail.privilege}}</view>
+          </view>
+        </view>
+        <view class="rankContent {{rankShow==true?'show':'notShow'}}">
+          <scroll-view scroll-y style="height: 900rpx;" bindscrolltolower="lower" scroll-top="{{scrollTop}}">
+            <view class="rankLine" wx:for="{{rank}}">
+              <view class="personMsg fl">
+                <view class="number"><span wx:if="{{index+1}}<10">0</span>{{index+1}}</view>
+                <image src='{{item.avatarurl}}'></image>
+                <view class="nickName">{{item.nickname}}</view>
+              </view>
+              <view class="fr">
+                <view class="cutPrice">
+                  <view class="digit">{{item.hadprice}}</view>
+                  <view class="cutTo">当前已砍至</view>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+    <view class="footer" wx:if="{{barDetail.dhonum!=0&&footerShow&&!otherPop}}">
+      <button class="buy" bindtap='pay'>立即购买（￥{{current_price}}）</button>
+      <button class="iCut" formType="submit">我要砍（+{{barDetail.dhonum}}次）</button>
+    </view>
+    <view class="footer" wx:if="{{barDetail.dhonum==0&&footerShow&&!otherPop}}">
+      <view class="invite" bindtap='invite'>邀请好友砍价</view>
+      <view class="buyNow" bindtap='pay'>立即购买</view>
+    </view>
+    <view class="footer" wx:if="{{barDetail.dhonum==0&&footerShow&&otherPop}}">
+      <button class="helpCut" formType="submit">帮他砍（+{{barDetail.dhonum}}次）</button>
+      <button class="mePlay">我也要玩</button>
+    </view>
+  </view>
+  <view class="mask cutMoneyMask {{cutMoneyMask==true?'show':'notShow'}}">
+    <view class="barginBody">
+      <view class="iconfont icon-cancel" bindtap='closeCut'></view>
+      <view class="maskTitle">恭喜你砍掉<view>￥{{err_dom}}</view></view>
+      <view class="subTitle" wx:if="{{!otherPop}}">赶紧邀请好友砍价接力~</view>
+      <view class="maskBody">
+        <image src="../../image/moneyBag.png"></image>
+      </view>
+      <view class="maskFooter">
+        <view class='invite' bindtap='invite' wx:if="{{!otherPop}}">邀请好友砍价</view>
+        <view class='continue' bindtap='cutMoney' wx:if="{{!otherPop}}">继续砍价(+{{barDetail.dhonum}}）</view>
+        <view class='continue' bindtap='cutMoney' wx:if="{{otherPop}}">继续帮砍(+{{barDetail.dhonum}}）</view>
+      </view>
+    </view>
+  </view>
+  <view class="mask payMask {{payMask==true?'show':'notShow'}}">
+    <view class="payBody">
+      <view class="iconfont icon-cancel" bindtap='closePayMask'></view>
+      <image src='../../image/fail.png'></image>
+      <view class="maskTitle">支付失败</view>
+      <view class="subTitle">
+        <view>请在{{payCount}}内到我的订单中可</view>
+        <view>继续完成支付，过期将此订单关闭</view>
+      </view>
+      <view class="maskFooter">
+        <view class="giveUp" bindtap='closePayMask'>放弃支付</view>
+        <view class="continuePay" bindtap="pay">继续支付</view>
+      </view>
+    </view>
+  </view>
+  <view class="mask friendsMask {{friendsMask==true?'show':'notShow'}}">
+    <view class="frendsBody">
+      <view class="maskTitle">
+        砍价亲友团
+        <view bindtap='closeMask' class="iconfont icon-cancel"></view>
+      </view>
+      <view class="maskBody">
+        <view class="rankLine" wx:for="{{allFriends}}">
+              <view class="personMsg fl">
+                <view class="number"></view>
+                <image src='{{item.avatarurl}}'></image>
+                <view class="nickName">
+                  <view>{{item.nickname}}</view>
+                  <view class="time f24 color6">{{item.time}}</view>
+                </view>
+              </view>
+              <view class="fr">
+                <view class="cutPrice">
+                  <view class="digit">砍下￥{{item.price}}</view>
+                </view>
+              </view>
+            </view>
+      </view>
+    </view>
+  </view>
+  <!-- 已砍至最低价 -->
+  <view class="mask cutSuccessMask {{cutSuccessMask==true?'show':'notShow'}}">
+    <view class="barginBody">
+      <view class="iconfont icon-cancel" bindtap='closeCut'></view>
+      <view class="maskTitle">恭喜你已成功砍至底价<view>￥{{price}}</view></view>
+      <view class="subTitle">您的砍价大军果然名不虚传~</view>
+      <view class="maskBody">
+        <image src="../../image/moneyBag.png"></image>
+      </view>
+      <view class="maskFooter">
+        <view class='payNow' bindtap='pay'>立即付款</view>
+      </view>
+    </view>
+  </view>
+</form>
+<view class="authorizeMask" wx:if="{{!authorize}}">
+  <view class="personMsg">
+    <view class="authorizeNotice">
+      为了正常体验会员中心小程序，请先用户授权
+    </view>
+    <view class="authorizeFooter">
+      <button bindtap='modalHidden' class="getUserInfo" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权</button>
+    </view>
+  </view>
+</view>

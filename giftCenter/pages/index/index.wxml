@@ -1,0 +1,69 @@
+<view class="head">
+  <view class="photo">
+    <image src="../../image/photo.png"></image>
+  </view>
+  <view class="name">柠檬干片</view>
+  <view class="money">
+    <span class="">￥</span>1562.00
+  </view>
+  <navigator url="useBalance" hover-class="none" class="use">立即使用</navigator>
+  <navigator url="recharge" hover-class="none" class="recharge">充值</navigator>
+</view>
+<view class="menuList">
+  <navigator hover-class="none" class="line">
+    <view class="lineName fl">
+      <span class="iconfont icon-dianpu"></span>我要开店/我的店铺
+    </view>
+    <view class="view fr">
+      查看<span class="iconfont icon-icon"></span>
+    </view>
+  </navigator>
+  <navigator url="myOrder" hover-class="none" class="line">
+    <view class="lineName fl">
+      <span class="iconfont icon-dingdanjilu"></span>我的订单
+    </view>
+    <view class="view fr">
+      查看<span class="iconfont icon-icon"></span>
+    </view>
+  </navigator>
+  <navigator url="activity" hover-class="none" class="line">
+    <view class="lineName fl">
+      <span class="iconfont icon-lipin"></span>活动参与
+    </view>
+    <view class="view fr">
+      秒杀、砍价、拼团等<span class="iconfont icon-icon"></span>
+    </view>
+  </navigator>
+  <navigator url="balanceDetail" hover-class="none" class="line">
+    <view class="lineName fl">
+      <span class="iconfont icon-jilu"></span>余额明细
+    </view>
+    <view class="view fr">
+      查看<span class="iconfont icon-icon"></span>
+    </view>
+  </navigator>
+  <navigator url="record" hover-class="none" class="line">
+    <view class="lineName fl">
+      <span class="iconfont icon-touzijilu"></span>我的记录
+    </view>
+    <view class="view fr">
+      送礼、收礼等<span class="iconfont icon-icon"></span>
+    </view>
+  </navigator>
+  <navigator hover-class="none" class="line">
+    <view class="lineName fl">
+      <span class="iconfont icon-yue"></span>分销返佣
+    </view>
+    <view class="view fr">
+      商家尚未开启此功能/累计获得0元<span class="iconfont icon-icon"></span>
+    </view>
+  </navigator>
+  <navigator hover-class="none" class="line">
+    <view class="lineName fl">
+      <span class="iconfont icon-zuji"></span>我浏览过的店铺
+    </view>
+    <view class="view fr">
+      查看<span class="iconfont icon-icon"></span>
+    </view>
+  </navigator>
+</view>

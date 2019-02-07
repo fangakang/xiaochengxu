@@ -1,0 +1,48 @@
+<view class="content">
+  <view class="orderList">
+    <view class="mealOrder">
+      <view class="mealMsg clearix">
+        <image class="fl" src="{{allData.imageArr[0]}}"></image>
+        <view class="fl">
+          <view class="mealName">{{allData.themename}}</view>
+          <view class="money">
+            <span class="saleprice"><span class="iconfont icon-qian"></span>{{nowPrice}}</span>
+            <span class="oldprice"><span class="iconfont icon-qian">{{oldPrice}}</span></span>
+          </view>
+        </view>
+      </view>
+      <view class="mealNum clearix">
+        <view class="fl numName">数量</view>
+        <view class="fr clearix">
+          <view class="fl less" bindtap='less'>-</view>
+          <view class="fl num">{{amount}}</view>
+          <view class="fl add" bindtap='add'>+</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="personMsg">
+    <view class="label clearix">
+      <view class="labName fl">姓名</view>
+      <view class="labContent fr">
+        <input  bindinput="bindNameInput" placeholder='请输入姓名' value='{{name}}'></input>
+      </view>
+    </view>
+    <view class="label clearix">
+      <view class="labName fl">手机号码</view>
+      <view class="labContent fr">
+        <input bindinput="bindPhoneInput" value='{{phone}}' maxlength='11' placeholder='请输入手机号' type="number"></input>
+      </view>
+    </view>
+  </view>
+  <view class="footer clearix">
+    <view class="fl totalPrice">
+      合计： <span><span class="iconfont icon-qian"></span><span class="fontBig">{{totalMoney}}</span></span>
+    </view>
+    <view class="fr">
+      <view class="cancle" bindtap='cancel'>取消</view>
+      <button wx:if="{{!hadPhone}}" class="getPhone fr" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"> 立即购买</button> 
+      <view wx:if="{{hadPhone}}" class="buyNow" bindtap='buyNow'>立即购买</view>
+    </view>
+  </view>
+</view>

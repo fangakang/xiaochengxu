@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的卡包",
+  "navigationBarBackgroundColor": "#f24c36",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "authorize": "../component/authorize"
+  }
+}

@@ -1,0 +1,567 @@
+/**index.wxss**/
+@import "../../icon/iconfont.wxss";
+.paddingb80{
+  padding-bottom: 80rpx;
+}
+.color3{
+  color: #333;
+}
+.color9{
+  color:#999;
+}
+.color6{
+  color:#666;
+}
+.f24{
+  font-size: 24rpx;
+}
+.f26{
+  font-size: 26rpx;
+}
+.head{
+  background: #fff;
+  padding-bottom: 40rpx;
+  margin-bottom: 20rpx;
+}
+swiper{
+  position: relative;
+}
+.remain{
+  position:absolute;
+  left:0;
+  top:255rpx;
+  padding:0 25rpx;
+  font-size:24rpx;
+  color:#fff;
+  line-height:50rpx;
+  border-bottom-right-radius:10rpx;
+  border-top-right-radius:10rpx;
+  background:rgba(242,76,54,.8);
+}
+.goodsTitle{
+  padding:30rpx 25rpx;
+  font-size:30rpx;
+  color:#333;
+}
+.titleShow{
+  display: block;
+}
+.titleHide{
+  display:none;
+}
+.activityStatus{
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #eee;
+  font-size:30rpx;
+  padding-left: 15rpx;
+}
+.soldOver,.activityEnd{
+ padding-left: 20rpx;
+}
+.timing>view{
+  display: inline-block;
+  color:#fff;
+  background: #f24c36;
+  padding:10rpx;
+  border-radius:10rpx;
+  margin: 0 13rpx 0 9rpx;
+}
+.wrap{
+  padding:55rpx;
+  margin-top: 30rpx;
+}
+.progressBar{
+  border:1px solid #f24c36;
+  background-color: #ffd6d1;
+}
+.progressBar .progressBar_inner{
+    background: -moz-linear-gradient(left, #f06436 0%, #f9425b 100%);
+    background: -webkit-linear-gradient(left, #f06436 0%,#f9425b 100%);
+    background: linear-gradient(to right, #f06436 0%,#f9425b 100%);
+}
+.progressBar current{
+  color: #ff3867;
+}
+
+.progressBar .slider{
+  border:10rpx solid #ff3867;
+}
+.progressBar{
+  height: 23rpx;
+  border:1px solid #fe6b31;
+  background-color: #ffdacb;
+  border-radius: 20rpx;
+  position: relative;
+}
+.progressBar .progressBar_inner{
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  border-radius: 20rpx;
+}
+.progressBar .slider{
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 100%;
+  box-sizing: border-box;
+  border:10rpx solid #fe6b31;
+  position: absolute;
+  top: -1px;
+  right: -15rpx;
+  background-color: #fff
+}
+.progressBar .current{
+  position: absolute;
+  top: -60rpx;
+  left: 0%;
+  font-size: 24rpx;
+  color: #f24c36;
+  margin-left:-20rpx;
+  white-space: nowrap;
+}
+.progressBar .current:before{
+	content: " ";
+  position: absolute;
+  left: 0;
+  top: 40rpx;
+  color: #E5000D;
+	border-top: 14rpx solid #f24c36;
+	border-right: 14rpx solid transparent;
+	border-bottom: 14rpx solid transparent;
+	border-left: 14rpx solid transparent;
+}
+.current.on_right{
+	left: inherit
+}
+.current.on_right:before{
+    left: inherit;
+    right: 0
+}
+.fr{
+  float: right;
+}
+.fl{
+  float: left;
+}
+.price_p{
+  font-size: 28rpx;
+  color: #999;
+  margin-top: 10rpx;
+  display: block;
+}
+.cutNotice{
+  width:500rpx;
+  margin: 0 auto;
+  line-height: 56rpx;
+  color:#f24c36;
+  background: #f6f6f6;
+  font-size: 24rpx;
+  text-align: center;
+  border-radius: 28rpx;
+  margin-top: 20rpx;
+}
+.body{
+  padding:45rpx 20rpx;
+  background: #ffd6d1;
+  padding-bottom: 20rpx;
+}
+.body>view{
+  margin-bottom: 45rpx;
+  position: relative;
+}
+.playNotice,.friends,.detailAndRanking{
+  padding: 20rpx;
+  background: #fff;
+  border:2rpx solid #f24c36;
+}
+.bodyTitle{
+  color:#333;
+  width:150rpx;
+  text-align: center;
+  line-height: 46rpx;
+  border-radius: 23rpx;
+  background: #ffd6d1;
+  font-size: 24rpx;
+  border:2rpx solid #f24c36;
+  position: absolute;
+  top:-26rpx;
+  left:260rpx;
+}
+.playContent{
+  color:#666;
+  font-size: 24rpx;
+  margin-top:50rpx;
+  border-bottom:2rpx solid #eee;
+  margin-bottom: 22rpx;
+}
+.playContent view{
+  margin-bottom: 20rpx;
+}
+.activityTime{
+  font-size: 22rpx;
+  color:#999;
+  padding-bottom: 10rpx;
+}
+.activityTime>view{
+  display: inline-block;
+}
+.activityTime .iconfont{
+  color:#f24c36;
+  float:left;
+  margin-right:10rpx;
+}
+.friendsTitle{
+  overflow: hidden;
+  margin-top: 35rpx;
+  padding-bottom:30rpx; 
+  border-bottom:2rpx solid #eee;
+}
+.friendsList{
+  margin-top: 45rpx;
+  padding-left: 20rpx;
+}
+.firendsPic{
+  display: inline-block;
+  width:98rpx;
+  height:98rpx;
+  border-radius:49rpx;
+  position: relative;
+  margin-right: 35rpx;
+}
+.firendsPic image,.moreFriends image{
+  width:98rpx;
+  height:98rpx;
+  border-radius:49rpx;
+}
+.helpPrice{
+  position: absolute;
+  font-size: 20rpx;
+  background: #fff;
+  width: 94rpx;
+  text-align: center;
+  line-height: 30rpx;
+  color:#fe6b3e;
+  border: 2rpx solid #ddd;
+  border-radius: 15rpx;
+  bottom:-5rpx;
+}
+.moreFriends{
+  display: inline-block;
+  width:98rpx;
+  height:98rpx;
+  border-radius:49rpx;
+  position: relative;
+  margin-right: 0;
+  text-align: center
+}
+.goodsContent{
+  padding-left: 14rpx;
+}
+.detailTitle{
+  left:175rpx;
+}
+.rankingTitle{
+  left:380rpx;
+}
+.detailAndRanking .choosen{
+  color:#fff;
+  background: #f24c36;
+}
+.line{
+  padding:30rpx 0;
+  border-bottom:1px solid #eee;
+}
+.line .lineName{
+  color: #333;
+  width:24%;
+  text-align: left;
+  font-size: 28rpx;
+}
+.line .viewShop{
+  color: #666
+}
+.line view,.line navigator {
+  display: inline-block;
+  font-size:26rpx;
+}
+.useNotice{
+  overflow: hidden;
+}
+.useNotice .lineName{
+  float: left;
+}
+.noticeDetail{
+  width:75%;
+  float:left;
+}
+.show{
+  display: block;
+}
+.notShow{
+  display: none;
+}
+.rankContent{
+  margin-top: 46rpx;
+  padding: 0 28rpx;
+}
+.rankLine{
+  padding:26rpx 0;
+  border-bottom:2rpx solid #eee;
+  overflow: hidden;
+}
+.personMsg{
+  overflow: hidden
+}
+.personMsg>view{
+  float: left;
+}
+.personMsg image{
+  width: 86rpx;
+  height:86rpx;
+  border-radius:50%;
+  float:left;
+  margin-left:28rpx;
+  margin-right: 24rpx;
+}
+.number{
+  font-size: 24rpx;
+  color:#b7b7b7;
+  margin-top: 25rpx;
+}
+.nickName{
+  font-size: 28rpx;
+  color:#333;
+  margin-top: 20rpx;
+}
+.cutPrice{
+  text-align: right;
+  margin-top: 20rpx;
+}
+.digit{
+  font-size: 30rpx;
+  color:#f24c36;
+  padding-right: 20rpx;
+}
+.cutTo{
+  font-size: 24rpx;
+  color:#b7b7b7;
+}
+.footer{
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  display: flex;
+  
+  color:#fff;
+}
+.footer>view,.footer>button{
+  flex:1;
+  text-align: center;
+  font-size: 34rpx;
+  padding: 30rpx 0;
+  display: inline-block
+}
+.footer>button{
+  padding:10rpx 0;
+  border-radius:0rpx;
+  color:#fff;
+}
+.footer>button::before{
+  border: none;
+}
+.payNow{
+  background: #f24c36;
+}
+.buy,.invite,.helpCut{
+  background: #f24c36;
+}
+.iCut,.buyNow,.mePlay{
+  background: #f82e4b;
+}
+.mask{
+  position: fixed;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,.5)
+}
+.barginBody{
+  padding:65rpx 20rpx 45rpx 20rpx;
+  background: #fff;
+  border-radius:10rpx;
+  width:610rpx;
+  position: relative;
+  left:55rpx;
+  top:125rpx;
+}
+.cutMoneyMask .maskTitle,.cutSuccessMask .maskTitle{ 
+  font-size: 38rpx;
+  color:#333;
+  text-align: center
+}
+.cutMoneyMask .maskTitle view,.cutSuccessMask .maskTitle view{
+  display: inline-block;
+  color: #fa5e4f;
+}
+.cutMoneyMask .subTitle,.cutSuccessMask .subTitle{
+  font-size: 26rpx;
+  text-align: center;
+  color: #5b667a;
+  margin-top:28rpx;
+}
+.cutMoneyMask .maskBody,.cutSuccessMask .maskBody{
+  text-align: center;
+  margin-top: 50rpx;
+}
+.cutMoneyMask .maskBody image,.cutSuccessMask .maskBody image{
+  width: 410rpx;
+  height:355rpx;
+  margin: 0 auto;
+}
+.maskFooter{
+  text-align: center;
+}
+.cutMoneyMask .maskFooter view,.cutSuccessMask .maskFooter view{
+  color:#fff;
+  font-size:30rpx;
+  line-height: 76rpx;
+  width:460rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  margin: 0 auto;
+  margin-top:30rpx;
+}
+.cutMoneyMask .invite{
+  background: #f24c36;
+}
+.cutMoneyMask .continue{
+  background: #608ee0;
+}
+.mask .iconfont{
+  position: absolute;
+  color:#f24c36;
+  font-size: 40rpx;
+  right:20rpx;
+  top:20rpx;
+}
+.payBody{
+  width: 625rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  text-align: center;
+  padding-top: 35rpx;
+  position: relative;
+  padding-bottom:58rpx;
+  top:260rpx;
+  left:60rpx;
+}
+.payBody image{
+  width: 135rpx;
+  height:160rpx;
+  margin: 0 auto;
+}
+.payBody .maskTitle{
+  font-size: 40rpx;
+}
+.payBody .subTitle{
+  font-size: 26rpx;
+  text-align: center;
+  color: #5b667a;
+  margin-top:25rpx;
+  line-height: 40rpx;
+}
+.payBody .maskFooter{
+  overflow: hidden;
+  margin-top: 50rpx;
+}
+.payBody .maskFooter view{
+  float:left;
+  line-height: 76rpx;
+  width: 250rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  margin-left: 45rpx;
+}
+.giveUp{
+  background: #ececec;
+  color: #666
+}
+.continuePay{
+  color:#fff;
+  background: #f24c36;
+}
+.frendsBody{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  
+}
+.frendsBody .maskTitle{
+  line-height: 104rpx;
+  background: #f4f4f4;
+  color: #000;
+  font-size: 32rpx;
+  text-align: center;
+  position: relative;
+  border-top-right-radius:20rpx;
+  border-top-left-radius:20rpx;
+}
+.frendsBody .iconfont{
+  font-size: 40rpx;
+  color: #bbb;
+  position: absolute;
+  top:3rpx;
+}
+.frendsBody .maskBody{
+  background: #fff;
+  height:675rpx;
+  overflow: scroll;
+}
+.maskBody .nickName{
+  margin-top: 10rpx;
+}
+.authorizeMask{
+  position: fixed;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  background: rgba(0,0,0,.5)
+}
+.personMsgMask{
+  background: #fff;
+  width:650rpx;
+  border-radius: 10rpx;
+  margin:0 auto;
+  text-align: center;
+  margin-top: 300rpx
+}
+.authorizeTitle{
+  border-bottom: 1rpx solid #ddd;
+  font-size: 34rpx;
+  color:#333;
+  padding:20rpx 0;
+}
+.authorizeNotice{
+  font-size: 30rpx;
+  color:#333;
+  padding: 90rpx;
+}
+.getUserInfo{
+  background: #03a6fe;
+  color:#fff;
+  font-size: 32rpx;
+  width:225rpx;
+  margin-left:220rpx;
+}
+.authorizeFooter{
+  padding-bottom: 20rpx;
+}
+.l260{
+  left:260rpx;
+}

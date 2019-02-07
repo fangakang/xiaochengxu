@@ -1,0 +1,22 @@
+/* pages/index/authorize.wxss */
+.notice{
+  font-size: 32rpx;
+  text-align: center;
+  color:#333;
+  margin-top: 200rpx;
+}
+.btn_group{
+  display: flex;
+  margin-top: 100rpx;
+}
+.btn_group view{
+  flex:1;
+  text-align: center;
+}
+.authorize{
+  background: #f24c36;
+  color:#fff;
+}
+.btn_group view button{
+  width: 350rpx;
+}

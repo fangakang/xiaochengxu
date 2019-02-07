@@ -1,0 +1,70 @@
+<view class="content">
+  <view class="orderDetail">
+    <view class="orderNum">
+      订单编号：{{couponMsg[0].agorderid}}
+    </view>
+    <view class="codeContent" wx:if="{{couponMsg[0].sbakang!=1&&couponMsg[0].sbakangoutMsg!=1&&!useOver}}">
+      <canvas class="myQrcode" style="width:150px;height:150px;" canvas-id="myQrcode"></canvas>
+    </view>
+    <view class="codeContent" wx:if="{{couponMsg[0].sbakang==1}}">
+      <view class="mask">
+        <image src="../../image/errCode.png"></image>
+        <view>暂不可用</view>
+      </view>
+    </view>
+    <view class="codeContent" wx:if="{{couponMsg[0].sbakangoutMsg==1}}">
+      <view class="mask">
+        <image src="../../image/errCode.png"></image>
+        <view>已过期</view>
+      </view>
+    </view>
+    <view class="codeContent" wx:if="{{useOver}}">
+      <view class="mask">
+        <image src="../../image/errCode.png"></image>
+        <view>已用完</view>
+      </view>
+    </view>
+    <view class="name">{{couponMsg[0].themename}}</view>
+    <view class="money" wx:if="{{couponMsg[0].goods_price!=0}}"><span class="iconfont icon-qian"></span>{{couponMsg[0].goods_price}}</view>
+    <view class="money" wx:if="{{couponMsg[0].goods_price==0}}">免费购买</view>
+    <view class="line clearix">
+      <view class="fl">姓名</view>
+      <view class="fr">{{couponMsg[0].truename}}</view>
+    </view>
+    <view class="line clearix">
+      <view class="fl">支付时间</view>
+      <view class="fr">{{paytime}}</view>
+    </view>
+    <view class="line clearix" wx:if="{{couponMsg[0].sbakang==1}}">
+      <view class="fl">生效时间</view>
+      <view class="fr">{{couponMsg[0].sbakangstime}}</view>
+    </view>
+    <view class="line clearix">
+      <view class="fl">有效期至</view>
+      <view class="fr">{{cendtime}}</view>
+    </view>
+  </view>
+  <view class="writeOff">
+    <view class="line clearix" wx:for="{{couponMsg}}">
+      <view class="fl">核销码：{{item.card_no}}</view>
+      <view class="fr">
+      <span wx:if="{{item.coustatus==2&&item.sbakangoutMsg==1}}">已过期</span>
+        <span wx:if="{{item.coustatus==2&&item.sbakangoutMsg!=1}}">未使用</span>
+        <span wx:if="{{item.coustatus==3}}">已使用</span>
+      </view>
+    </view>
+  </view>
+  <view class="back" bindtap='back'>返回</view>
+</view>
+<view class="authorize" wx:if="{{!authorize}}">
+    <view class="authorizeModal">
+      <view class="authorizeMsg">
+        <image src='../../image/authorize.png'></image>
+        <view>您的公开信息（昵称和头像等）</view>
+        <view>以便于查看优惠信息哦</view>
+      </view>
+      <button bindtap='modal_click_Hidden' class="getUserInfo" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+        <span class="iconfont icon-weixin1"></span>确定授权
+      </button>
+    </view>
+</view>

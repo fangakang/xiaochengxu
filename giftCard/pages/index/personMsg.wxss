@@ -1,0 +1,286 @@
+@import"../../icon/iconfont.wxss";
+page{
+  background: #fff;
+}
+.title{
+  color:#999;
+  font-size:30rpx;
+  padding:40rpx 25rpx;
+  background: #f1eff4;
+}
+.head{
+  background: #fff;
+  padding: 15rpx 25rpx;
+  border-top:1rpx solid #ddd;
+  border-bottom:1rpx solid #ddd;
+  overflow: hidden;
+}
+.image{
+  margin-right: 15rpx;
+  float: left;
+}
+.image image{
+  width: 100rpx;
+  height:100rpx;
+}
+.nameContent{
+ float: left; 
+ margin-top: 8rpx;
+}
+.wxNick{
+  font-size: 34rpx;
+  color:#333;
+  margin-bottom: 5rpx;
+}
+.nickName{
+  font-size: 26rpx;
+  color:#999;
+}
+.editContent{
+  background: #fff;
+  padding-left: 25rpx;
+  border-top: 1rpx solid #ddd;
+  padding-bottom: 500rpx;
+}
+.label{
+  overflow: hidden;
+  padding:20rpx 0;
+  border-bottom: 1rpx solid #ddd;
+  position: relative;
+}
+.labName,.labContent{
+  float:left;
+}
+.labName{
+  width:200rpx;
+  text-align: left;
+  font-size: 32rpx;
+  color:#333;
+  position: relative;
+  padding-left: 20rpx;
+}
+.must{
+  position: absolute;
+  color: #f00;
+  left:0;
+}
+.labContent{
+  font-size: 34rpx;
+  color:#333;
+  width:505rpx
+}
+.labContent .iconfont{
+  position: absolute;
+  right:30rpx;
+  top:28rpx;
+}
+.multiple{
+  display: inline-block;
+  color:#333;
+  font-size: 24rpx;
+  background: #f8f8f8;
+  border: 1rpx solid #ddd;
+  margin-right: 15rpx;
+  border-radius: 5rpx;
+  padding:5rpx 20rpx;
+  margin-bottom: 20rpx;
+}
+.labContent .selected{
+  border-color:#1aad19;
+  background: #1aad19;
+  color: #fff;
+}
+.modal{
+  background: rgba(0,0,0,.5);
+  position: fixed;
+  top:0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 200;
+}
+.modalBody>view{
+  background: #fff;
+  position: absolute;
+  padding:40rpx;
+  left:90rpx;
+}
+.radio{
+  width:30rpx;
+  height:30rpx;
+  border-radius:50%;
+  border:1rpx solid #ddd;
+  position: relative;
+  text-align: center;
+  float:left;
+  margin-top: 7rpx;
+  margin-right: 20rpx;
+}
+.radioCheck{
+  width: 16rpx;
+  height:16rpx;
+  background: #fff;
+  border-radius:50%;
+  margin-top: 6.9rpx;
+  margin-left: 7.9rpx;
+}
+.modalList{
+  font-size: 30rpx;
+  color:#333;
+  margin-bottom: 20rpx;
+  width:500rpx;
+}
+.modalList .active{
+  background: #509eff;
+  border-color:#509eff;
+}
+.genderModal,.educationModal,.incomeModal,.ktvModal{  
+  top:400rpx;  
+}
+.jobModal,.hairModal{
+  height:600rpx;
+  overflow: scroll;
+  top:190rpx;  
+}
+.car{
+  overflow: hidden;
+}
+.carNo{
+  float:left;
+  border:1rpx solid #ddd;
+  width:53rpx;
+  text-align:center;
+  height:50rpx;
+  margin-right:5rpx;
+  padding-top:4rpx;
+}
+.newEnergy{
+  border:1rpx dotted #ddd;
+  position: relative;
+}
+.logo{
+  position: absolute;
+  font-style: italic;
+  bottom:15rpx;
+  left:11rpx;
+}
+.word{
+  font-size: 17rpx;
+  color:#bbb;
+  position: absolute;
+  bottom:5rpx;
+}
+.close{
+  background: #fff;
+  border-top:1rpx solid #333;
+  font-size: 34rpx;
+  line-height: 70rpx;
+  text-align: right;
+  padding-right: 40rpx;
+}
+.keyBord{
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background: #ddd;
+  z-index: 100
+}
+.province,.numWord{
+  overflow: hidden;
+  padding:10rpx 0rpx;
+}
+.provinceSelect,.delete,.numWord>view{
+  float: left;
+  width:64rpx;
+  line-height: 70rpx;
+  background: #fff;
+  margin-bottom: 10rpx;
+  margin-left: 10rpx;
+  text-align: center;
+  font-size: 34rpx;
+  border-radius:8rpx;
+}
+.provinceSelect:nth-child(31){
+  margin-left: 158rpx;
+}
+.province .delete{
+  margin-left: 230rpx;
+}
+.car .active{
+  border: 1rpx solid #1aad19
+}
+.numWord .disabled{
+  background: #bbb
+}
+.close view{
+  display: inline-block;
+}
+.submit{
+  padding-right: 25rpx;
+  margin-top: 40rpx;
+}
+.submitBtn{
+  background: #1aad19;
+  color: #fff;
+  width: 540rpx;
+}
+.hide{
+  display: none;
+}
+.payActive{
+  overflow:hidden;
+  padding:10px 0;
+  border-bottom:1px solid #ddd;
+}
+.input input {
+  width: 100%;
+  background-color: #fff;
+}
+
+.section {
+  padding-top: 20rpx;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+.city-cancel{
+  float:right;
+}
+.city-true{
+  float:left;
+}
+.usermotto {
+  margin-top: 200px;
+}
+.citypicker{
+  position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+}
+.cityheader{
+ position: absolute
+}
+.cityTitle{
+  background: #eee;
+  color: #666;
+  text-align: center;
+  font-size: 34rpx;
+  line-height: 90rpx;
+  position: relative
+}
+.cityTitle view{
+  position: absolute;
+  color: #1aad19;
+  top:0;
+  right:25rpx;
+}

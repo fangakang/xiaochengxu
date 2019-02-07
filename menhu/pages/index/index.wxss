@@ -1,0 +1,398 @@
+@import "../../icon/iconfont.wxss";
+/* page{
+  background: #efefef;
+} */
+page{
+  padding-bottom: 90rpx;
+}
+.form{
+  background: #fff;
+}
+.scrollContent{
+  overflow:auto;
+  margin:auto;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+button::after{
+  border: none;
+}
+.content{
+  height:600px;
+}
+swiper swiper-item{
+  width:750rpx;
+  height:450rpx;
+}
+swiper swiper-item image{
+  width:750rpx;
+  height:450rpx;
+}
+.headNav{
+  display: flex;
+  background: #fff;
+  width: 750rpx;
+  border-bottom: 1rpx solid #efefef
+}
+.headNav view{
+  flex: 1;
+  text-align: center;
+  color: #555;
+  font-size: 30rpx;
+  margin-top:5rpx;
+}
+.headNav view span{
+  display: inline-block;
+  padding:25rpx 0;
+  height:40rpx;
+}
+.headNav .active{
+  color: #fb2d37;
+  border-bottom: 7rpx solid #fb2d37;
+  padding-bottom: 21rpx;
+}
+.banner image{
+  width: 750rpx;
+  height:450rpx;
+}
+.foodList{
+  padding:0 30rpx;
+  background: #fff;
+  padding-bottom: 20rpx;
+}
+.fl{
+  float: left;
+}
+.food{
+  overflow: hidden;
+  padding-bottom: 15rpx;
+  border-bottom: 1rpx solid #eee;
+  position: relative;
+  margin-top:10rpx;
+}
+.foodPic{
+  position: relative;
+}
+.foodPic>image{
+  width:200rpx;
+  height:200rpx;
+  border-radius: 10rpx;
+}
+.over{
+  position: absolute;
+  width: 200rpx;
+  height:200rpx;
+  top:0;
+  bottom:0;
+  background: rgba(0,0,0,.5);
+  z-index: 10;
+  border-radius: 10rpx;
+  text-align: center
+}
+.over>image{
+  width:130rpx;
+  height:130rpx;
+  margin-top: 35rpx;
+}
+.rushBuy{
+  display: inline-block;
+  background: #fb2d37;
+  color:#fff;
+  font-size: 24rpx;
+  padding:5rpx 12rpx;
+  border-radius: 5rpx;
+}
+.foodMsg{
+  padding-left: 20rpx;
+}
+.foodName{
+  width: 450rpx; 
+  font-size: 28rpx;
+  margin: 13rpx 0;
+  height:70rpx;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 35rpx;
+  text-align:justify;
+  word-break: break-word;
+  white-space: normal;
+  word-wrap: normal;
+}
+.foodName image{
+  width:76rpx;
+  height:40rpx;
+  position: absolute
+}
+.nowMoney{
+  color: #fb2d37;
+  font-size: 36rpx;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+.oldMoney{
+  color:#999;
+  text-decoration:line-through;
+  font-size: 26rpx;
+  margin-top:8rpx;
+}
+.buyNow{
+  display: inline-block;
+  background: #fb2d37;
+  color:#fff;
+  position: absolute;
+  font-size: 24rpx;
+  padding:0rpx 20rpx;
+  line-height: 56rpx;
+  border-radius: 28rpx;
+  right:0rpx;
+  bottom: 23rpx;
+  width:145rpx;
+}
+.overBtn{
+  display: inline-block;
+  background: #bbb;
+  color:#fff;
+  position: absolute;
+  font-size: 24rpx;
+  padding:0rpx 20rpx;
+  line-height: 56rpx;
+  border-radius: 28rpx;
+  right:0rpx;
+  bottom: 23rpx;
+  width:145rpx;
+}
+/* 2018.8.1 */
+.indexBanner{
+  margin-top: 25rpx; 
+  box-shadow:0px 3px 3px #dddddd;
+  margin-bottom: 0;
+}
+.recommend{
+  padding: 0 30rpx;
+  text-align: left;
+  line-height: 90rpx;
+  margin-top: 10rpx;
+}
+.recommend span{
+  padding: 20rpx 0;
+  font-weight: bolder;
+  font-size: 36rpx;
+  color: #333;
+}
+.food{
+ padding-bottom: 20rpx;
+ margin-top: 20rpx;
+}
+.rushBuy{
+  padding: 4rpx 15rpx;
+}
+.foodMsg{
+  padding-left: 25rpx;
+}
+.businessDetail .iconfont{
+  margin-top: 0
+}
+.homeFoot{
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background: #fff;
+  display: flex;
+  padding: 10rpx 0;
+  border-top:1rpx solid #ddd;
+  z-index: 20;
+  height:80rpx;
+}
+.footSenction{
+  flex:1;
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+  height: 80rpx;
+}
+.searchHeader{
+  position: relative;
+  width: 700rpx;
+  margin-left: 25rpx;
+  border-radius: 30rpx;
+   background: #f4f4f4;
+}
+.searchHeader .iconfont {
+  font-size:38rpx;
+  color:#999;
+  margin-right:20rpx;
+  margin-top:13rpx;
+  position: absolute;
+  z-index:10;
+  left:30rpx;
+}
+.searchHeader input{
+  text-align: left;
+  font-size: 26rpx;
+  height: 60rpx;
+  color: #333;
+  padding-left: 80rpx;
+}
+.money{
+  display: inline-block;
+  position: relative;
+}
+.searchView{
+  font-size: 28rpx;
+  color:#999;
+  line-height: 60rpx;
+  padding-left: 85rpx;
+}
+/*二期*/
+.shopIn{
+  position: fixed;
+  top: 750rpx;
+  right:50rpx;
+  width:125rpx;
+  height: 110rpx;
+}
+.shopIn image{
+  width:125rpx;
+  height: 110rpx;
+  z-index: 10
+}
+.shopInMask{
+  position: fixed;
+  top:0;
+  bottom:0rpx;
+  right:0rpx;
+  left:0;
+  background: rgba(0,0,0,.5);
+  z-index: 10000;
+  text-align: center
+}
+.shopInContent{
+  position: relative;
+  width: 550rpx;
+  height:600rpx;
+  margin: 0 auto;
+  margin-top:200rpx;
+}
+.shopInContent image{
+  width: 550rpx;
+  height:600rpx;
+}
+.contact .iconfont{
+  font-size: 40rpx;
+  color: #fff;
+  margin-right: 20rpx;
+}
+.phoneNum{
+  color: #fff;
+  font-size: 32rpx;
+}
+.phoneCall{
+  font-size: 26rpx;
+  color: #0843b4;
+  background: #fff446;
+  padding-left:10px;
+  padding-right:10px;
+  line-height:1.6555555600000004;
+  border-radius: 0;
+  margin-left: 30rpx;
+}
+.phoneCall::after{
+  border: none;
+}
+.contact{
+  position:absolute;
+  bottom:80rpx;
+  left:65rpx;
+}
+.shopInMask .icon-cancel{
+  font-size: 50rpx;
+  color:#fff;
+  margin-top: 40rpx;
+  display:inline-block;
+}
+.location{
+  width:180rpx;
+  display: flex;
+  border:1rpx solid #fb2d37;
+  line-height: 50rpx;
+  margin-top: 25rpx;
+  border-radius: 5rpx;
+}
+.location>view{
+  flex:1;
+  color:#fb2d37;
+  font-size: 22rpx;
+  text-align: center;
+}
+.location>view:first-child{
+  border-right:1rpx solid #fb2d37
+}
+.location .selected{
+  color: #fff;
+  background: #fb2d37;
+}
+.navSwiper{
+  height:96rpx;
+  width: 750rpx;
+}
+.navSwiper swiper-item{
+  width:20%;
+  line-height:96rpx;
+  text-align: center
+}
+.navSwiper swiper-item span{
+  color: #555;
+  font-size: 30rpx;
+}
+.nowMoney .icon-qian{
+  font-size: 38rpx
+}
+.oldMoney .icon-qian{
+  font-size: 28rpx;
+}
+.foodListBtn{
+  background: #fff;
+  padding-left:0;
+  padding-right: 0;
+  text-align: left;
+  line-height:1;
+}
+.advertisementList button,.advertiseOne button{
+  padding-left:0;
+  padding-right: 0;
+  text-align: left;
+  line-height:1;
+  border-radius: 0;
+}
+.advertiseOne{
+  margin-top: 25rpx;
+}
+.advertiseOne image{
+  width:750rpx;
+  height:450rpx;
+}
+.memberPrice{
+  width: 80rpx;
+  height:35rpx;
+  margin-left: 25rpx;
+}
+.saleNum{
+  position: absolute;
+  color: #999;
+  font-size: 24rpx;
+  right:0;
+  bottom:37rpx;
+}
+.notMember{
+  margin-top: 65rpx;
+}
+.isMember{
+  margin-top: 40rpx;
+}

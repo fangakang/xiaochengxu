@@ -1,0 +1,41 @@
+<view class="body">
+  <view class="msgContent">
+    <image class="headBg" src='../../image/headBg.png'></image>
+    <view class="personMsg">
+      <view class="photo">
+        <image src="{{giveUser.avatarurl}}"></image>
+      </view>
+      <view class="nickName">{{giveUser.nickname}}</view>
+      <view class="thanks">
+        {{recoedd.givewish}}
+      </view>
+    </view>
+    <view class="giftMsg" wx:if="{{card}}">
+      <view>
+        <image src="{{cardDetail.background_loc_url}}"></image>
+        <view class="giftName">{{giftList[0].newtitle}}</view>
+        <view class="useNotice">已存入到账户，可用于到店支付</view>
+        <view class="send">我也要送</view>
+      </view>
+    </view>
+  </view>
+  <view class="giftList">
+    <view class="giftHead">
+      <image src='../../image/line.png'></image>
+        <view class='sendPart'>送出<span>{{hanum}}/{{total}}</span>份礼品</view>
+        <image src='../../image/line.png'></image>
+    </view>
+    <view class="listContent">
+      <view class="gift" wx:for="{{giftList}}">
+        <view class="fl giftImg">
+          <image src="{{item.backimage}}"></image>
+        </view>
+        <view class="fl nameDate">
+          <view class="name">{{item.newtitle}}</view>
+          <view class="date">{{item.addtime}}</view>
+        </view>
+        <view class="fr reeivePeople">{{item.wx_name}}</view>
+      </view>
+    </view>
+  </view>
+</view>

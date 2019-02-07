@@ -1,0 +1,67 @@
+<view class="wholeContent">
+  <view class="buyMsg">
+    <view class='giftCard' style="background-image:url({{cardDetail[0].background_loc_url}})">
+      <image class="logo" src="{{cardDetail[0].logo_url}}"></image>
+      <view class="nameTitle">
+        <view class="brand_name">{{cardDetail[0].brand_name}}</view>
+        <view class="brand_title">{{cardDetail[0].cardtitle}}</view>
+      </view>
+    </view>
+    <view class="title">{{cardDetail[0].cardtitle}}</view>
+    <view class="total">
+      <view class="totalMoney">
+        <view class="subTitle f24">总面值</view>
+        <view class="money">
+          <view class="f24">￥</view>
+          <view class="f50">{{cardDetail[0].price}}</view>
+        </view>
+      </view>
+      <view class="totalSheets">
+        <view class="subTitle f24">总张数</view>
+        <view class="sheets">
+          <view class="f50">{{cardDetail[0].hadm}}</view>
+          <view class="f24">张</view>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="giftList f26">
+      <view class="giftName">100元礼品卡</view>
+      <view class="part">x1</view>
+    </view> -->
+  </view>
+  <view class="description">
+    <view class="line">
+      <view class="lineName">有效时间</view>
+      <view>永久有效</view>
+    </view>
+    <view class="line">
+      <view class="lineName">使用门店</view>
+      <navigator class="w75">查看门店<view class="iconfont icon-icon"></view></navigator>
+    </view>
+    <view class="line">
+      <view class="lineName use">使用须知</view>
+      <view class="useNotice w75">
+        {{cardDetail[0].description}}
+      </view>
+    </view>
+    <view class='line'>
+      <view class="lineName">特权说明</view>
+      <view>{{cardDetail[0].privilege}}</view>
+    </view>
+  </view>
+</view>
+<view class="footer">
+    <view class="send" bindtap='send'>
+      <view class="iconfont icon-fenxiang"></view>
+      转赠
+    </view>
+    <!-- <view class="receive">
+      <view class="iconfont icon-xiazai"></view>
+      领取到卡包
+    </view> -->
+    
+    <view class="recharge" bindtap='recharge'>
+      <view class="iconfont icon-qia"></view>
+      充值到会员卡
+    </view>
+  </view>

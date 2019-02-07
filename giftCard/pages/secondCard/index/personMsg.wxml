@@ -1,0 +1,112 @@
+
+<form wx:if="{{loadComplete}}" bindsubmit="formSubmit">
+  <view class="title">请确认信息</view>
+  <view class="editContent">
+    <view wx:if="{{tempInfo!=''}}">
+      <view class="label" wx:for="{{tempInfo}}">
+          <view class="labName">{{codeInfo[item.name]}}</view>
+          <view class="labContent">{{item.value}}</view>
+      </view>
+    </view>
+    <view wx:if="{{richInfo!=''}}">
+      <view class="label" wx:for="{{richInfo}}">
+          <view class="labName">{{item.name}}</view>
+          <view class="labContent">{{item.value}}</view>
+      </view>
+    </view>
+    <view class="label" wx:for="{{merchantField}}">
+      <view class="labName"><span wx:if="{{item.ismust!=0}}" class="must">*</span>{{item.title}}</view>
+      <!-- type==1日期类型 -->
+      <view class="labContent" wx:if="{{item.type==1}}">
+        <picker mode="date" data-id="{{index}}" bindchange="bindDateChange">
+          <view class="picker">
+            <span wx:if="{{item.fvalue==''}}">请选择时间</span>
+            <span wx:if="{{item.fvalue!=''}}">{{item.fvalue}}</span>
+          </view>
+          <input class="hide" name="{{item.name}}" value="{{item.fvalue}}"></input>
+        </picker>
+        <view class="iconfont icon-icon"></view>
+      </view>
+      <!-- type==2单选类型 -->
+      <view class="labContent"  wx:if="{{item.type==2}}">
+        <picker bindchange="bindPickerChange" data-id="{{index}}" value="{{index}}" range="{{item.selectVal}}">
+          <view class="picker" >
+            {{item.selectVal[item.index]}}
+          </view>
+        </picker>
+        <view class="iconfont icon-icon"></view>
+        <input class="hide" name="{{item.name}}" value="{{item.fvalue}}"></input>
+      </view>
+      <!-- type==3多选类型 -->
+      <view class="labContent" data-index="{{index}}" wx:if="{{item.type==3}}" bindtap="multiSelect">
+        <view data-val="{{item.value}}"  class="multiple {{item.stype?'selected':''}}" wx:for="{{item.typeall}}">{{item.match}}</view>
+        <input class="hide" name="{{item.name}}" value="{{item.fvalue}}"></input>
+      </view>
+      <!-- type==4普通文本 -->
+      <view class="labContent" wx:if="{{item.type==4&&item.name!='carnum'}}">
+        <input data-id="{{index}}" bindinput='textInput' value="{{item.fvalue}}" placeholder='请输入{{item.title}}' name="{{item.name}}" type="text"/>
+      </view>
+      <!-- type==4车牌号 -->
+      <view class="labContent car" wx:if="{{item.type==4&&item.name=='carnum'}}">
+        <view bindtap="numChoose" data-index='{{index}}' class="carNo {{index==7?'newEnergy':''}} {{target===index?'active':''}}" wx:for="{{carNumArr}}">
+          <span wx:if="{{index!=7}}">{{item}}</span>
+          <view wx:if="{{index==7&&item==''}}">
+            <view class="logo">+</view>
+            <view class="word">新能源</view>
+          </view>
+          <span wx:if="{{index==7&&item!=''}}">{{item}}</span>
+        </view>
+        <input class="hide" name="{{item.name}}" value="{{carNo}}"></input>
+      </view>
+      <!-- type==5省市区 -->
+      <view class="labContent input" wx:if="{{item.type==5}}">
+        <input placeholder="选择" value="{{province}}-{{city}}-{{county}}" focus="{{focus}}" bindfocus="open" />
+      </view>
+    </view>
+    <view class="lab payActive" wx:if="{{wx_coupon.payactive==2}}">
+        <view class="labName">付费金额</view>
+        <view class="labContent">
+          {{wx_coupon.paymoney}}元
+        </view>
+      </view>
+    <view class="submit">
+      <button class="submitBtn" formType="submit">激活会员卡</button>
+    </view>
+  </view>
+  <view wx:if="{{condition}}"  class="citypicker">
+    <view class="cityHead">
+      <view class='cityTitle'>请选择省市区<view bindtap='open'>确定</view></view>
+    </view>
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;" value="{{value}}" bindchange="bindChange" class="citybody">
+      <picker-view-column>
+        <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;" data-code="{{item.code}}">{{item.name}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;" data-code="{{item.code}}">{{item.name}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;" data-code="{{item.code}}">{{item.name}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+  <view class="keyBord" wx:if="{{keyBord}}">
+    <view class="bordHead">
+      <view class="close">
+        <view bindtap="closeKeyBord">关闭</view>
+      </view>
+    </view>
+    <view class="bordBody">
+      <view class="province" wx:if="{{provinceBord}}">
+        <view bindtap="selectProvince" class="provinceSelect" data-val="{{item}}" wx:for="{{provinceList}}">{{item}}</view>
+        <view bindtap="deleteNum" class="delete provinceSelect" data-val="0">删</view>
+      </view>
+      <view class="numWord" wx:if="{{numBord}}">
+        <view bindtap="selectNum" class="num {{target==1?'disabled':''}}" data-type="number" data-val="{{item}}" wx:for="{{numArr}}">{{item}}</view>
+        <view bindtap="selectNum" class="englishWord" data-type="english" data-val="{{item}}" wx:for="{{wordArr}}">{{item}}</view>
+        <view bindtap="selectNum" class="new {{target!=6?'disabled':''}}" data-type="special" data-val="{{item}}" wx:for="{{newEnergyArr}}">{{item}}</view>
+        <view bindtap="deleteNum" class="delete" data-val="0">删</view>
+      </view>
+    </view>
+  </view>
+</form>
+

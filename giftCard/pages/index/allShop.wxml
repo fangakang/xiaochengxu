@@ -1,0 +1,17 @@
+<view class="body">
+  <view class="title">
+    仅显示离你最近的30家门店
+  </view>
+  <view class="shopList" wx:for="{{shopList}}">
+    <view class="fl shopContent">
+      <view class="shop">
+        <view class="name">{{item.business_name}}</view>
+        <view class="distance">{{item.juli}}米</view>
+      </view>
+      <view class="address">{{item.address}}</view>
+    </view>
+    <view class="fr">
+      <view bindtap="openLocation" data-name="{{item.business_name}}" class="iconfont icon-iconfontsiglyphpinlocation2" data-latitude="{{item.latitude}}" data-longitude="{{item.longitude}}"></view>
+    </view>
+  </view>
+</view>

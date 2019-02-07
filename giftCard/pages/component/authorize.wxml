@@ -1,0 +1,10 @@
+<view class="authorizeMask" hidden='{{modalHidden}}'>
+  <view class="personMsg">
+    <view class="authorizeNotice">
+      为了正常体验礼品卡小程序，请先用户授权
+    </view>
+    <view class="authorizeFooter">
+      <button bindtap='modal_click_Hidden' class="getUserInfo" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权</button>
+    </view>
+  </view>
+</view>

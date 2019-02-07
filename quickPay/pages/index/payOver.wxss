@@ -1,0 +1,45 @@
+/* pages/index/payOver.wxss */
+@import '../../icon/iconfont.wxss';
+.logo{
+  width:160rpx;
+  height:160rpx;
+  border-radius: 50%;
+  box-shadow: 0rpx 0rpx 20rpx #ddd;
+  margin: 0 auto;
+  margin-top: 70rpx;
+}
+.logo image{
+  width:160rpx;
+  height:160rpx;
+  border-radius: 50%;
+}
+.beneficiary{
+  text-align: center;
+  color:#333;
+  font-size: 34rpx;
+  margin-top: 45rpx;
+}
+.payPrice{
+  text-align: center;
+  margin: 70rpx 0 20rpx 0;
+  color: #1fb822;
+  font-size: 50rpx;
+}
+.payPrice .iconfont{
+  font-size: 50rpx;
+}
+.oldPrice{
+  text-align: center;
+  color: #999;
+  font-size: 28rpx;
+}
+.oldPrice .iconfont{
+  font-size: 28rpx;
+  text-decoration: line-through;
+}
+.closeBtn{
+  width: 90%;
+  color: #fff;
+  background: #1fb822;
+  margin-top: 115rpx;
+}

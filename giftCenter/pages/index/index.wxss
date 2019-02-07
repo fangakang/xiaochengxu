@@ -1,0 +1,93 @@
+@import "../../icon/iconfont.wxss";
+.head{
+  background: #f24c36;
+  color:#fff;
+  text-align: center;
+  padding-top: 20rpx;
+  padding-bottom: 40rpx; 
+  position: relative;
+}
+.head .photo{
+  width: 145rpx;
+  height:145rpx;
+  border-radius: 50%;
+  border: 6rpx solid #ffbab1;
+  margin: 0 auto
+}
+.photo image{
+  width: 145rpx;
+  height:145rpx;
+  border-radius: 50%;
+}
+.name{
+  font-size: 36rpx;
+  margin-top: 15rpx;
+  margin-bottom: 30rpx;
+}
+.money{
+  font-size: 50rpx;
+}
+.money span{
+  font-size: 36rpx;
+}
+.use{
+  display: inline-block;
+  line-height: 70rpx;
+  width:400rpx;
+  text-align: center;
+  background: #fff;
+  color:#f24c36;
+  font-size: 28rpx;
+  border-radius:35rpx;
+  margin-top: 30rpx;
+}
+.recharge{
+  position: absolute;
+  width:140rpx;
+  line-height: 58rpx;
+  text-align: center;
+  border-top-left-radius: 29rpx;
+  border-bottom-left-radius: 29rpx;
+  background: #ffd3cd;
+  color:#f24c36;
+  font-size: 26rpx;
+  right:0;
+  bottom:120rpx;
+}
+.menuList{
+  background: #fff;
+  margin-top: 20rpx;
+  padding-left: 30rpx;
+}
+.line{
+  overflow: hidden;
+  padding: 35rpx 30rpx 35rpx 0;
+  border-bottom:2rpx solid #eee;
+}
+.line:last-child{
+  border-bottom:none;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float:right;
+  text-align: right;
+}
+.lineName{
+  font-size: 30rpx;
+  color:#202020;
+}
+.lineName .iconfont{
+  display: inline-block;
+  margin-right: 20rpx;
+}
+.view{
+  color: #ccc;
+  font-size: 24rpx;
+}
+.view .iconfont{
+  display: inline-block;
+  margin-left: 15rpx;
+  font-size: 24rpx;
+}

@@ -1,0 +1,268 @@
+    /**index.wxss**/
+page{
+  background: #fff;
+}
+.bodyWrap{
+	padding-top: 104rpx;
+}
+.bodyWrap.noMember{
+	padding-top: 204rpx;
+}
+    .bodyWrap.noImg{
+	    padding-top: 0;
+    }
+.scrollWrap{
+	height:1100rpx;
+}
+.scrollWrap.scrollMem{
+	height:970rpx;
+}
+    .scrollWrap.scrollnoImg{
+	    height:1200rpx;
+    }
+.onceCard_top{
+  padding: 0 34rpx 30rpx;
+	position: fixed;
+	top:0;
+  background: #fff;
+  z-index: 9999;
+  width: 100%;
+}
+.tip_icon image{
+  width:24rpx;
+  height:24rpx;
+  margin-right: 4rpx;
+  margin-top: 4rpx;
+}
+.tip_icon{
+  display: inline-block;
+}
+.tip_text{
+  font-size: 24rpx;
+  color: rgb(102,102,102);
+  line-height: 34rpx;
+  padding-top:24rpx;
+}
+.uploadImg{
+  display: inline-block;
+  color: rgb(65,156,251);
+}
+.onceCard_list{
+  padding-top: 30rpx;
+}
+.onceCard_li{
+  position: relative;
+  padding:18rpx 0 10rpx;
+}
+.card_tip{
+  text-align: center;
+}
+.card_tip image{
+  width:590rpx;
+  height:200rpx;
+}
+.card_msg{
+  width:676rpx;
+  height:200rpx;
+  position: absolute;
+  top:0;
+  left:40rpx;
+  padding: 24rpx 27rpx 0;
+}
+.msg_img image{
+  width:676rpx;
+  height:200rpx;
+  position: absolute;
+  top:0;
+  left:0;
+}
+.head_img image{
+  width:154rpx;
+  height:154rpx;
+  border-radius: 50%;
+}
+.detail_text{
+  width:445rpx;
+}
+.card_detail {
+  position: relative;
+  z-index: 999;
+  color: #fff;
+}
+.detail_title{
+  font-size: 32rpx;
+  line-height: 32rpx;
+}
+.detail_subtitle{
+  font-size: 26rpx;
+  padding: 20rpx 0 0;
+  line-height: 25rpx;
+}
+.use_time image{
+  width:24rpx;
+  height:24rpx;
+  margin-right: 7rpx;
+}
+.time{
+  font-size: 22rpx;
+  line-height: 17rpx;
+}
+.times_num{
+  font-size: 24rpx;
+  line-height: 26rpx;
+}
+.goBuy image{
+  width:47rpx;
+  height: 47rpx;
+}
+.buyText{
+  font-size: 28rpx;
+  padding-right: 15rpx;
+}
+.time_wrap{
+  padding-top: 30rpx;
+  line-height: 17rpx;
+}
+.right{
+  padding-top: 14rpx;
+}
+.nouse .card_detail {
+  color: rgb(102,102,102);
+}
+.can_use{
+  font-size: 28rpx;
+  /* line-height:50rpx; */
+  height:50rpx;
+}
+.head_img{
+  border-radius: 50%;
+}
+.use_num{
+  font-size: 65rpx;
+  line-height:50rpx;
+  font-weight: bold;
+}
+.seeOther{
+  line-height: 60rpx;
+  font-size:30rpx;
+  text-align: center;
+}
+
+.modal{
+  position: fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+	background: rgba(0,0,0,0.6);
+	z-index: 999;
+}
+.content{
+	background: #f9f9f9;
+	color: #333;
+	-webkit-border-radius: 20rpx;
+	-moz-border-radius: 20rpx;
+	border-radius: 20rpx;
+	width:560rpx;
+	margin: auto;
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+}
+.content_text{
+	text-align: center;
+	padding: 90rpx 0;
+  font-size: 32rpx;
+}
+.modal_footer{
+	line-height:100rpx;
+	border-top:1px solid #e1e1e1;
+	width:100%;
+	font-size: 30rpx;
+}
+.footer_btn{
+	width:50%;
+	text-align: center;
+}
+.modal_footer .footer_btn:first-child{
+	border-right:1px solid #e1e1e1;
+}
+.authorize{
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom: 0;
+	background: rgba(0,0,0,.5);
+	z-index: 200000;
+}
+.authorizeModal{
+	background: #fff;
+	position: fixed;
+	padding: 20rpx;
+	top:100rpx;
+	left:100rpx;
+	width:500rpx;
+	border-radius: 10rpx;
+}
+.authorizeMsg{
+	text-align: center;
+	font-size: 30rpx;
+	color:#999;
+	line-height: 45rpx;
+}
+.getUserInfo{
+	background: #1aad19;
+	color: #fff;
+	font-size: 30rpx;
+	width:260rpx;
+	line-height: 80rpx;
+	margin-top: 30rpx;
+}
+.getUserInfo .iconfont {
+	font-size: 38 rpx;
+	float: left;
+	margin-left: 15 rpx;
+	margin-top: 3 rpx;
+}
+.tab_nav{
+  justify-content: center;
+  margin-top: 40rpx;
+	width:100%;
+}
+.tab_li{
+      flex-grow: 1;
+      text-align: center;
+      font-size: 30rpx;  
+     
+}
+.tab_li view{
+ /* width: 180rpx; */
+      line-height: 70rpx;
+      background: #e1e1e1;
+      /* border-radius: 10rpx; */
+      margin: auto;
+      border-left:1px solid #efefef;
+}
+
+.tab_li.active view{
+  background:rgb(65,156,251);
+  color: #fff;
+  border:none;
+}
+.no_list{
+	line-height: 70rpx;
+	text-align: center;
+	font-size: 30rpx;
+}
+.emptyList{
+	font-size: 30rpx;
+	text-align: center;
+}

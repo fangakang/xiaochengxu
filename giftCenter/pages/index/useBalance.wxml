@@ -1,0 +1,13 @@
+<view class="head">
+  <view class="title">可用余额（元）</view>
+  <view class="money">{{balance}}</view>
+  <span class="forever">永久有效</span>
+</view>
+<view class="body">
+  <view class="tip">到店请出示礼品卡</view>
+  <canvas class="myQrcode" style="width:400rpx;height:400rpx;" canvas-id="myQrcode"></canvas>
+  <view class="number">{{number}}</view>
+  <view class="change">
+    <span class="iconfont icon-shuaxin"></span>30秒后更换新核销码
+  </view>
+</view>

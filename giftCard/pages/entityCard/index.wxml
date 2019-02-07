@@ -1,0 +1,24 @@
+<view class="content" wx:if="{{loadComplete}}">
+  <view class="notice">
+  您有张来自{{merchant.wxname}}的礼品卡，可将此线下实体卡通过卡密的方式变成电子实体卡（可在微信卡包查看），卡密在礼品卡的背后，刮开涂层即可看见。
+  </view>
+  <view class="enterPass">
+    <view class="title">请输入卡密：</view>
+    <input bindinput='enterPass' value='{{inputVal}}' bindfocus="focus" bindblur='blur' password class="password {{focus?'focus':''}}" type="number" maxlength='18' placeholder="请输入18位卡密"></input>
+    <view class="errNotice" wx:if="{{enterErr}}">* 抱歉， 你输入的卡密不正确，请重新输入</view>
+  </view>
+  <view class="btn-group">
+    <view class="notMember" wx:if="{{!receive}}">您当前还不是会员，请先<view bindtap='receiveCard'>领取会员卡</view></view>
+    <button bindtap="recharge">充值到会员卡</button>
+  </view> 
+</view>
+<view class="authorizeMask" wx:if="{{!authorize}}">
+  <view class="personMsg">
+    <view class="authorizeNotice">
+      为了正常体验实体卡小程序，请先用户授权
+    </view>
+    <view class="authorizeFooter">
+      <button bindtap='modalHidden' class="getUserInfo" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权</button>
+    </view>
+  </view>
+</view>

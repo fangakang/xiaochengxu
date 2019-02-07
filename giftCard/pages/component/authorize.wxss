@@ -1,0 +1,37 @@
+/* pages/component/authorize.wxss */
+.authorizeMask{
+  position: fixed;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  background: rgba(0,0,0,.5)
+}
+.personMsg{
+  background: #fff;
+  width:650rpx;
+  border-radius: 10rpx;
+  margin:0 auto;
+  text-align: center;
+  margin-top: 300rpx
+}
+.authorizeTitle{
+  border-bottom: 1rpx solid #ddd;
+  font-size: 34rpx;
+  color:#333;
+  padding:20rpx 0;
+}
+.authorizeNotice{
+  font-size: 30rpx;
+  color:#333;
+  padding: 90rpx;
+}
+.getUserInfo{
+  background: #f24c36;
+  color:#fff;
+  font-size: 32rpx;
+  width:225rpx;
+}
+.authorizeFooter{
+  padding-bottom: 20rpx;
+}

@@ -1,0 +1,130 @@
+/* pages/index/payPage.wxss */
+@import '../../icon/iconfont.wxss';
+page{
+  background: #efefef;
+}
+button::after{
+  border: none;
+}
+.notice {
+  font-size:26rpx;
+  color:#999;
+  text-align:center;
+  padding:15rpx;
+}
+.notice span{
+  color: #fb2d37
+}
+.personMsg{
+  background: #fff;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  color:#333;
+}
+.personTitle{
+  color: #333;
+  font-size: 30rpx;
+  /* padding-bottom: 10rpx; */
+  /* border-bottom: 1rpx solid #efefef; */
+}
+.phoneNum{
+  font-size: 30rpx;
+}
+.personTitle .iconfont{
+  font-size: 38rpx;
+  display:inline-block;
+  margin-right:15rpx;
+
+}
+.phoneTo{
+  color: #666;
+  font-size: 30rpx;
+  padding: 20rpx;
+  padding-bottom: 0;
+}
+.orderMsg{
+  padding: 20rpx;
+  background: #fff;
+}
+.orderTitle{
+  color: #666;
+  font-size: 30rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1rpx solid #efefef;
+  margin-bottom: 10rpx;
+}
+.orderTitle .iconfont{
+  font-size: 34rpx;
+}
+.orderNo,.orderTime{
+  font-size: 24rpx;
+  color:#666;
+  margin-bottom: 15rpx;
+}
+.goodsMsg{
+  background: #efefef;
+  margin-top: 20rpx;
+  padding: 20rpx;
+  border-radius: 10rpx;
+}
+.goodsMsg image{
+  width:100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+}
+.goodsName{
+  font-size: 28rpx;
+  /* color:#333;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical; */
+  margin-left: 30rpx;
+  width:490rpx;
+  color: #666;
+  margin-top:5rpx;
+  /* margin-top: 30rpx; */
+}
+.leaveMsg{
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #efefef;
+}
+.leaveMsg span{
+  margin-top: 5rpx;
+}
+.msgInput{
+  width: 500rpx;
+  text-align: right;
+  float: right;
+}
+.total{
+  text-align: right;
+  font-size: 28rpx;
+  color:#666;
+  padding-top: 20rpx;
+}
+.total span{
+  font-size: 36rpx;
+  color: #fb2d37;
+}
+.footer{
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background: #fb2d37;
+  z-index: 10;
+  color: #fff;
+  font-size: 34rpx;
+  text-align: center;
+  padding: 29rpx;
+  border-radius: 0;
+  line-height: 1;
+}
+.total .iconfont{
+  font-size: 36rpx;
+}

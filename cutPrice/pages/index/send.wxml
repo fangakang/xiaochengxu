@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="codeContent">
+    <view class="mainBody">
+      <view class="close">
+        <navigator url="index" hover-class="none" class="iconfont icon-guanbi"></navigator>
+      </view>
+      <!-- <view class="picContent">
+        <image src="../../image/sharePic.png"></image>
+      </view>
+      <view class="qrContent">
+        <view class="qrCode fl">
+          <image src="../../image/qrCode.png"></image>
+        </view>
+        <view class="word">
+          <view class="spot">长按识别小程序码，即可<view class="help">帮我砍价</view></view>
+          <view class="thanks">感恩我的世界有一个美丽的你</view>
+        </view>
+      </view> -->
+      <image class="pic" src='{{imgUrl}}'></image> 
+    </view>
+  </view>
+  <view class="footer">
+    <view class="footTitle">保存图片至本地相册转发到朋友圈</view>
+    <button class="footBtn shareTo fl" open-type="share">分享给好友</button>
+    <view class="footBtn save fl" bindtap="saveImg">保存到本地</view>
+  </view>
+</view>

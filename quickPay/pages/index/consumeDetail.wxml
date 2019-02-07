@@ -1,0 +1,20 @@
+
+<view class="myPage" wx:if="{{loadComplete}}">
+  <view class="shopList">
+    <view class="shopContent clearfix" wx:for="{{orderData}}">
+        <view class="fl shopMsg">
+          <view class="shopName">{{item.storename}}</view>
+          <view class="time">{{item.time}}</view>
+        </view>
+        <view class="fr">
+          <view class="{{item.changeMoney>0?'plus':'less'}} money">{{item.changeMoney}}</view>
+          <view class="payType">{{item.payType}}</view>
+        </view>
+    </view>
+  </view>
+  <loadAll wx:if="{{loadAll}}"></loadAll> 
+  <view class="noData" wx:if="{{noData}}">
+    <image src="../../image/noData.png"></image>
+    <view>暂无数据...</view>
+  </view>
+</view>

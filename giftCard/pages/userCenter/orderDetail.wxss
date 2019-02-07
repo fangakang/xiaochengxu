@@ -1,0 +1,121 @@
+@import "../../icon/iconfont.wxss";
+.buyMsg{
+  padding:60rpx;
+  background: #fff;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+.buyMsg image{
+  width:550rpx;
+  height:300rpx;
+  margin: 0 auto;
+}
+.title{
+  font-size: 32rpx;
+  color:#666;
+  margin-top: 30rpx;
+}
+.total{
+  display: flex;
+  margin-top: 35rpx;
+  margin-bottom: 55rpx;
+}
+.totalMoney{
+  border-right:2rpx solid #ddd
+}
+.total>view{
+  flex:1;
+}
+.money view,.sheets view{
+  display: inline-block;
+  color: #333;
+}
+.f50{
+  font-size: 50rpx;
+}
+.f24{
+  font-size: 24rpx;
+}
+.f26{
+  font-size: 26rpx;
+}
+.total .subTitle{
+  color:#999;
+}
+.giftList{
+  color:#999;
+  display: flex;
+  margin-bottom: 30rpx;
+}
+.giftList:last-child{
+  margin-bottom: 0px;
+}
+.giftList view{
+  flex:1;
+}
+.giftName{
+  text-align: left
+}
+.part{
+  text-align: right;
+}
+.description{
+  padding:0rpx 35rpx;
+  background: #fff; 
+}
+.line{
+  padding:30rpx 0;
+  border-bottom:1px solid #eee;
+}
+.line:last-child{
+  border-bottom:none
+}
+.line view,.line navigator{
+  display: inline-block;
+  font-size: 28rpx;
+  color:#666;
+}
+.line .lineName{
+  width:24%;
+  text-align: left;
+}
+.line .iconfont{
+  font-size: 28rpx;
+  float: right;
+  margin-top: 8rpx;
+}
+.fr{
+  float:right;
+  margin-top: 10rpx;
+}
+.cardMsg{
+  width: 490rpx;
+  height:240rpx;
+  margin: 0 auto;
+  border-radius:10rpx;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 30rpx;
+  overflow: hidden;
+  position: relative;
+}
+.cardMsg .logo{
+  width:90rpx;
+  height:90rpx;
+  border-radius:50%;
+  float:left;
+}
+.nameTitle{
+  float: left;
+  text-align:left;
+  margin-left:20rpx;
+  margin-top: 5rpx
+}
+.brand_name{
+  font-size: 32rpx;
+  color:#fff;
+}
+.brand_title{
+  font-size: 24rpx;
+  color:#fff;
+}

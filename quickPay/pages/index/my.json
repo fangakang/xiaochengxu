@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "小额储值买单",
+  "usingComponents": {
+    "footer": "../components/footer"
+  }
+}

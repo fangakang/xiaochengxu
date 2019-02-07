@@ -1,0 +1,41 @@
+<view class="body">
+    <view class="title">
+      <view class="sendHeart active">送心意</view>
+      <view class="lottery" style='display:none'>发起抽奖</view>
+    </view>
+    <view class="out">
+      <view class="mainContent">
+        <view class="swiperContent">
+          <!-- <swiper class="swiper-box" data-id="{{index}}" bindchange="swiperChange" indicator-active-color="{{indicatorActiveColor}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+            <block wx:for="{{cardDetail}}">
+              <swiper-item>
+                <image src="{{item.background_loc_url}}" class="slide-image" width="355" height="150"/>
+              </swiper-item>
+            </block>
+          </swiper> -->
+          <image src="{{cardDetail[0].background_loc_url}}" class="slide-image" width="355" height="150"/>
+        </view>
+        <!-- <view class="swiperTitle" wx:for="{{cardDetail}}" wx:if="{{item.flasg}}">{{item.title}}</view> -->
+        <view class="swiperTitle" >{{cardDetail[0].title}}</view>
+        <view class="sendLine">
+          <view class="lineTitle fl">赠送心意（份）</view>
+          <view class="part">{{sumNum}}</view>
+        </view>
+        <view class="sendLine">
+          <view class="lineTitle fl">每人领取（份）</view>
+          <view class="inputNum">
+            <!-- <input bindinput="inputNum" value='1' class="{{errorNum==true?'error':''}}" type="number"/> -->
+              1
+          </view>
+          <view class="noticeMsg {{errorNum==true?'errorShow':'errorHide'}}">*已超过份数，最多可赠送{{sumNum}}位好友</view>
+        </view>
+        <view class="textInput">
+          <textarea col bindfocus="textAreaFocus" bindblur="textAreaBlur" bindinput="inputWord" placeholder='请输入祝福语' value="{{thankWord}}"></textarea> 
+        </view>
+        <button class="sendBtn" open-type="share" wx:if="{{canSend}}">发送</button>
+        <button class="sendBtn" wx:if="{{!canSend}}" bindtap='notSend'>发送</button>
+      </view>
+      <view class="bgLine"></view>
+    </view>
+</view>
+

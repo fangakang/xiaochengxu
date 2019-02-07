@@ -1,0 +1,16 @@
+<view class="body">
+  <image class="bgImg" src="../../image/successBg.png"></image>
+  <view class="mainContent">
+    <navigator url="/pages/index/index" class="close iconfont icon-cancel"></navigator>
+  <!-- 成功送出 -->
+    <view class="content sendSuccess">
+      <image src="../../image/successIcon.png"></image>
+      <view class="title">已成功送出礼品</view>
+      <view class="subTitle">
+        <view>未领取的礼品卡，将于24小时后原路返还给您，</view>
+        <view>您可以继续前往<view class='toIndex' bindtap='toIndex'>礼品中心</view>挑选其他礼品。</view>
+      </view>
+      <button bindtap='toIndex' class="continue">返回首页</button>
+    </view>
+  </view>
+</view>

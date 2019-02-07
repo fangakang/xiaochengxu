@@ -1,0 +1,153 @@
+/* pages/index/personPage.wxss */
+@import '../../icon/iconfont.wxss';
+page{
+  background: #efefef;
+}
+.personMsg{
+  margin-bottom: 20rpx;
+  position: relative;
+  height: 750rpx;
+}
+.headBg{
+  width: 750rpx;
+  height:290rpx;
+}
+.memberMsg{
+  position: absolute;
+  color: #fff;
+  top:20rpx;
+  left:30rpx;
+}
+.memberMsg image{
+  width:130rpx;
+  height:130rpx;
+  border-radius:50%;
+  margin-right: 40rpx;
+}
+.personMsg .name{
+  font-size: 36rpx;
+}
+.tabContent{
+   position: absolute;
+   width: 700rpx;
+   left:25rpx;
+   top:205rpx;
+}
+.superMember{
+  background: #fff;
+  border-radius:20rpx;
+  box-shadow: 0 0 10rpx #ddd;
+  padding: 30rpx 35rpx;
+  margin-bottom: 35rpx;
+}
+.myOrder{
+  background: #fff;
+  border-radius:20rpx;
+  box-shadow: 0 0 10rpx #ddd;
+}
+.myOrderTitle{
+  font-size: 30rpx;
+  color:#333;
+  padding:30rpx;
+  border-bottom:1rpx solid #efefef;
+}
+.myOrderTitle .fr{
+  color:#999;
+  font-size: 24rpx;
+}
+.myOrderTitle .icon-icon{
+  margin-top: 5rpx;
+}
+.orderType{
+  display: flex;
+  padding: 20rpx 0;
+  padding-bottom: 40rpx;
+}
+.type{
+  flex: 1;
+  text-align: center;
+  font-size: 30rpx;
+  color:#666;
+  position: relative;
+}
+.type .iconfont{
+  font-size:55rpx;
+  display: inline-block;
+  color:#fb2d37;
+}
+.type .iconfont span{
+  font-size: 24rpx;
+  position: absolute;
+  line-height: 30rpx;
+  width: 30rpx;
+  text-align: center;
+  border-radius: 50%;
+  border: 1rpx solid #fb2d37;
+  color:#fb2d37;
+  right:80rpx;
+  top:2rpx;
+  background: #fff;
+}
+.type .titleFont{
+  font-size: 30rpx;
+}
+
+.joinMember{
+  line-height: 50rpx;
+  color:#fff;
+  background: #ff7b76;
+  width: 235rpx;
+  text-align: center;
+  border-radius:25rpx;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+.superTitle{
+  font-size: 30rpx;
+  color: #333;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.vipLogo{
+  width: 35rpx;
+  height:35rpx;
+  float: left;
+  margin-right: 20rpx;
+  margin-top: 5rpx;
+}
+.superLeft{
+  width: 65%;
+}
+.superLeft .superSub{
+  padding-top: 30rpx;
+  font-size: 24rpx;
+  color:#9a9a9a;
+}
+.memberArea{
+  background: #222;
+  font-size:28rpx;
+  color: #fff;
+  margin-top: 30rpx;
+}
+.memberArea::after{
+  border: none;
+}
+.myPoint{
+  line-height: 50rpx;
+  color: #fff;
+  background: #ff7b76;
+  padding: 0 25rpx;
+  border-top-left-radius: 25rpx;
+  border-bottom-left-radius: 25rpx;
+  position: absolute;
+  right:0;
+  top:55rpx;
+  font-size: 24rpx;
+}
+.myPoint .iconfont{
+  float: right;
+  margin-top: 3rpx;
+}
+.personMsg .name.notMember{
+  margin-top: 40rpx;
+}

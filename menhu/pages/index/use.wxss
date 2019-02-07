@@ -1,0 +1,144 @@
+/* pages/index/use.wxss */
+@import '../../icon/iconfont.wxss';
+page{
+  background: #efefef;
+}
+.content{
+  padding:20rpx;
+  padding-bottom: 120rpx;
+}
+.orderDetail{
+  background: #fff;
+  border-radius: 10rpx;
+}
+.orderNum{
+  font-size: 28rpx;
+  color:#333;
+  padding:20rpx;
+  border-bottom: 10rpx dotted #ddd;
+}
+.qrCode{
+  text-align: center;
+  margin-top: 60rpx;
+}
+.qrCode image{
+  width: 150px;
+  height:150px;
+  margin: 0 auto;
+}
+.name{
+  font-size: 28rpx;
+  text-align: center;
+  color: #333;
+  width:650rpx;
+  margin: 30rpx auto;
+}
+.money{
+  font-size: 40rpx;
+  text-align: center;
+  color: #fb2d37;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx dashed #ddd;
+}
+.money .iconfont{
+  font-size: 40rpx;
+}
+.line{
+  font-size: 30rpx;
+  color: #333;
+  padding:0 40rpx;
+  line-height: 70rpx;
+}
+.writeOff{
+  background: #fff;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+}
+.back{
+  position: fixed;
+  bottom:0;
+  right:0;
+  left:0;
+  background: #fb2d37;
+  color: #fff;
+  text-align: center;
+  font-size: 34rpx;
+  line-height: 80rpx;
+}
+.myQrcode{
+  margin: 0 auto;
+  margin-top: 30rpx;
+  z-index: 200
+}
+
+/* 2018.8.1 */
+.back{
+  line-height: 100rpx;
+}
+.codeContent{
+  position: relative;
+}
+.mask{
+  width:150px;
+  height:150px;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  text-align: center;
+  font-size: 34rpx;
+  border: 1rpx solid transparent;
+  position: relative;
+}
+.mask image{
+  width:150px;
+  height:150px;
+}
+.mask>view{
+  position: absolute;
+  width: 100%;
+  top: 65px;
+  text-align: center; 
+}
+
+.authorize{
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 200;
+}
+.authorizeModal{
+  background: #fff;
+  position: fixed;
+  padding: 20rpx;
+  top:300rpx;
+  left:110rpx;
+  width:500rpx;
+  border-radius: 10rpx;
+}
+.authorizeMsg{
+  text-align: center;
+  font-size: 30rpx;
+  color:#999;
+  line-height: 45rpx;
+}
+.getUserInfo{
+  background: #1aad19;
+  color: #fff;
+  font-size: 30rpx;
+  width:260rpx;
+  line-height: 80rpx;
+  margin-top: 30rpx;
+}
+.getUserInfo .iconfont{
+  font-size:38rpx;
+  float:left;
+  margin-left:15rpx;
+  margin-top:3rpx;  
+}
+.authorizeMsg image{
+  width:250rpx;
+  height:250rpx;
+  margin-top:20rpx;
+}

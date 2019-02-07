@@ -1,0 +1,52 @@
+<view class="content">
+    <view class="personMsg clearix">
+      <image class="headBg" src="../../image/headBg.png"></image>
+      <view class="myPoint" style='display:none'>
+        <span>我的积分：0</span>
+        <span class="iconfont icon-icon"></span>
+      </view>
+      <view class="memberMsg">
+        <image class="fl" src='{{userInfo.avatarUrl}}'></image>
+        <view class="fl">
+          <view class="name {{userDetail.is_member==0?'':'notMember'}}">{{userInfo.nickName}}</view>
+          <view class="joinMember" bindtap="privilege" wx:if="{{userDetail.is_member==0}}">快加入{{cardInfo.title}}</view>
+        </view>
+      </view>
+      <view class="tabContent">
+        <view class="superMember clearix">
+          <view class="fl superLeft">
+            <view class="superTitle">
+              <image class="vipLogo" src="../../image/vipLogo.png"></image>
+              <span>{{cardInfo.title}}</span>
+            </view>
+            <view class='superSub'>会员专享特权·专属商品·好物折上折</view>
+          </view>
+          <view class="fr">
+            <button class="memberArea" bindtap="privilege">会员专区</button>
+          </view>
+        </view>
+        <view class="myOrder">
+          <view class="myOrderTitle clearix" data-type="0" bindtap='toList'>
+            <view class="fl">我的订单</view>
+            <view class="fr">查看我的订单<span class="iconfont icon-icon fr"></span></view>
+          </view>
+          <view class="orderType">
+            <view class="type notPay" bindtap='toList' data-type="1">
+              <view class="iconfont icon-qiabao"><span wx:if="{{willPay>0}}">{{willPay}}</span></view>
+              <view class="titleFont">未支付</view>
+            </view>
+            <view class="type use" bindtap='toList' data-type="2">
+              <view class="iconfont icon-youhuiquan1"><span wx:if="{{willUse>0}}">{{willUse}}</span></view>
+              <view class="titleFont">待使用</view>
+            </view>
+            <view class="type notPay" bindtap='toList' data-type="3">
+              <view class="iconfont icon-daishiyong"></view>
+              <view class="titleFont">已使用</view>
+            </view>
+          </view>
+      </view>
+    </view> 
+  </view>
+  
+  <footer page-num="{{page}}"></footer>
+</view>

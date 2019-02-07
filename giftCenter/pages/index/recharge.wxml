@@ -1,0 +1,19 @@
+<view class="head">
+    <view class="money">0.00</view>
+    <view class="balance">余额（元）</view>
+</view>
+<view class="content">
+  <view bindtap="select" class="priceContent {{item.flag==true?'choose':'notChoose'}}" data-id="{{index}}" wx:for="{{priceList}}">
+    <view class="oldPrice">￥{{item.oldPrice}}</view>
+    <view class="offerPrice">售价￥{{item.offerPrice}}</view>
+  </view>
+  <view class="inputMoney">
+    <span class="fl">其他</span>
+    <input type="digit" class="fl"></input>
+    <span class="yuan fr">元</span>
+  </view>
+</view>
+<view class="footer">
+  <view class="rechargeBtn">立即充值</view>
+  <view class="notice">点击充值即表示同意<navigator>《小猪店铺充返协议》</navigator>，知悉充值成功后不可退还</view>
+</view>

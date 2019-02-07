@@ -1,0 +1,221 @@
+@import "../../icon/iconfont.wxss";
+.nav{
+  display: flex;
+  background: #fff;
+  color:#333;
+  font-size: 28rpx;
+  padding:25rpx 0;
+  position: fixed;
+  width:750rpx;
+  z-index: 200;
+  top:0;
+}
+.navList{
+  flex:1;
+  text-align: center;
+}
+.navList span{
+  display: inline-block;
+  padding:10rpx 25rpx;
+  border-bottom: 6rpx solid #fff;
+}
+.navList .active{
+  border-bottom: 6rpx solid #f24c36;
+  color: #f24c36;
+}
+.first{
+  margin-top:130rpx;
+}
+.orderContent{
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.title{
+  padding: 20rpx 25rpx;
+  overflow: hidden;
+}
+.fl{
+  float:left;
+}
+.fr{
+  float:right;
+}
+.fr{
+  float: right;
+}
+.orderNum{
+  font-size: 24rpx;
+  color:#999;
+}
+.status{
+  font-size: 28rpx;
+  margin-top: 15rpx;
+}
+.waitPay{
+  color: #f24c36;
+}
+.alreadyPay{
+  color:#f90
+}
+.cancelPay,.reback{
+  color: #666;
+}
+.content,.cardContent{
+  padding:20rpx 20rpx 20rpx 45rpx;
+  background: #f8fafa;
+  overflow: hidden;
+  border-bottom: 2rpx solid #eee
+}
+.image{
+  width: 122rpx;
+  height:122rpx;
+  border:2rpx solid #eee;
+  position: relative;
+  margin-right: 20rpx;
+}
+.image .pic{
+  width: 122rpx;
+  height:122rpx;
+}
+.type{
+  position: absolute;
+  background: #f24c36;
+  color:#fff;
+  font-size: 20rpx;
+  padding: 5rpx 10rpx;
+  border-top-right-radius: 5rpx;
+  border-bottom-right-radius: 5rpx;
+  left:0;
+  top:10rpx;
+}
+.orderMsg{
+  position: relative;
+  height:122rpx;
+}
+.name{
+  font-size:26rpx;
+  color:#333;
+  width:515rpx;
+  position: absolute;
+  top:4rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.group{
+  overflow: hidden;
+  margin-top: 75rpx;
+  width:510rpx;
+}
+.price{
+  font-size:26rpx;
+  color:#333;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+.peopleNum{
+  font-size: 24rpx;
+  color:#999;
+}
+.time{
+  font-size: 22rpx;
+  color:#999;
+}
+.cutPrice{
+  margin-top: 90rpx;
+  font-size: 26rpx;
+  color:#333;
+}
+.secondPrice{
+  margin-top: 90rpx;
+  font-size: 26rpx;
+  color:#f90;
+}
+.orderFooter{
+  padding:25rpx;
+}
+.payMoney{
+  text-align: right;
+  color:#333;
+  font-size: 30rpx;
+}
+.payMoney span{
+  color: #f24c36
+}
+.payContent{
+  overflow: hidden;
+}
+.msgLeft{
+  font-size: 26rpx;
+  color: #f24c36;
+  margin-top: 15rpx;
+}
+.msgLeft .iconfont{
+  font-size: 26rpx;
+}
+.btnGroup .btn{
+  display: inline-block;
+  font-size:28rpx;
+  line-height: 60rpx;
+  width: 180rpx;
+  text-align: center;
+  border-radius:5rpx;
+  color:#888;
+  border:2rpx solid #888;
+}
+.cardImg{
+  width: 122rpx;
+  height:122rpx;
+  border:2rpx solid #eee;
+  position: relative;
+  margin-right: 20rpx;
+}
+.cardImg image{
+  width: 122rpx;
+  height:70rpx;
+  margin-top: 26rpx;
+}
+.cardTitle{
+  font-size: 26rpx;
+  color:#333;
+  margin-top: 4rpx;
+}
+.cardTitle span{
+  color: #f24c36;
+}
+.goodDetail{
+  font-size: 22rpx;
+  color:#999;
+  width:540rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  margin-top: 15rpx;
+}
+.time2{
+  font-size: 20rpx;
+  color:#888;
+  margin-top: 15rpx;
+}
+.continue{
+  color:#32c35e;
+}
+.endding{
+  color:#ababab;
+}
+.shopLogo{
+  width: 70rpx;
+  height:70rpx;
+  border-radius: 50%;
+  float: left; 
+}
+.shopMsg{
+  float: left;
+  margin-left: 10rpx;
+}
+.shopMsg .shopName{
+  font-size: 28rpx;
+  color:#333;
+  margin-top: 15rpx;
+}

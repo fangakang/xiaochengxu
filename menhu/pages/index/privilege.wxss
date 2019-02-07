@@ -1,0 +1,371 @@
+/* pages/index/privilege.wxss */
+@import "../../icon/iconfont.wxss";
+page{
+  padding-bottom: 100rpx;
+}
+.scrollBody{
+  padding: 0 30rpx;
+}
+button::after{
+  border:none;
+}
+.vipBg{
+  height:370rpx;
+  width:690rpx;
+}
+.headCard{
+  height:370rpx;
+  width:690rpx;
+  border-radius:10rpx;
+}
+.notMember,.member{
+  height:282rpx;
+  width:612rpx;
+  padding: 45rpx 40rpx;
+  background: rgba(0,0,0,.4);
+  border-radius:10rpx;
+}
+.photo image{
+  width:110rpx;
+  height:110rpx;
+  border-radius: 50%;
+}
+.nickName{
+  color: #fff;
+  margin-left: 30rpx;
+}
+.name{
+  font-size: 38rpx;
+  margin-bottom: 25rpx;
+}
+.subTitle{
+  font-size: 24rpx;
+}
+.money{
+  color:#fff;
+  font-size: 38rpx;
+}
+.headBottom{
+  color:#fff;
+}
+.memberNum{
+  font-size: 24rpx;
+  margin-top: 55rpx;
+  margin-bottom: 15rpx;
+}
+.memberNum span{
+  font-size: 38rpx;
+}
+.f22{
+  font-size: 22rpx;
+}
+.open{
+  margin-top: 65rpx;
+  color: #fff;
+  background: #fc2b31;
+  font-size: 30rpx;
+}
+.validaty{
+  font-size: 24rpx;
+  color: #fff;
+  position: relative;
+}
+.superVip{
+  display: inline-block;
+  font-size: 20rpx;
+  color: #fec554;
+  border: 1rpx solid #fec554;
+  padding:5rpx 10rpx;
+  margin-left: 10rpx;
+  border-radius: 10rpx;
+}
+.memberBottom{
+  display: flex;
+  margin-top: 45rpx;
+}
+.memberBottom>view{
+  flex: 1;
+  text-align: center;
+}
+.bottomTitle{
+  font-size: 24rpx;
+  color: #fff;
+  margin-bottom: 30rpx;
+}
+.bottomSub{
+  font-size: 24rpx;
+  color:#fff;
+}
+.bottomSub span{
+  font-size: 38rpx;
+}
+.memberReport{
+  padding-bottom: 35rpx;
+  border-bottom: 1px solid #efefef;
+  margin-top: 30rpx;
+}
+.reportImg{
+  padding-top: 3rpx;
+  padding-right: 20rpx;
+  border-right:1rpx solid #efefef;
+  margin-right: 20rpx;
+}
+.reportImg image{
+  width:80rpx;
+  height:65rpx;
+  margin-top: 10rpx
+}
+.newPeople{
+  width:34rpx;
+  height:34rpx;
+  border-radius: 50%;
+}
+.newName{
+  font-size: 24rpx;
+  color:#9a9a9a;
+  margin-left: 20rpx;
+}
+.newComing>view{
+  margin-top:8rpx;
+}
+.memberRights{
+  margin-top: 50rpx;
+}
+.rightsTitle{
+  color:#333;
+  font-size: 30rpx;
+  text-align: center
+}
+.rightsTitle .icon-jiantou2{
+  font-size: 22rpx;
+  margin-left: 20rpx;
+  display: inline-block;
+}
+.rightsConent{
+  width: 33.3333333%;
+  text-align: center;
+  margin-top: 60rpx;
+}
+.rightsConent image{
+  width: 100rpx;
+  height:100rpx;
+}
+.rightsConent .mainTitle{
+  font-size: 24rpx;
+  color:#6a6a6a;
+}
+.rightsConent .rightsSub{
+  font-size: 20rpx;
+  color:#6a6a6a;
+}
+.recommend{
+  margin-top: 70rpx;
+}
+.recommendTitle{
+  font-size: 30rpx;
+  color:#333;
+}
+.recommendGoods{
+  position: relative;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #efefef;
+}
+.goodsImg{
+  margin-right: 25rpx;
+  position: relative;
+  width:165rpx;
+  height:165rpx;
+}
+.goodsImg image{
+  width:165rpx;
+  height:165rpx;
+  border-radius: 10rpx;
+}
+.over{
+  position: absolute;
+  width: 165rpx;
+  height:165rpx;
+  top:0;
+  bottom:0;
+  background: rgba(0,0,0,.5);
+  z-index: 10;
+  border-radius: 10rpx;
+  text-align: center
+}
+.goodsImg .over>image{
+  width:130rpx;
+  height:130rpx;
+  margin-top: 17rpx;
+
+}
+.goodsName{
+  font-size:28rpx;
+  margin-bottom:13rpx;
+  height:59rpx;
+  width: 450rpx;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.pricePart {
+  margin-top: 27rpx;
+}
+.nowPrice{
+  font-size: 36rpx;
+  color:#fc2b31;
+}
+.oldPrice{
+  font-size: 26rpx;
+  color: #9a9a9a;
+  text-decoration:line-through;
+  display: inline-block; 
+  margin:10rpx 10rpx 0 10rpx;
+
+}
+.memberPrice image{
+  width: 80rpx;
+  height:35rpx;
+  margin-left:25rpx;
+}
+.buyNow{
+  position: absolute;
+  font-size: 24rpx;
+  color: #fff;
+  background: #fc2b31;
+  right:0;
+  bottom:30rpx;
+  height:56rpx;
+  line-height:56rpx;
+  border-radius:28rpx;
+  padding:0 20rpx;
+  width:145rpx;
+}
+.overBtn{
+  position: absolute;
+  font-size: 24rpx;
+  color: #fff;
+  background: #ddd;
+  right:0;
+  bottom:30rpx;
+  height:56rpx;
+  line-height:56rpx;
+  border-radius:28rpx;
+  padding:0 20rpx;
+  width:145rpx;
+}
+button::after{
+  border:none;
+}
+.rightsLogo{
+  width: 100rpx;
+  line-height: 100rpx;
+  background: #fff6e9;
+  border-radius: 50%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 10rpx;
+}
+.rightsLogo .iconfont{
+  color:#ffa340;
+  font-size:50rpx;
+}
+@keyframes slidedown{
+    from {
+        height: 0;
+        opacity: 0;
+    }
+    to {
+        height: 470rpx;
+        opacity: 1;
+    }
+}
+
+@keyframes slideup{
+    from {
+        height: 470rpx;
+        opacity: 1;
+    }
+    to {
+        height: 0;
+        opacity: 0;
+    }
+}
+@-webkit-keyframes slidedown{
+    from {
+        height: 0;
+        opacity: 0;
+    }
+    to {
+        height: 470rpx;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes slideup{
+    from {
+        height: 470rpx;
+        opacity: 1;
+    }
+    to {
+        height: 0;
+        opacity: 0;
+    }
+}
+.start .show{
+  animation: slidedown 0.5s ease-in forwards;
+  -webkit-animation: slidedown 0.5s ease-in forwards;
+}
+.start .close{
+  animation: slideup 0.5s ease-out forwards;
+  -webkit-animation: slideup 0.5s ease-out forwards;
+}
+.start .rotate{
+  transform: rotate(180deg)
+}
+.memberSwiper{
+  height:84rpx;
+  width: 565rpx;
+}
+.money .iconfont{
+  font-size: 38rpx;
+}
+.nowPrice .iconfont{
+  font-size: 36rpx;
+}
+.oldPrice .iconfont{
+  font-size: 24rpx;
+}
+.rightsMain{
+  width: 690rpx;
+  height:470rpx;
+  margin-top: 30rpx;
+}
+.rightsMain image{
+  width: 690rpx;
+  height:464rpx;
+}
+.haveImg{
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+.recommendBtn{
+  background: #fff;
+  padding-left:0;
+  padding-right: 0;
+  text-align: left;
+  line-height:1;
+}
+.memberRenewal{
+  font-size:24rpx;
+  color:#fff;
+  background:#fc2b31;
+  height:56rpx;
+  line-height:56rpx;
+  padding:0 20rpx;
+  width: 140rpx;
+  float: left;
+  margin-top: -10rpx;
+  margin-left: 10rpx;
+}

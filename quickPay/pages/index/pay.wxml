@@ -1,0 +1,239 @@
+<view class="myPage" wx:if="{{loadComplete}}">
+  <button wx:if="{{!phone}}" class="noPhone" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">授权获取手机号，会员买单享受更多优惠！去授权>
+  </button>
+  <view class="firstStep {{isMember?'':'notStyle'}}" wx:if="{{firstStep}}">
+    <view class="cardList" wx:if="{{isMember}}">
+      <view class="cardContent clearfix" style="background-image:url({{memberMsg.cardBg}})">
+          <view class="contentMain">
+              <view class="fl logo">
+                <image src='{{memberMsg.cardLogo}}'></image>
+              </view>
+              <view class="cardMsg fl">
+                <view class="cardName">{{memberMsg.brandName}}</view>
+                <view class="cardNum">{{memberMsg.cardNo}}</view>
+                <view class="cardDetail clearfix">
+                  <view class="point fl">
+                    <span class="iconfont icon-jifen1"> {{memberMsg.point}}</span>
+                  </view>
+                  <view class="balance fl">
+                    <span class="iconfont icon-qian">{{memberMsg.money}}</span>
+                  </view>
+                </view>
+              </view>
+          </view>
+      </view>
+    </view>
+    <view class="msgList">
+      <view class="list clearfix">
+        <view class="listName fl">付款给</view>
+        <view class="listContent fr clearfix" bindtap='showStore'>
+           <view class="iconfont icon-icon fr"></view><view class="shopNameList fr">{{storeName}}</view>
+        </view>
+      </view>
+      <view class="list clearfix">
+        <view class="listName fl">支付总额</view>
+        <view class="listContent fr">
+          <input disabled placeholder="询问店员后输入" value="{{totalMoney}}" bindtap='bordShow1'></input>
+          <view class="wiget_number_show" wx:if="{{inputTarget==1}}"></view>
+        </view>
+      </view>
+      <view class="list clearfix" wx:if="{{isMember}}">
+        <view class="listName fl">是否输入不优惠金额及备注</view>
+        <view class="listContent fr">
+          <switch checked="{{enterRemark}}" bindchange="switchChange"/>
+        </view>
+      </view>
+      <view class="list clearfix" wx:if="{{enterRemark&&isMember}}">
+        <view class="listName fl">不优惠金额</view>
+        <view class="listContent fr">
+          <input disabled placeholder="询问店员后输入" value='{{noReduce}}' bindtap='bordShow2'></input>
+          <view class="wiget_number_show" wx:if="{{inputTarget==2}}"></view>
+        </view>
+      </view>
+      <view class="list clearfix" wx:if="{{enterRemark}}">
+        <view class="listName fl">备注信息</view>
+        <view class="listContent fr">
+          <view bindtap='remark' class="remarkDetail" wx:if="{{sureRemark}}">{{sureRemark}}</view>
+          <view bindtap='remark' class="remarkDetail" wx:if="{{!sureRemark}}">这是一条备注信息</view>
+        </view>
+      </view>
+    </view>
+    <button class="firstStepOver" bindtap='sureMoney'>确定金额</button>
+  </view>
+  <view class="secondStep" wx:if="{{secondStep}}">
+    <view class="msgList">
+      <view class="list clearfix" bindtap='reEdit'>
+        <view class="listName fl">支付总额</view>
+        <view class="listContent fr">
+          <view class="totalMoney"><span class="iconfont icon-qian"></span>{{totalMoney}}<span class="iconfont icon-bianji1"></span></view>
+        </view>
+      </view>
+      <view class="list clearfix" wx:if="{{isMember}}">
+        <view class="listName fl">是否输入不优惠金额及备注</view>
+        <view class="listContent fr">
+          <switch checked="{{enterRemark}}" bindchange="switchChange"/>
+        </view>
+      </view>
+      <view class="list clearfix" wx:if="{{enterRemark&&isMember}}">
+        <view class="listName fl">不优惠金额</view>
+        <view class="listContent fr">
+          <input disabled placeholder="询问店员后输入" value='{{noReduce}}' bindtap='bordShow2'></input>
+          <view class="wiget_number_show" wx:if="{{inputTarget==2}}"></view>
+        </view>
+      </view>
+      <view class="list clearfix" wx:if="{{enterRemark}}">
+        <view class="listName fl">备注信息</view>
+        <view class="listContent fr">
+          <view bindtap='remark' class="remarkDetail" wx:if="{{sureRemark}}">{{sureRemark}}</view>
+          <view bindtap='remark' class="remarkDetail" wx:if="{{!sureRemark}}">这是一条备注信息</view>
+        </view>
+      </view>
+      <view class="list clearfix" wx:if="{{payInfo.discountMoney>0}}">
+        <view class="listName fl">会员折扣（{{payInfo.discount}}折）</view>
+        <view class="listContent fr">
+          减{{payInfo.discountMoney}}元
+        </view>
+      </view>
+      <view class="list clearfix" wx:if="{{payInfo.drawcountMoney>0}}">
+        <view class="listName fl">储值折扣（{{payInfo.drawcount}}折）</view>
+        <view class="listContent fr">
+          减{{payInfo.drawcountMoney}}元
+        </view>
+      </view>
+       <view class="list clearfix" wx:if="{{payInfo.is_can_bonus&&payInfo.pointMoney>0}}">
+        <view class="listName fl">可用{{payInfo.pointNum}}积分抵扣{{payInfo.pointMoney}}元</view>
+        <view class="listContent fr">
+          <switch bindchange="switchChange2"/>
+        </view>
+      </view>
+      <view class="list clearfix couponPart" wx:if="{{payInfo.can_use_coupon&&payInfo.couponList.length>0&&isMember}}">
+        <view class="listName fl">优惠券</view>
+        <view class="listContent fr" bindtap='openCouponMask'>
+          <span wx:if="{{payInfo.couponName}}"> {{payInfo.couponName}}</span>
+          <span wx:if="{{!payInfo.couponName}}"> 不使用优惠券</span>
+          <span class="iconfont icon-icon"></span>
+        </view>
+      </view>
+      <view class="list clearfix" wx:if="{{payInfo.payReduceMoney>0}}">
+        <view class="listName fl">满{{payInfo.payfullprice}}元随机立减</view>
+        <view class="listContent fr">
+          减{{payInfo.payReduceMoney}}元
+        </view>
+      </view>
+      <view class="list clearfix">
+        <view class="listName fl">应付金额</view>
+        <view class="listContent fr">
+          <view class="shouldPay"><span class="iconfont icon-qian"></span>{{payInfo.pay_money}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="payPart">
+      <view class="choosePart clearfix" wx:if="{{rechargeData.length>0&&!payInfo.canCardPay}}">
+        <view class="chooseList fl {{index==rechargeIndex?'active':''}}" data-id="{{index}}" bindtap='selectRecharge' wx:for="{{rechargeData}}">
+          <view class="rechargeMoney">充{{item.money}}</view>
+          <view class="sendMoney">送<span>{{item.gift}}</span>元</view>
+        </view>
+      </view>
+      <view class="notice" wx:if="{{rechargeData.length>0&&!payInfo.canCardPay}}">微信充值到余额，再支付<span>{{payInfo.pay_money}}元</span>，账户剩余<span>{{remainMoney}}元</span></view>
+      <button class="balancePay {{payType=='wx_balance'?'greenBtn':''}}" bindtap='chargeBalancePay' wx:if="{{rechargeData.length>0&&!payInfo.canCardPay&&phone}}">{{rechargeWord}}</button>
+      <button class="balancePay {{payType=='wx_balance'?'greenBtn':''}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" wx:if="{{rechargeData.length>0&&!payInfo.canCardPay&&!phone}}">{{rechargeWord}}</button>
+      <button class="balancePay {{payType=='cardPay'?'greenBtn':''}}"  bindtap='balancePay' wx:if="{{payInfo.canCardPay}}">{{balanceWord}}</button>
+      <button class="wechatPay {{payType=='weixin'?'greenBtn':''}}" bindtap="weixinPay">{{wxWord}}</button>
+      <view class="backPoint" wx:if="{{payInfo.integral>0}}">本单可返<span class="pointNum">{{payInfo.integral}}</span>积分</view>
+    </view>
+  </view>
+  <view class="keyBord" wx:if="{{keyBord}}">
+    <!-- <view class="bordTitle">
+      <span class="close iconfont icon-guanbi" bindtap="closeBord"></span>
+    </view> -->
+    <view class="keyContent">
+      <view class="leftKey clearfix">
+        <view wx:for="{{keyNum}}" class="{{item==0?'zeroKey':'key'}} fl" data-val="{{item}}" bindtap='inputNum'>{{item}}</view>
+      </view>
+      <view class="rightKey">
+        <view class="deleteKey" bindtap='deleteNum'>
+          <view class="iconfont icon-jianpanshanchu"></view>
+        </view>
+        <view class="sureBtn" bindtap='sureMoney'>
+          <view>确认</view>
+          <view>金额</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="mask" wx:if="{{storeMask&&!fromCode&&storeLen>1}}">
+    <view class="maskContent">
+      <view class="maskTitle">
+        门店列表
+        <span class="closeMask iconfont icon-guanbi" bindtap="showStore"></span>  
+      </view>
+      <view class="maskBody">
+        <view class="couponContent">
+          <view class="couponList {{storeId==item.id?'active':''}}" bindtap='selectStore' wx:for="{{storeList}}" data-id='{{item.id}}' data-name="{{item.shop_name+item.branch_name}}">{{item.shop_name+item.branch_name}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="mask" wx:if="{{couponMask}}">
+  <view class="maskContent">
+    <view class="maskTitle">
+      优惠券列表
+      <span class="closeMask iconfont icon-guanbi" bindtap="closeMask"></span>  
+    </view>
+    <view class="maskBody">
+      <view class="couponContent">
+        <view class="couponList {{item.couponId==couponId?'active':''}}" data-id='{{item.couponId}}' bindtap='selectCoupon' wx:for="{{payInfo.couponList}}">{{item.title}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="mask" wx:if="{{remarkModal}}">
+  <view class="remarkModal">
+    <view class="remarkTitle">
+      备注信息
+    </view>
+    <view class="remarkContent">
+      <textarea class="remarkText" bindinput='remarkInput' placeholder='请输入备注信息' value="{{remarkMsg}}"></textarea>
+    </view>
+    <view class="maskFooter">
+      <view class="maskCancle" bindtap='remarkClose'>取消</view>
+      <view class="maskSure" bindtap='remarkSure'>确定</view>
+    </view>
+  </view>
+</view>
+
+<view class="authorize" wx:if="{{!authorize}}">
+    <view class="authorizeModal">
+      <view class="authorizeMsg">
+        <image src='../../image/authorize.png'></image>
+        <view>您的公开信息（昵称和头像等）</view>
+        <view>以便于查看优惠信息哦</view>
+      </view>
+      <button bindtap='modal_click_Hidden' class="getUserInfo" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+        <span class="iconfont icon-weixin1"></span>确定授权
+      </button>
+    </view>
+</view>
+<view class="mask" wx:if="{{passwordModal}}">
+  <view class="password">
+    <view class="passTitle">
+      输入余额支付密码以验证身份
+      <span class="closeMask iconfont icon-guanbi" bindtap="passwordClose"></span> 
+    </view>
+    <view class="passwordNotice">{{passwordNotice}}</view>
+    <view class="inputGroup clearfix">
+      <view class="dot fl" wx:for="{{password}}">{{item}}</view>
+    </view>
+    <view class="passContent clearfix">
+      <view class="passKey fl" wx:for="{{passKey}}" bindtap='passTap' data-target="{{item}}">{{item}}</view>
+      <view class="passKey fl" bindtap='passTap' data-target="D">
+        <span class="iconfont icon-jianpanshanchu"></span>
+      </view>
+    </view>
+  </view>
+</view>
+
+

@@ -1,0 +1,189 @@
+<view class="body" wx:if="{{loadComplete}}">
+  <scroll-view class="scrollContent" scroll-y="true" bindscrolltolower="loadMore" scroll-top="{{scrollTop}}">
+    <!-- 可用 -->
+    <view class="avaliable {{!viewFail?'show':'notShow'}}">
+      <view class="record" wx:for="{{allCard}}" wx:if="{{item.status!=3&&item.status!=7}}">
+          <view bindtap="nextPage" data-id="{{index}}" class="content" style="background-image:url({{item.backimage}})">
+            <view class="useHover">
+              <view class="cardMsg" >
+                <!-- <view class="logo fl">
+                  <image src="{{item.logo_url}}"></image>
+                </view> -->
+                <view class="cardType fl">
+                  <!-- <view class="name">{{item.brand_name}}</view>  -->
+                  <view class="name">{{item.price}}元{{item.title}}</view>
+                  <view class="type">永久有效</view>
+
+                </view>
+              </view>
+              <view class="validity" bindtap='showDetail' data-id="{{index}}">
+                <!-- <view class="period fl">永久有效</view> -->
+                <view class="money">
+                  <span wx:if="{{item.status!=7&&item.guvenae==''&&item.status!=6}}">当前可用<span class="moneySpan">￥{{item.total}}</span></span>
+                  <span class="rebackNotice" wx:if="{{is_store==1&&item.status==6}}">24小时后无人领取将自动退回 </span>
+                  <span  wx:if="{{is_store==1&&item.status==0&&item.guvenae!=''}}">转赠退回</span>
+                </view>
+              </view>
+              <view class="cardNo">
+                NO.{{item.card_no}}
+              </view>
+              <view class="use" wx:if="{{item.juli<=1000&&is_store!=1}}">附近可用</view>  
+              <view class="status" wx:if="{{item.status==0}}">未激活</view>
+              <view class="status" wx:if="{{item.status==2||item.status==1}}">自用中</view>
+              <view class="status" wx:if="{{item.status==5}}">自用中</view>
+              <view class="status" wx:if="{{item.status==6}}">赠送中</view>  
+            </view>
+                
+          </view>
+          <view class="detailContent" wx:if="{{item.detailFlag}}">
+            <view class="line" wx:for="{{item.detail}}" wx:for-item="detail" wx:key="time">
+              <view class="fl time">{{detail.time}}</view>
+              <view class="fr msg">{{detail.msg}}</view>
+            </view>
+            <view class="btnGroup">
+              <view class="recharge fr">充值到账户</view>
+              <view class="send fr">赠送给好友</view>
+            </view>
+          </view>
+      </view>
+      <view class="noData" wx:if="{{noAvlData}}">
+        <image src='../../image/signNo.png'></image>
+        <view>暂无数据...</view>
+      </view>
+      <!-- <view class="loadAll" wx:if="{{loadAll}}">
+        <view class="line">
+          <image class="fr" src="../../image/line.png"></image>
+        </view>
+        <view>没有更多数据了</view>
+        <view class="line">
+          <image class="fl" src="../../image/line.png"></image>
+        </view>
+      </view> -->
+      <view hover-class="viewActive" class="viewFail" bindtap='viewFail' wx:if="{{!viewFail&&loadAll}}">查看已失效的礼品卡（{{npcoutn}}）</view>
+    </view>
+    <!-- 失效 -->
+    <view class="notAvaliable {{viewFail?'show':'notShow'}}">
+      <view class="record"  wx:for="{{noallCard}}" wx:if="{{item.status==3||item.status==7}}">
+          <view class="content" style="background-image:url({{item.backimage}})">
+            <view class="hoverMask">
+              <view class="cardMsg" >
+                <!-- <view class="logo fl">
+                  <image src="{{item.logo_url}}"></image>
+                </view> -->
+                <view class="cardType fl">
+                  <!-- <view class="name">{{item.brand_name}}</view> -->
+                  <view class="name">{{item.price}}元{{item.title}}</view>
+                  <view class="type">永久有效</view>
+                </view>
+              </view>
+              <view class="validity" bindtap='showDetail' data-id="{{index}}">
+                <!-- <view class="period fl">永久有效</view> -->
+                <view class="money">
+                  <span wx:if="{{is_store==1&&item.status==3&&item.usestatus==3}}">已充值到会员卡</span>
+                  <span wx:if="{{is_store==1&&item.status==7}}">已被{{item.guvenae}}领取</span>
+                </view>
+              </view>
+              <view class="cardNo">
+                  NO.{{item.card_no}}
+              </view>
+              <view class="status" wx:if="{{is_store==1&&item.status==6}}">转赠中</view>
+              <view class="status" wx:if="{{is_store==1&&item.status==3}}">已用完</view>
+              <view class="status" wx:if="{{is_store==1&&item.status==7}}">已赠送</view>
+              <view class="status" wx:if="{{is_store==1&&item.status==3&&item.usestatus==3}}">已充值</view>
+            </view>
+            
+          </view>
+          <view class="detailContent" wx:if="{{item.detailFlag}}">
+            <view class="line" wx:for="{{item.detail}}" wx:for-item="detail" wx:key="time">
+              <view class="fl time">{{detail.time}}</view>
+              <view class="fr msg">{{detail.msg}}</view>
+            </view>
+          
+            <view class="btnGroup">
+              <view class="recharge fr">充值到账户</view>
+              <view class="send fr">赠送给好友</view>
+            </view>
+          </view>
+      </view>
+      <view class="noData" wx:if="{{noFailData}}">
+        <image src='../../image/signNo.png'></image>
+        <view>暂无数据...</view>
+      </view>
+      <!-- <view class="loadAll" wx:if="{{noallCard.length!=0}}">
+        <view class="line">
+          <image class="fr" src="../../image/line.png"></image>
+        </view>
+        <view>没有更多数据了</view>
+        <view class="line">
+          <image class="fl" src="../../image/line.png"></image>
+        </view>
+      </view> -->
+      <view hover-class="viewActive" class="viewUse" bindtap='viewUse'  wx:if="{{viewFail}}">查看可用的礼品卡（{{count}}）</view>
+    </view>
+    <view class="pullNotice" wx:if="{{pullShow&&!loadAll}}">加载中...</view>
+   
+  </scroll-view>
+</view>
+<!-- <button class="introduce fixedBtn" bindtap="showMask">
+  <view class="iconfont icon-dianpu1"></view>
+  <view class="word">商家介绍</view>
+</button> -->
+<!-- <view class="footer">
+  <navigator hover-class='none' url="../index/index">
+    <view class="iconfont icon-shouye1"></view>
+    <view>首页</view>
+  </navigator>
+  <view hover-class='none' wx:if="{{is_store==1}}" bindtap='showMask'>
+    <view class="iconfont icon-dianpu1"></view>
+    <view>商家介绍</view>
+  </view>
+  <view hover-class='none' wx:if="{{is_store==1}}" >
+    
+  </view>
+  <navigator class="active" hover-class='none' url="../userCenter/record" wx:if="{{is_store==1}}">
+    <view class="iconfont icon-qianbao"></view>
+    <view>我的卡包</view>
+  </navigator>
+  <navigator hover-class='none' wx:if="{{is_store==1}}" url="../userCenter/saveCard?tempnum=">
+    <view class="iconfont icon-jilu"></view>
+    <view>我的记录</view>
+  </navigator>
+  <navigator hover-class='none' wx:if="{{is_store==0}}">
+    <view class="iconfont icon-dianpu1"></view>
+    <view>开店</view>
+  </navigator>
+  <navigator hover-class='none' wx:if="{{is_store==0}}">
+    <view class="iconfont icon-zuji"></view>
+    <view>足迹</view>
+  </navigator>
+  <navigator hover-class='none' wx:if="{{is_store==0}}">
+    <view class="iconfont icon-lianxikefu"></view>
+    <view>客服</view>
+  </navigator>
+  <navigator class="active" url="../userCenter/record" hover-class='none' wx:if="{{is_store==0}}">
+    <view class="iconfont icon-geren"></view>
+    <view>我的</view>
+  </navigator>
+</view> -->
+ <!-- <button class="usebt fixedBtn" bindtap="use" wx:if="{{is_store==1}}">
+  <view class="iconfont icon-paypal"></view>
+  <view class="word">使用</view>
+</button>  -->
+<view class="introduceMask" wx:if="{{introduce}}">
+  <view class="maskContent">
+    <view class="maskTitle">
+      <image src="../../image/title.png"></image>
+      <span>商家介绍</span>
+    </view>
+    <view class="maskBody">
+      <view class="indent" wx:for="{{merdesc}}">
+       {{item}}
+      </view>
+    </view>
+    <view class="maskFooter">
+      <button bindtap="closeMask">我知道了</button>
+    </view>
+  </view>
+</view>
+<!-- 授权 -->
+<authorize modal-hidden="{{authorize}}"></authorize>

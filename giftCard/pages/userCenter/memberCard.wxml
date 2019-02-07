@@ -1,0 +1,71 @@
+<view class="body">
+  <view class="head">
+  <view class='giftCard' style="background-image:url({{allDetail[0].background_loc_url}})">
+    <image class="logo" src="{{allDetail[0].logo_url}}"></image>
+    <view class="nameTitle">
+      <view class="brand_name">{{allDetail[0].brand_name}}</view>
+      <view class="brand_title">{{allDetail[0].title}}</view>
+    </view>
+    <view class="forever">永久有效</view>
+  </view>
+  <view class="detailMsg">
+    <view class="saveCard">
+      <navigator hover-class="none" url="saveCard?tempnum={{tempnum}}">
+        <view class="title">储值卡</view>
+        <view class="number">{{allDetail[0].count}}</view>
+      </navigator>
+    </view>
+    <view class="balance">
+      <navigator hover-class="none" url="balanceDetail?tempnum={{tempnum}}">
+        <view class="title">余额</view>
+        <view class="bmoney">{{allDetail[0].total}}</view>
+      </navigator>
+    </view>
+  </view>
+  <view bindtap="useNow" class="use">立即使用</view>
+</view>
+<view class="menuList">
+  <navigator hover-class="none" class="line">
+    <view class="lineName fl">
+      我也要送
+    </view>
+    <view class="view fr">
+      卡券商城<span class="iconfont icon-icon"></span>
+    </view>
+  </navigator>
+  <navigator url="myOrder" hover-class="none" class="line">
+    <view class="lineName fl">
+      我的订单
+    </view>
+    <view class="view fr">
+      查看<span class="iconfont icon-icon"></span>
+    </view>
+  </navigator>
+  <navigator url="activity" hover-class="none" class="line">
+    <view class="lineName fl">
+      活动参与
+    </view>
+    <view class="view fr">
+      秒杀、砍价、拼团等<span class="iconfont icon-icon"></span>
+    </view>
+  </navigator>
+  <navigator url="balanceDetail" hover-class="none" class="line">
+    <view class="lineName fl">
+      推荐购买
+    </view>
+    <view class="view fr">
+      佣金查看<span class="iconfont icon-icon"></span>
+    </view>
+  </navigator>
+  <navigator url="record" hover-class="none" class="line">
+    <view class="lineName fl">
+      储值卡详情
+    </view>
+    <view class="view fr">
+      查看<span class="iconfont icon-icon"></span>
+    </view>
+  </navigator>
+</view>
+</view>
+
+

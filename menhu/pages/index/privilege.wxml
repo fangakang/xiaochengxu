@@ -1,0 +1,127 @@
+<form class="content" bindsubmit="toDetail" report-submit='true' wx:if="{{loadComplete}}">
+  <!-- <scroll-view class="content" id="content" style="height:{{mainHeight}}px;" scroll-y  bindscrolltolower="scrollLoad"> -->
+    <view class="scrollBody">
+      <view class="headCard {{cardInfo.use_image==2?'haveImg':''}}" style="background:{{cardInfo.use_image==1?cardInfo.bgcolor:'url('+cardInfo.bgcolor+')'}}">
+        <!-- 非会员 -->
+        <view class="notMember" wx:if="{{memberDetail.is_member==0}}">
+          <view class="memberHead">
+            <view class="headTop clearix">
+              <view class="fl clearix">
+                <view class="fl photo">
+                  <image src="{{userInfo.avatarUrl}}"></image>
+                </view>
+                <view class="fl nickName">
+                  <view class="name">{{userInfo.nickName}}</view>
+                  <view class="subTitle" wx:if="{{memberDetail.validitytime==0}}">还未加入{{cardInfo.title}}</view>
+                  <view class="subTitle" wx:if="{{memberDetail.validitytime>0}}">{{memberDetail.hasvaliditytime}}</view>
+                </view>
+              </view>
+              <view class="money fr">
+                <span class="iconfont icon-qian"></span>
+                <span wx:if="{{cardInfo.sale_price==0}}">{{cardInfo.original}}</span>
+                <span wx:if="{{cardInfo.sale_price!=0}}">{{cardInfo.sale_price}}</span>
+              </view>
+            </view>
+            <view class="headBottom clearix">
+              <view class="fl">
+                <view class="memberNum"><span>{{cardInfo.open_card+cardInfo.salenum}}</span>人已开卡</view> 
+                <view class="f22">享受会员权益，给你更高优惠</view>
+              </view>
+              <view class="fr">
+                <button class="open" bindtap='openNow' wx:if="{{memberDetail.validitytime==0}}">立即开通</button>
+                <button class="open" bindtap='openNow' wx:if="{{memberDetail.validitytime>0}}">立即续费</button>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- 会员 -->
+        <view class="member" wx:if="{{memberDetail.is_member!=0}}">
+          <view class="memberHead">
+            <view class="headTop clearix">
+              <view class="fl clearix">
+                <view class="fl photo">
+                  <image src="{{userInfo.avatarUrl}}"></image>
+                </view>
+                <view class="fl nickName">
+                  <view class="name">
+                    <span>{{userInfo.nickName}}</span>
+                    <span class="superVip">{{cardInfo.title}}会员</span>
+                  </view>
+                  <view class="validaty clearfix">
+                    <view class="fl">{{memberDetail.validitytimeMsg}}到期</view>
+                    <button class="memberRenewal fl" bindtap='openNow'>立即续费</button>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="memberBottom clearix">
+              <view>
+                <view class="bottomTitle">累计消费</view> 
+                <view class="bottomSub"><span>{{countArr.counts}}</span> 次</view>
+              </view>
+              <view>
+                <view class="bottomTitle">为你节省</view> 
+                <view class="bottomSub">
+                  <span wx:if="{{countArr.allprice}}">{{countArr.allprice}}</span>
+                  <span wx:if="{{!countArr.allprice}}">0</span>
+                  元
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="memberReport clearix" wx:if="{{num>=10}}">
+        <view class="fl reportImg">
+          <image src="../../image/memberReport.png"></image>
+        </view>
+        <view class="fl newComing">
+          <swiper display-multiple-items="2" circular="{{circular}}" vertical="{{vertical}}" indicator-dots="{{indicatorDots}}" autoplay="true" interval="2000" duration="500" class='memberSwiper'>
+            <swiper-item wx:for="{{allByCard}}">
+              <image class="fl newPeople" src='{{item.avatarurl}}'></image>
+              <view class="fl newName">{{item.nickname}} 成功购买 {{item.title}}</view>
+            </swiper-item>
+          </swiper>
+        </view>
+      </view>
+      <view class="memberRights {{start?'start':''}}">
+        <view class="rightsTitle" bindtap='clickTitle'>
+          {{cardInfo.title}}专属权益 <span class="iconfont icon-jiantou2 {{rotate?'rotate':'notRotate'}} {{start?'start':''}}"></span>
+        </view>
+        <view class="rightsMain clearix {{showRights?'show':'close'}}">
+          <image src='{{cardInfo.prerogative}}'></image>
+        </view>
+      </view>
+      <view class="recommend">
+        <view class="recommendTitle">{{cardInfo.title}}推荐</view>
+        <button formType="submit" class="recommendGoods clearix recommendBtn" wx:for="{{allData}}"  data-id='{{item.id}}'>
+          <view class="fl goodsImg">
+            <image src="{{item.allimage}}"></image>
+            <view class="over" wx:if="{{item.tempFlag==1}}">
+              <image src='../../image/saleOver.png'></image>
+            </view>
+            <view class="over" wx:if="{{item.tempFlag==2}}">
+              <image src='../../image/over.png'></image>
+            </view>
+          </view>
+          <view class="fl">
+            <view class="goodsName">{{item.themename}}</view>
+            <view class="pricePart clearix">
+              <view class="memberPrice"><image src='../../image/memberPrice.png'></image></view>
+              <view>
+                <span class="nowPrice fl"><span class="iconfont icon-qian"></span>{{item.memberprice}}</span>
+                <span class="oldPrice fl"><span class="iconfont icon-qian">{{item.price}}</span></span>
+              </view>
+              
+            </view>
+          </view>
+          <button class="buyNow" wx:if="{{item.tempFlag==0}}" formType="submit" data-id='{{item.id}}'>立即购买</button>
+          <button wx:if="{{item.tempFlag==1}}" class="overBtn" formType="submit" data-id='{{item.id}}'>已售罄</button>
+          <button wx:if="{{item.tempFlag==2}}" class="overBtn" formType="submit" data-id='{{item.id}}'>已结束</button>
+        </button>
+      </view>
+    </view>
+    <loadAll wx:if="{{loadAll}}"></loadAll>
+  <!-- </scroll-view> -->
+  <footer page-num="{{page}}" id="footView"></footer>
+</form>

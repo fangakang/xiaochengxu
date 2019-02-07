@@ -1,0 +1,421 @@
+@import "../../icon/iconfont.wxss";
+scroll-view{
+  background: #fff
+}
+.nav{
+  display: flex;
+  background: #fff;
+  color:#333;
+  font-size: 28rpx;
+  padding:25rpx 0;
+  position: fixed;
+  width:750rpx;
+  z-index: 200;
+  top:0;
+}
+/* .body{
+   background: #fff; 
+} */
+.navList{
+  flex:1;
+  text-align: center;
+}
+.navList span{
+  display: inline-block;
+  padding:10rpx 25rpx;
+  border-bottom: 6rpx solid #fff;
+}
+.navList .active{
+  border-bottom: 6rpx solid #f24c36;
+  color: #f24c36;
+}
+/* .bodyContent{
+  margin-top:155rpx;
+} */
+.pb100{
+  padding-bottom: 100rpx;
+}
+.bodyContent .content{
+  background: #fff;
+  overflow: hidden;
+  /* margin-top: 105rpx; */
+}
+.cardList{
+  padding:30rpx 24rpx;
+  overflow: hidden;
+  position: relative;
+  border-bottom:1rpx solid #eee;
+}
+.bodyContent .cardImg{
+  margin-right: 20rpx;
+}
+.bodyContent .cardImg image{
+  width:220rpx;
+  height:132rpx;
+  border-radius:10rpx;
+}
+.fl{
+  float: left
+}
+.cardName{
+  font-size:32rpx;
+  color:#333;
+}
+.time{
+  font-size: 24rpx;
+  color:#999;
+  margin:15rpx 0;
+}
+.msg{
+  font-size: 24rpx;
+  color:#f63;
+}
+.select {
+  width:40rpx;
+  height:40rpx;
+  border-radius:50%;
+  border:1px solid #ddd;
+  position:absolute;
+  font-size:42rpx;
+  color:#1aad19;
+  right:35rpx;
+  bottom:80rpx;
+}
+.footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  display:flex;
+  background:#fff;
+  padding:35rpx 0rpx;
+}
+.footer>view{
+  flex:1;
+  text-align:center;
+  color:#333;
+  font-size:28rpx;
+  border-right:1px solid #ddd;
+  line-height:35rpx;
+}
+.footer>view:last-child{
+  border-right:none; 
+}
+.footer .iconfont {
+  color:#1aad19;
+  display:inline-block;
+  margin-right:10rpx;
+}
+.all {
+  margin-right:75rpx;
+}
+.selectAll {
+  width:40rpx;
+  height:40rpx;
+  border-radius:50%;
+  border:1px solid #ddd;
+  display:inline-block;
+  font-size:42rpx;
+  position:absolute;
+  right:65rpx;
+  top:33rpx;
+}
+.quanXuan .icon-duihao2 {
+  border:none;
+  top:38rpx;
+  right:70rpx;
+}
+.cardContent{
+  overflow: hidden;
+  display: inline-block;
+}
+.cardList .icon-duihao2{
+  border: none;
+  bottom:84rpx;
+  right:40rpx;
+}
+.pullNotice{
+  color:#bbb;
+  font-size: 28rpx;
+  text-align: center;
+  margin-top: 10rpx;
+  line-height: 50rpx;
+}
+.selectPage{
+  position: fixed;
+  top:0;
+  left: 0;
+  right:0;
+  background: #fff;
+  z-index: 20;
+  padding-bottom: 20rpx;
+}
+.selectPage .selectPart{
+  font-size: 30rpx;
+  display: flex;
+  width: 500rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  
+}
+.noticePart{
+  font-size: 25rpx;
+  text-align: center;
+  color: #333;
+  margin-top: 20rpx;
+}
+.joinRecord,.obtainRecord{
+  color: #333;
+  border:1rpx solid #333;
+  /* border-left:none; */
+  text-align: center;
+  flex:1;
+  padding:15rpx 0
+}
+.selectPage .selectPart .active{
+  color:#fff;
+  background: #f24c36;
+  text-align: center;
+  flex:1;
+  padding:15rpx 0;
+  border:1rpx solid #f24c36;
+}
+.joinRecord{
+  border-left: none
+}
+.obtainRecord{
+  border-right: none;
+}
+.loadAll{
+  display: flex;
+  background: #fff;
+  height:50rpx;
+  margin-top:15rpx;
+}
+.loadAll>view{
+  flex:1;
+  color:#bbb;
+  font-size: 28rpx;
+  text-align: center
+}
+.line image{
+  height:2rpx;
+  width:150rpx;
+  margin-top: 20rpx;
+}
+.line .fl{
+  float: left
+}
+.line .fr{
+  float: right
+}
+.noData image{
+  width:750rpx;
+  height:230rpx;
+  margin-top: 200rpx;
+}
+.noData view{
+  text-align:center;
+  font-size:30rpx;
+  color:#aaa;
+}
+
+
+
+/* 参与记录样式 */
+.first{
+  margin-top:130rpx;
+}
+.orderContent{
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.title{
+  padding: 20rpx 25rpx;
+  overflow: hidden;
+}
+.fl{
+  float:left;
+}
+.fr{
+  float:right;
+}
+.fr{
+  float: right;
+}
+.orderNum{
+  font-size: 24rpx;
+  color:#999;
+}
+.status{
+  font-size: 28rpx;
+  margin-top: 15rpx;
+}
+.waitPay{
+  color: #f24c36;
+}
+.alreadyPay{
+  color:#f90
+}
+.cancelPay,.reback{
+  color: #666;
+}
+.orderContent .content,.orderContent .cardContent{
+  padding:20rpx 20rpx 20rpx 45rpx;
+  background: #f8fafa;
+  overflow: hidden;
+  border-bottom: 2rpx solid #eee
+}
+.image{
+  width: 122rpx;
+  height:122rpx;
+  border:2rpx solid #eee;
+  position: relative;
+  margin-right: 20rpx;
+}
+.image .pic{
+  width: 122rpx;
+  height:122rpx;
+}
+.type{
+  position: absolute;
+  background: #f24c36;
+  color:#fff;
+  font-size: 20rpx;
+  padding: 5rpx 10rpx;
+  border-top-right-radius: 5rpx;
+  border-bottom-right-radius: 5rpx;
+  left:0;
+  top:10rpx;
+}
+.orderMsg{
+  position: relative;
+  height:122rpx;
+}
+.name{
+  font-size:26rpx;
+  color:#333;
+  width:515rpx;
+  position: absolute;
+  top:4rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.group{
+  overflow: hidden;
+  margin-top: 75rpx;
+  width:510rpx;
+}
+.price{
+  font-size:26rpx;
+  color:#333;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+.peopleNum{
+  font-size: 24rpx;
+  color:#999;
+}
+.time{
+  font-size: 22rpx;
+  color:#999;
+}
+.cutPrice{
+  margin-top: 90rpx;
+  font-size: 26rpx;
+  color:#333;
+}
+.secondPrice{
+  margin-top: 90rpx;
+  font-size: 26rpx;
+  color:#f90;
+}
+.orderFooter{
+  padding:25rpx;
+}
+.payMoney{
+  text-align: right;
+  color:#333;
+  font-size: 30rpx;
+}
+.payMoney span{
+  color: #f24c36
+}
+.payContent{
+  overflow: hidden;
+}
+.msgLeft{
+  font-size: 26rpx;
+  color: #f24c36;
+  margin-top: 15rpx;
+}
+.msgLeft .iconfont{
+  font-size: 26rpx;
+}
+.btnGroup .btn{
+  display: inline-block;
+  font-size:28rpx;
+  line-height: 60rpx;
+  width: 180rpx;
+  text-align: center;
+  border-radius:5rpx;
+  color:#888;
+  border:2rpx solid #888;
+}
+.orderContent .cardImg{
+  width: 122rpx;
+  height:122rpx;
+  border:2rpx solid #eee;
+  position: relative;
+  margin-right: 20rpx;
+}
+.orderContent .cardImg image{
+  width: 122rpx;
+  height:70rpx;
+  margin-top: 26rpx;
+}
+.cardTitle{
+  font-size: 26rpx;
+  color:#333;
+  margin-top: 4rpx;
+}
+.cardTitle span{
+  color: #f24c36;
+}
+.goodDetail{
+  font-size: 22rpx;
+  color:#999;
+  width:540rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  margin-top: 15rpx;
+}
+.time2{
+  font-size: 20rpx;
+  color:#888;
+  margin-top: 15rpx;
+}
+.continue{
+  color:#32c35e;
+}
+.endding{
+  color:#ababab;
+}
+.shopLogo{
+  width: 70rpx;
+  height:70rpx;
+  border-radius: 50%;
+  float: left; 
+}
+.shopMsg{
+  float: left;
+  margin-left: 10rpx;
+}
+.shopMsg .shopName{
+  font-size: 28rpx;
+  color:#333;
+  margin-top: 15rpx;
+}

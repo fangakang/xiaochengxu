@@ -1,0 +1,128 @@
+@import "../../icon/iconfont.wxss";
+page{
+  background: #fff
+}
+.contant{
+  padding-bottom: 115rpx;
+}
+.gift{
+  padding:45rpx 40rpx;
+  overflow: hidden;
+  border-bottom:1px solid #eee;
+}
+.fr{
+  float: right;
+}
+.fl{
+  float:left;
+}
+.cardImg{
+  width: 250rpx;
+  height:150rpx;
+  border-radius:10rpx;
+}
+.nameContent{
+  margin-left: 25rpx;
+  width:57%
+}
+.giftTitle{
+  font-size: 30rpx;
+  color:#333;
+}
+.cradNo{
+  color:#999;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+  margin-bottom: 15rpx;
+}
+.status{
+  font-size: 20rpx;
+  color:#fff;
+  line-height: 40rpx;
+  display: inline-block;
+  text-align: center;
+  border-radius:10rpx;
+  padding: 0 10rpx;
+}
+.red{
+  background:#d84952;
+}
+.green{
+  background: #1dad1a;
+}
+.blue{
+  background: #26ccca;
+}
+.select{
+  width: 40rpx;
+  height:40rpx;
+  border-radius: 50%;
+  border:1px solid #ddd;
+  margin-top: -3rpx;
+  position: relative;
+  font-size: 42rpx;
+  color:#1aad19;
+}
+.cradNo .icon-duihao2{
+  border: none;
+}
+.footer{
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  display: flex;
+  background: #f2f2f2;
+  padding:25rpx 0rpx;
+}
+.footer>view{
+  flex:1;
+  text-align: center;
+  color:#333;
+  font-size: 28rpx;
+  border-right:1px solid #ddd;
+  line-height:35rpx;
+}
+.footer>view:last-child{
+  border: none;
+}
+.footer button{
+  background:#1aad19;
+  color:#fff; 
+  font-size: 28rpx;
+  width:550rpx;
+}
+.footer .iconfont{
+  display: inline-block;
+  margin-right: 10rpx;
+}
+.quanXuan{
+  position: relative;
+}
+.selectAll{
+  width: 40rpx;
+  height:40rpx;
+  border-radius: 50%;
+  border:1px solid #ddd;
+  margin-top:-3rpx;
+  display: inline-block;
+  font-size: 42rpx;
+  margin-top: -5rpx;
+  position: absolute;
+  right:65rpx;
+}
+.quanXuan .icon-duihao2{
+  border:none;
+  top:10rpx;
+  right:67rpx;
+}
+.all{
+  margin-left: 60rpx;
+  margin-right: 20rpx;
+}
+.iconShow{
+  display: block;
+}
+.iconHide{
+  display: none;
+}

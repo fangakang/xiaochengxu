@@ -1,0 +1,68 @@
+/* pages/index/buyCard.wxss */
+@import '../../icon/iconfont.wxss';
+.content{
+  padding-left: 30rpx;
+  padding-top: 40rpx;
+}
+.pageTitle{
+  padding-bottom: 35rpx;
+  border-bottom: 1rpx solid #efefef;
+}
+.mainTitle{
+  font-size: 30rpx;
+  color:#333;
+}
+
+.mainTitle .iconfont{
+  margin-right: 20rpx;
+  margin-top: 5rpx;
+}
+.notice{
+  font-size: 22rpx;
+  color:#b8b7b7;
+  margin-top: 10rpx;
+  margin-bottom: 35rpx;
+}
+.chooseType{
+  font-size: 30rpx;
+  color:#333;
+}
+.cardName{
+  font-size: 28rpx;
+  color:#333;
+  margin-bottom: 6rpx;
+}
+.useTime{
+  font-size: 24rpx;
+  color:#333;
+}
+.money{
+  color:#fc252c;
+  font-size: 36rpx;
+  margin-top: 6rpx;
+}
+.buyNow{
+  background: #fc252c;
+  color: #fff;
+  font-size: 26rpx;
+}
+.cardType{
+  padding:25rpx 30rpx 25rpx 0;
+  border-bottom: 1rpx solid #efefef;
+}
+.buyGroup{
+  margin-top: 8rpx;
+}
+.money .iconfont{
+  font-size: 36rpx;
+}
+.oldMoney{
+  color:#999;
+  text-decoration:line-through;
+  margin-top: 6rpx;
+  margin-right: 10rpx;
+}
+.oldMoney .iconfont{
+  font-size:26rpx;
+}
+

@@ -1,0 +1,62 @@
+<view class="content">
+  <form bindsubmit="" class="">
+    <view class="header clearix">
+      <view class="searchHeader fl">
+        <span class="iconfont icon-sousuo fl"></span>
+        <input bindconfirm="searchSubmit" value='{{name}}' bindinput="bindKeyInput" class="searchMsg" name="searchName" placeholder='请输入要搜索的商品'></input>
+      </view>
+      <view class="cancle fr" bindtap='backIndex'>取消</view>
+      <view class="delete" bindtap='deleteInput' wx:if="{{inputValue}}"><i class="iconfont icon-guanbi1"></i></view>
+    </view>
+  </form>
+  <view class="history" wx:if="{{pageInit&&search.length>0}}">
+    <view class="historyTitle">历史记录</view>
+    <view class="historyList">
+      <view wx:for="{{search}}" data-target="{{item.seaname}}" bindtap='searchBtn'>{{item.seaname}}</view>
+    </view>
+    <view wx:if="{{search.length>0}}" class="clearHistory" bindtap="clearSearchKeyWord"><span>清空搜索历史</span></view>
+  </view>
+  <scroll-view class="goodsList" scroll-y="{{canScroll}}" wx:if="{{!pageInit&&!searchNo}}" style='height:{{mainHeight}}px' bindscrolltolower="scrollLoad">
+    <form bindsubmit="buy" report-submit='true'>
+      <button class="goodsContent clearix" formType="submit" wx:for="{{allData}}" data-id="{{item.id}}">
+        <view class="fl goodsImg">
+          <image src="{{item.allimage}}"></image>
+          <view class="over" wx:if="{{item.tempFlag==1}}">
+              <image src='../../image/saleOver.png'></image>
+            </view>
+            <view class="over" wx:if="{{item.tempFlag==2}}">
+              <image src='../../image/over.png'></image>
+          </view>
+        </view>
+        <view class="fl goodsMsg">
+          <view class="goodsName">
+            {{item.themename}}
+          </view>
+          <view class="goodsFoot notMember" wx:if="{{item.memberprice==-1}}">
+            <span class="nowPrice"><span class="iconfont icon-qian"></span>{{item.saleprice}}</span>
+            <span class="oldPrice"><span class="iconfont icon-qian">{{item.price}}</span></span>
+            <button class="goodsStatus fr canBuy" wx:if="{{item.tempFlag==0}}" formType="submit" data-id="{{item.id}}">购 买</button>
+            <button wx:if="{{item.tempFlag==1}}" class="goodsStatus fr overBtn" formType="submit" data-id='{{item.id}}'>已售罄</button>
+            <button wx:if="{{item.tempFlag==2}}" class="goodsStatus fr overBtn" formType="submit" data-id='{{item.id}}'>已结束</button>
+          </view>
+          <view class="goodsFoot isMember" wx:if="{{item.memberprice>-1}}">
+            <view class="memberPriceLogo">
+                <image class="memberPrice" src='../../image/memberPrice.png'></image>
+            </view>
+            <span class="nowPrice"><span class="iconfont icon-qian"></span>{{item.memberprice}}</span>
+            <span class="oldPrice"><span class="iconfont icon-qian">{{item.price}}</span></span>
+            <button wx:if="{{item.tempFlag==0}}" class="goodsStatus fr canBuy" formType="submit" data-id="{{item.id}}">购 买</button>
+            <button wx:if="{{item.tempFlag==1}}" class="goodsStatus fr overBtn" formType="submit" data-id='{{item.id}}'>已售罄</button>
+            <button wx:if="{{item.tempFlag==2}}" class="goodsStatus fr overBtn" formType="submit" data-id='{{item.id}}'>已结束</button>
+          </view>
+        </view>
+      </button>
+    </form>
+    <loadAll wx:if="{{loadAll}}"></loadAll>
+  </scroll-view>
+  <view class="searchNo" wx:if="{{!pageInit&&searchNo}}">
+    <image class="searchNo" src='../../image/searchNo.png'></image>
+    <view>暂无数据...</view>
+  </view> 
+  <footer page-num="{{page}}"></footer>
+</view>

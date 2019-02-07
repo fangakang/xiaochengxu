@@ -1,0 +1,19 @@
+<!--pages/components/footer.wxml-->
+<view class="footer" id="footer">
+  <view class="pageTo {{pageNum==1?'active':''}}" bindtap='index'>
+    <view class="iconfont icon-weibiaoti1"></view>
+    <view>首页</view>
+  </view>
+  <view class="pageTo {{pageNum==4?'active':''}}" bindtap='privilege'>
+    <view class="iconfont icon-huiyuan2"></view>
+    <view>会员福利</view>
+  </view>
+  <view class="pageTo {{pageNum==2?'active':''}}" bindtap='search'>
+    <view class="iconfont icon-sousuo-tianchong"></view>
+    <view>搜索</view>
+  </view>
+  <view class="pageTo {{pageNum==3?'active':''}}" bindtap='my'>
+    <view class="iconfont icon-weibiaoti-_huabanfuben"></view>
+    <view>我的</view>
+  </view>
+</view>

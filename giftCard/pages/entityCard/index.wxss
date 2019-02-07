@@ -1,0 +1,90 @@
+page{
+  background: #fff;
+}
+.notice{
+  font-size: 30rpx;
+  color:#333;
+  padding: 80rpx 40rpx;
+  line-height: 45rpx;
+}
+.enterPass{
+  padding-left: 40rpx;
+  position: relative;
+}
+.title{
+  font-size: 32rpx;
+}
+.password{
+  border: 1rpx solid #ddd;
+  width: 630rpx;
+  margin-top: 20rpx;
+  height:65rpx;
+  padding-left:20rpx;
+  font-size:30rpx;
+}
+.enterPass .focus{
+  border: 1rpx solid #27ab29;
+}
+.errNotice{
+  color: #f00;
+  font-size:26rpx;
+  position: absolute;
+  bottom:-55rpx;
+}
+.btn-group{
+  margin-top: 300rpx;
+}
+.btn-group button{
+  color: #fff;
+  background: #f24c36;
+  margin-bottom: 20rpx;
+  width: 640rpx;
+  font-size: 32rpx;
+}
+.notMember{
+  font-size: 30rpx;
+  color:#333;
+  text-align: center;
+  margin-bottom: 25rpx;
+}
+.notMember view{
+  color:#f24c36;
+  text-decoration: underline;
+  display: inline-block;
+}
+.authorizeMask{
+  position: fixed;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  background: rgba(0,0,0,.5)
+}
+.personMsg{
+  background: #fff;
+  width:650rpx;
+  border-radius: 10rpx;
+  margin:0 auto;
+  text-align: center;
+  margin-top: 300rpx
+}
+.authorizeTitle{
+  border-bottom: 1rpx solid #ddd;
+  font-size: 34rpx;
+  color:#333;
+  padding:20rpx 0;
+}
+.authorizeNotice{
+  font-size: 30rpx;
+  color:#333;
+  padding: 90rpx;
+}
+.getUserInfo{
+  background: #f24c36;
+  color:#fff;
+  font-size: 32rpx;
+  width:225rpx;
+}
+.authorizeFooter{
+  padding-bottom: 20rpx;
+}

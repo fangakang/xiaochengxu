@@ -1,0 +1,36 @@
+<view class="myPage">
+  <!-- <view class="searchGroup clearfix">
+    <view class="iconfont icon-sousuo fl"></view>
+    <view class="searchInput fl">
+      <input placeholder='输入商家名称搜索'></input>
+    </view>
+  </view> -->
+  <view class="cardList" wx:if="{{!noData}}">
+    <view class="shopContent" style="background-image:url({{item.cardBg}})" wx:for="{{cardList}}" bindtap='toDetail' data-id="{{item.memberId}}" >
+      <view class="cardContent clearfix" >
+          <view class="fl logo">
+            <image src='{{item.cardLogo}}'></image>
+          </view>
+          <view class="cardMsg fl">
+            <view class="cardName">{{item.brandName}}</view>
+            <view class="cardNum">{{item.card_no}}</view>
+            <view class="cardDetail clearfix">
+              <view class="point fl">
+                <span class="iconfont icon-jifen1"> {{item.points}}</span>
+              </view>
+              <view class="balance fl">
+                <span class="iconfont icon-qian">{{item.money}}</span>
+              </view>
+            </view>
+          </view>
+      </view>
+    </view>
+    
+    <loadAll wx:if="{{loadAll&&!noData}}"></loadAll>
+  </view>
+  <view class="noData" wx:if="{{noData}}">
+      <image src="../../image/noData.png"></image>
+      <view>暂无数据...</view>
+    </view>
+</view>
+
